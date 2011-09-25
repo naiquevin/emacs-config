@@ -54,6 +54,21 @@
 (add-to-list 'auto-mode-alist '("\\.js$" . espresso-mode))
 (add-to-list 'auto-mode-alist '("\\.json$" . espresso-mode))
 
+;; Pyflakes (Flymake included in emacs23+)
+(when (load "flymake" t) 
+  (defun flymake-pyflakes-init () 
+    (let* ((temp-file (flymake-init-create-temp-buffer-copy 
+                       'flymake-create-temp-inplace)) 
+           (local-file (file-relative-name 
+                        temp-file 
+                        (file-name-directory buffer-file-name)))) 
+      (list "pyflakes" (list local-file))))
+  
+  (add-to-list 'flymake-allowed-file-name-masks 
+               '("\\.py\\'" flymake-pyflakes-init)))
+
+(add-hook 'find-file-hook 'flymake-find-file-hook)
+
 ;; markdown-mode
 (autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown files" t) 
 (setq auto-mode-alist (cons '("\\.md" . markdown-mode) auto-mode-alist))
@@ -65,6 +80,13 @@
 (add-to-list 'load-path "~/emacs/site/common/color-theme-solarized")
 (require 'color-theme-solarized)
 (color-theme-solarized-dark)
+;;(require 'color-theme-tangotango)
+
+;; any custom-set-faces must come after color theme conf to take effect
+;; flymake error and warning faces
+(custom-set-faces
+ '(flymake-errline ((t (:background "DarkRed"))))
+ '(flymake-warnline ((((class color)) (:background "DarkBlue")))))
 
 ;; Org Mode
 (setq load-path (cons "~/emacs/site/org-7.7/lisp" load-path))
@@ -75,3 +97,4 @@
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
+(setq org-hide-leading-stars t) ;; hide leading stars
