@@ -69,6 +69,9 @@
 
 (add-hook 'find-file-hook 'flymake-find-file-hook)
 
+;; enhancements for displaying flymake errors
+(require 'flymake-cursor)
+
 ;; markdown-mode
 (autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown files" t) 
 (setq auto-mode-alist (cons '("\\.md" . markdown-mode) auto-mode-alist))
