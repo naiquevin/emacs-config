@@ -32,6 +32,9 @@
 (setq mumamo-background-colors nil) 
 (add-to-list 'auto-mode-alist '("\\.html$" . django-html-mumamo-mode))
 
+;; add the common dir where all random modes will reside
+(add-to-list 'load-path (expand-file-name "~/emacs/site/common"))
+
 ;; for better array indentation in php
 (add-hook 'php-mode-hook (lambda ()
     (defun ywb-php-lineup-arglist-intro (langelem)
@@ -44,9 +47,6 @@
         (vector (current-column))))
     (c-set-offset 'arglist-intro 'ywb-php-lineup-arglist-intro)
     (c-set-offset 'arglist-close 'ywb-php-lineup-arglist-close)))
-
-;; add the common dir where all random modes will reside
-(add-to-list 'load-path (expand-file-name "~/emacs/site/common"))
 
 ;; javascript mode (espresso)
 ;; (require 'espresso) wow! already included
@@ -68,6 +68,21 @@
                '("\\.py\\'" flymake-pyflakes-init)))
 
 (add-hook 'find-file-hook 'flymake-find-file-hook)
+
+;; flymake for php
+(defun flymake-php-init ()
+  "Use php to check the syntax of the current file."
+  (let* ((temp (flymake-init-create-temp-buffer-copy 'flymake-create-temp-inplace))
+	 (local (file-relative-name temp (file-name-directory buffer-file-name))))
+    (list "php" (list "-f" local "-l"))))
+
+(add-to-list 'flymake-err-line-patterns
+  '("\\(Parse\\|Fatal\\) error: +\\(.*?\\) in \\(.*?\\) on line \\([0-9]+\\)$" 3 4 nil 2))
+
+(add-to-list 'flymake-allowed-file-name-masks '("\\.php$" flymake-php-init))
+
+;; disable flymake for html
+(delete '("\\.html?\\'" flymake-xml-init) flymake-allowed-file-name-masks)
 
 ;; enhancements for displaying flymake errors
 (require 'flymake-cursor)
@@ -101,3 +116,8 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
 (setq org-hide-leading-stars t) ;; hide leading stars
+
+;; octave mode
+(autoload 'octave-mode "octave-mod" nil t)
+(setq auto-mode-alist
+      (cons '("\\.m$" . octave-mode) auto-mode-alist))
