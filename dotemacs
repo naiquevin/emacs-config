@@ -1,17 +1,4 @@
-(custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(show-paren-mode t))
-(custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#042028" :foreground "#708183" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 113 :width normal :foundry "bitstream" :family "Courier 10 Pitch"))))
- '(mumamo-background-chunk-major ((((class color) (min-colors 88) (background light)) nil)))
- '(mumamo-background-chunk-submode1 ((((class color) (min-colors 88) (background light)) nil))))
+;; .emacs file of Vineet Naik
 
 ;; General Settings
 (menu-bar-mode -1) ;; Get rid of the menu bar first!
@@ -26,6 +13,10 @@
 (icomplete-mode t)  ;; Show completions in mini buffer
 (which-function-mode t) ;; enable which function mode
 (global-linum-mode t) ;; Show line nums on left
+
+;; Custom file where Customize-* will write
+(setq custom-file "~/emacs/site/common/custom.el")
+(load custom-file)
 
 ;; for php, xhtml, js mixed docs etc.
 (load "~/emacs/site/nxhtml/autostart.el")
@@ -52,7 +43,10 @@
 ;; (require 'espresso) wow! already included
 (autoload #'espresso-mode "espresso" "Start espresso-mode" t)
 (add-to-list 'auto-mode-alist '("\\.js$" . espresso-mode))
-(add-to-list 'auto-mode-alist '("\\.json$" . espresso-mode))
+
+;; Josh's lite weight json major mode
+(autoload 'json-mode "json-mode.el" "Major mode for editing json files" t)
+(add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
 
 ;; Pyflakes (Flymake included in emacs23+)
 (when (load "flymake" t) 
@@ -90,6 +84,7 @@
 ;; markdown-mode
 (autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown files" t) 
 (setq auto-mode-alist (cons '("\\.md" . markdown-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.markdown" . markdown-mode) auto-mode-alist))
 
 ;; color-theme
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/emacs-goodies-el/color-theme.el/file")
@@ -99,12 +94,6 @@
 (require 'color-theme-solarized)
 (color-theme-solarized-dark)
 ;;(require 'color-theme-tangotango)
-
-;; any custom-set-faces must come after color theme conf to take effect
-;; flymake error and warning faces
-(custom-set-faces
- '(flymake-errline ((t (:background "DarkRed"))))
- '(flymake-warnline ((((class color)) (:background "DarkBlue")))))
 
 ;; Org Mode
 (setq load-path (cons "~/emacs/site/org-7.7/lisp" load-path))
@@ -121,3 +110,12 @@
 (autoload 'octave-mode "octave-mod" nil t)
 (setq auto-mode-alist
       (cons '("\\.m$" . octave-mode) auto-mode-alist))
+
+;; any custom face attributes must come after color theme conf to take effect
+;; flymake error and warning faces
+;; (defun override-theme ()
+;;   (progn
+;;     (set-face-background 'flymake-errline "DarkRed")
+;;     (set-face-background 'flymake-warnline "DarkBlue")))
+
+;; (override-theme)
