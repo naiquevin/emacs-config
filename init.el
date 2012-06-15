@@ -30,6 +30,7 @@
 ;; flymake 
 (add-hook 'find-file-hook 'flymake-find-file-hook)
 (require 'flymake-cursor)
+(setq flymake-gui-warnings-enabled nil)
 
 ;; disable flymake for html and xml
 ;; (delete 
