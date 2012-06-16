@@ -107,3 +107,6 @@
 ;; solarized-dark - current theme of choice
 (load-theme 'solarized-dark t)
 
+;;;; On demand loading
+(load "~/emacs/site/ondemand.el")
+
