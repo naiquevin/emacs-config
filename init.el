@@ -22,7 +22,8 @@
 
 
 ;; common dir where all random modes will reside
-(add-to-list 'load-path (expand-file-name "~/emacs/site/common"))
+;; drop any one-file-mode inside this directory
+(add-to-list 'load-path (expand-file-name "~/emacs/site/lib"))
 
 
 ;;; Programming 
@@ -32,11 +33,6 @@
 (require 'flymake-cursor)
 (setq flymake-gui-warnings-enabled nil)
 
-;; disable flymake for html and xml
-;; (delete 
-;;  '("\\.html?\\'" flymake-xml-init) flymake-allowed-file-name-masks)
-;; (delete 
-;;  '("\\.xml?\\'" flymake-xml-init) flymake-allowed-file-name-masks)
 
 ;; python
 ;; Pyflakes
