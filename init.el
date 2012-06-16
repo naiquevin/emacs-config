@@ -1,6 +1,16 @@
+;;;; Vineet's emacs init file
+;; Refactored on Sat Jun 16 19:16:13 IST 2012
+
+;; Custom file where Customize-* will write
+(setq custom-file "~/emacs/site/custom.el")
+(load custom-file)
+
+;; Add lib dir to load path
+;; Drop any one-file-mode inside this directory
+(add-to-list 'load-path (expand-file-name "~/emacs/site/lib"))
 
 
-;;; General Settings 
+;;;; General Settings 
 
 (menu-bar-mode -1) ; Get rid of the menu bar first!
 (tool-bar-mode -1) ; and then the tool bar
@@ -16,25 +26,16 @@
 (global-linum-mode t) ; Show line nums on left
 
 
-;; Custom file where Customize-* will write
-(setq custom-file "~/emacs/site/custom.el")
-(load custom-file)
+;;;; Programming
 
-
-;; common dir where all random modes will reside
-;; drop any one-file-mode inside this directory
-(add-to-list 'load-path (expand-file-name "~/emacs/site/lib"))
-
-
-;;; Programming 
-
-;; flymake 
+;;; Flymake 
 (add-hook 'find-file-hook 'flymake-find-file-hook)
 (require 'flymake-cursor)
 (setq flymake-gui-warnings-enabled nil)
 
 
-;; python
+;;; Python
+
 ;; Pyflakes
 (when (load "flymake" t) 
   (defun flymake-pyflakes-init () 
@@ -48,42 +49,41 @@
   (add-to-list 'flymake-allowed-file-name-masks 
                '("\\.py\\'" flymake-pyflakes-init)))
 
-;; javascript 
-;; espresso mode
-(autoload #'espresso-mode "espresso" "Start espresso-mode" t)
-(add-to-list 'auto-mode-alist '("\\.js$" . espresso-mode))
+
+;;; Javascript 
+
+;; js-mode (earlier known as espresso mode, now packaged with emacs)
+(add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
 
 ;; json (Josh's lite weight json major mode)
 (autoload 'json-mode "json-mode.el" "Major mode for editing json files" t)
 (add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
 
 
-;;; php
-;; php 5.4 friendly mode from https://github.com/ejmr/php-mode
+;;; Php
+
+;; Php 5.4 friendly mode from https://github.com/ejmr/php-mode
 (require 'php-mode)
 
-;; flymake for php
+;; Flymake for php
 (defun flymake-php-init ()
   "Use php to check the syntax of the current file."
   (let* ((temp (flymake-init-create-temp-buffer-copy 'flymake-create-temp-inplace))
 	 (local (file-relative-name temp (file-name-directory buffer-file-name))))
     (list "php" (list "-f" local "-l"))))
-
 (add-to-list 'flymake-err-line-patterns
              '("\\(Parse\\|Fatal\\) error: +\\(.*?\\) in \\(.*?\\) on line \\([0-9]+\\)$" 3 4 nil 2))
-
 (add-to-list 'flymake-allowed-file-name-masks '("\\.php$" flymake-php-init))
 
-;; more stuff here
 
-;;; Editing and Outlining
+;;;; Editing and Outlining
 
-;; markdown
+;;; Markdown mode
 (autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown files" t) 
 (setq auto-mode-alist (cons '("\\.md" . markdown-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.markdown" . markdown-mode) auto-mode-alist))
 
-;; Org mode
+;;; Org mode
 (setq load-path (cons "~/emacs/site/org-mode/lisp" load-path))
 (setq load-path (cons "~/emacs/site/org-mode/contrib/lisp" load-path))
 (require 'org-install)
@@ -97,12 +97,13 @@
 (setq org-hide-leading-stars t) ; hide leading stars
 
 
-;;; Themes
+;;;; Themes
+
+;; custom-theme-load-path is new in Emacs24
 (add-to-list 'custom-theme-load-path "~/emacs/site/themes")
-
-;; solarized-dark
 (add-to-list 'custom-theme-load-path "~/emacs/site/themes/solarized")
-(load-theme 'solarized-dark t)
+(add-to-list 'custom-theme-load-path "~/emacs/site/themes/tomorrow-night")
 
-;; (add-to-list 'custom-theme-load-path "~/emacs/site/themes/tomorrow-night")
+;; solarized-dark - current theme of choice
+(load-theme 'solarized-dark t)
 
