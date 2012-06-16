@@ -25,6 +25,13 @@
 (which-function-mode t) ; enable which function mode
 (global-linum-mode t) ; Show line nums on left
 
+;;; unique buffer names
+(require 'uniquify) ; uniquify is packed in emacs
+(setq uniquify-buffer-name-style 'post-forward)
+(setq uniquify-separator "|")
+(setq uniquify-after-kill-buffer-p t) ; rename after killing uniquified
+(setq uniquify-ignore-buffers-re "^\\*") ; don't muck with special buffers
+
 
 ;;;; Programming
 
