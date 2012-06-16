@@ -4,3 +4,4 @@
 [submodule "nxhtml"]
 	path = nxhtml
 	url = git://github.com/emacsmirror/nxhtml.git
+    ignore = dirty
