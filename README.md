@@ -12,7 +12,7 @@ same time. Some important changes I have introduced are as follows:
   this repo and does nothing else. So no symlinking and such other
   things.
   
-* Customizing is set to write to a separate `custom.el` file and not
+* Customize is set to write to a separate `custom.el` file and not
   `init.el` itself.
 
 * The `nxhtml` and `org` modes are now added as git submodules for
@@ -35,6 +35,5 @@ same time. Some important changes I have introduced are as follows:
 
 
 A lot of code has been borrowed from init files of various people on
-the github and around the internets. All mistakes are most likely my
-own.
+github and around the internets. All mistakes are most likely my own.
 
