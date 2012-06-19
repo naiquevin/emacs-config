@@ -24,6 +24,7 @@
 (icomplete-mode t)  ; Show completions in mini buffer
 (which-function-mode t) ; enable which function mode
 (global-linum-mode t) ; Show line nums on left
+(show-paren-mode t) ; Show matching paren
 
 ;;; unique buffer names
 (require 'uniquify) ; uniquify is packed in emacs
