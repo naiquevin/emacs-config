@@ -125,3 +125,7 @@
 ;;;; On demand loading
 (load "~/emacs/site/ondemand.el")
 
+
+;;;; Start Server
+(server-start)
+
