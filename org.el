@@ -11,5 +11,11 @@
 (global-set-key "\C-cb" 'org-iswitchb)
 
 (setq org-hide-leading-stars t) ; hide leading stars
-(setq org-log-done t)
+(setq org-log-done t) ; display time when TODO was changed to DONE
+
+;; Agenda files
+(setq org-agenda-files (list "~/Dropbox/org/work-gtd.org"
+                             "~/Dropbox/org/home-gtd.org"))
+
+
 
