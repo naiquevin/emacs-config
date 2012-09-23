@@ -28,3 +28,14 @@
   (while (re-search-forward "\s\\([,.:;?!]\\)" nil t)
     (replace-match "\\1")))
 
+
+(defun http-serve-dir (port)
+  "Function for starting a SimpleHTTPServer in python on
+  localhost:9000 to serve the contents of the current directory"
+  (interactive "sEnter Port: ")
+  (shell-command (format "python -m SimpleHTTPServer %s &" port))
+  (message
+   (format
+    "Serving files from directory %s at http://127.0.0.1:%s"
+    default-directory
+    port)))
