@@ -6,7 +6,7 @@
  '(background-color "#002b36")
  '(background-mode dark)
  '(cursor-color "#839496")
- '(custom-safe-themes (quote ("fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "935e766f12c5f320c360340c8d9bc1726be9f8eb01ddeab312895487e50e5835" default)))
+ '(custom-safe-themes (quote ("27b53b2085c977a8919f25a3a76e013ef443362d887d52eaa7121e6f92434972" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "935e766f12c5f320c360340c8d9bc1726be9f8eb01ddeab312895487e50e5835" default)))
  '(foreground-color "#839496")
  '(tool-bar-mode nil))
 (custom-set-faces
