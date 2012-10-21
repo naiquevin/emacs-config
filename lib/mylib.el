@@ -36,6 +36,6 @@
   (shell-command (format "python -m SimpleHTTPServer %s &" port))
   (message
    (format
-    "Serving files from directory %s at http://127.0.0.1:%s"
+    "Serving files from directory %s at http://0.0.0.0:%s"
     default-directory
     port)))
