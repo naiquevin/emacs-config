@@ -91,6 +91,12 @@
 (add-to-list 'flymake-allowed-file-name-masks '("\\.php$" flymake-php-init))
 
 
+;; Jinja2 Templates
+(require 'jinja2-mode)
+;; Needs to be selectively activated in html file using C-c j
+(define-key html-mode-map (kbd "C-c j") 'jinja2-mode)
+
+
 ;;;; Editing and Outlining
 
 ;;; Markdown mode
