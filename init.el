@@ -91,6 +91,11 @@
 (add-to-list 'flymake-allowed-file-name-masks '("\\.php$" flymake-php-init))
 
 
+;;; Erlang
+
+;; Besides the built in erlang-mode, some utility functions and hooks are used
+(load "erlang-utils")
+
 ;;; Jinja2 Templates
 (require 'jinja2-mode)
 
