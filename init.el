@@ -99,6 +99,12 @@
 ;;; Jinja2 Templates
 (require 'jinja2-mode)
 
+
+;; Scala
+
+(add-to-list 'load-path "~/emacs/site/scala-mode2/")
+(require 'scala-mode2)
+
 ;; For all .html under /python/../templates/, jinja2-mode activated on
 ;; find-file
 (add-hook
