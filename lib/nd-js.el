@@ -17,10 +17,11 @@
               (when args
                 (insert (nd-js-commentize "Parameters:" t))
                 (dolist (a args)
-                  (insert (nd-js-commentize (format "  (<type>) %s - <describe %s>" a a) t)))
+                  (insert (nd-js-commentize (format "  (<type>) %s - <describe %s>" a a) t))))
+              (when (string= type "function")
                 (insert (nd-js-commentize "Returns:"))
-                (insert (nd-js-commentize "  <describe return type>")))
-              (insert "\n */")
+                (insert (nd-js-commentize "  <describe return type>" t)))
+              (insert "\n*/")
               (nd-js-indent-comment-region)))
         (message "Not a valid javascript definition")))))
 
