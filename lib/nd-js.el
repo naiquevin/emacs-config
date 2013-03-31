@@ -80,7 +80,6 @@
          (list "variable" (match-string 1 string) nil))))
 
 
-
 (defun nd-js-tests ()
   ;; tests for nd-js-func-args
   (assert (equal (nd-js-func-args "x, y") '("x" "y")))
