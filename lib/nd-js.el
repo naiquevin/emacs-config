@@ -37,11 +37,9 @@
 
 (defun nd-js-indent-comment-region ()
   (search-backward "/**")
-  (move-beginning-of-line nil)
-  (let ((beg (point)))
+  (let ((beg (point-at-bol)))
     (search-forward "*/")
-    (move-end-of-line nil)
-    (indent-region beg (point))))
+    (indent-region beg (point-at-eol))))
 
 
 (defun nd-js-doc-topic (type name)
