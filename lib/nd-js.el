@@ -29,8 +29,8 @@
 (global-set-key (kbd "C-c d") 'nd-js-doc)
 
 
-(defun nd-js-commentize (text &optional newline)
-  (if newline
+(defun nd-js-commentize (text &optional appendblank)
+  (if appendblank
       (format "\n * %s\n *" text)
     (format "\n * %s" text)))
 
