@@ -17,7 +17,8 @@
               (when args
                 (insert (nd-js-commentize "Parameters:" t))
                 (dolist (a args)
-                  (insert (nd-js-commentize (format "  (<type>) %s - <describe %s>" a a) t))))
+                  (insert (nd-js-commentize (format "  (<type>) %s - <describe %s>" a a))))
+                (insert (nd-js-commentize "")))
               (when (string= type "function")
                 (insert (nd-js-commentize "Returns:"))
                 (insert (nd-js-commentize "  <describe return type>" t)))
