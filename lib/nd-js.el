@@ -63,11 +63,11 @@
 
 
 (defun nd-js-match-def (string)
-  (cond ((string-match "^var\s?\\([a-zA-Z0-9_]+\\)\s?=\s?function\s?(\\(.*\\))\s?{" string)
+  (cond ((string-match "\s*var\s?\\([a-zA-Z0-9_]+\\)\s?=\s?function\s?(\\(.*\\))\s?{" string)
          (list "function" 
                (match-string 1 string)
                (nd-js-func-args (match-string 2 string))))
-        ((string-match "^function\s?\\([a-zA-Z0-9_]+\\)\s?(\\(.*\\))\s?{" string)
+        ((string-match "\s*function\s?\\([a-zA-Z0-9_]+\\)\s?(\\(.*\\))\s?{" string)
          (list "function" 
                (match-string 1 string)
                (nd-js-func-args (match-string 2 string))))
@@ -75,7 +75,7 @@
          (list "function"
                (match-string 1 string)
                (nd-js-func-args (match-string 2 string))))
-        ((string-match "^var\s?\\([a-zA-Z0-9_]+\\)\s?" string)
+        ((string-match "\s*var\s?\\([a-zA-Z0-9_]+\\)\s?" string)
          (list "variable" (match-string 1 string) nil))
         ((string-match "\\([a-zA-Z0-9_]+\\)\s?:\s?.*,?" string)
          (list "variable" (match-string 1 string) nil))))
@@ -98,7 +98,7 @@
   (assert (equal (nd-js-match-def "helloworld: function (x, y) {")
                  '("function" "helloworld" ("x" "y"))))
 
-  ;; tests with whitespace inconsistencies
+  ;; tests with/without whitespace and trailing semi-colon
   (assert (equal (nd-js-match-def "var helloworld=42;")
                  '("variable" "helloworld" nil)))
   (assert (equal (nd-js-match-def "var hello_world = function(x,y){")
@@ -109,10 +109,13 @@
                  '("variable" "helloWorld" nil)))
   (assert (equal (nd-js-match-def "helloworld:function (x,y) { ")
                  '("function" "helloworld" ("x" "y"))))
+  (assert (equal (nd-js-match-def "    var helloworld=42;")
+                 '("variable" "helloworld" nil)))
+  (assert (equal (nd-js-match-def "    function hw901_88(){")
+                 '("function" "hw901_88" nil)))
 
   ;; tests for non-relevant lines (should return nil)
   (assert (equal (nd-js-match-def "x = y + 1;") nil))
-  
 
   (assert (string= (nd-js-doc-topic "variable" "hello") "Variable: hello"))
   (assert (string= (nd-js-doc-topic "function" "doThis") "Function: doThis"))
