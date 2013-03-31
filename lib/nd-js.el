@@ -12,7 +12,7 @@
                   (name (cadr jsdef))
                   (args (cadr (cdr jsdef))))
               (insert "/**")
-              (insert (nd-js-commentize (nd-js-doc-title type name) t))
+              (insert (nd-js-commentize (nd-js-doc-topic type name) t))
               (insert (nd-js-commentize (format "<describe %s>" name) t))
               (when args
                 (insert (nd-js-commentize "Parameters:" t))
@@ -43,7 +43,7 @@
     (indent-region beg (point))))
 
 
-(defun nd-js-doc-title (type name)
+(defun nd-js-doc-topic (type name)
   (format "%s: %s" (capitalize type) name))
 
 
@@ -115,8 +115,8 @@
   (assert (equal (nd-js-match-def "x = y + 1;") nil))
   
 
-  (assert (string= (nd-js-doc-title "variable" "hello") "Variable: hello"))
-  (assert (string= (nd-js-doc-title "function" "doThis") "Function: doThis"))
+  (assert (string= (nd-js-doc-topic "variable" "hello") "Variable: hello"))
+  (assert (string= (nd-js-doc-topic "function" "doThis") "Function: doThis"))
   )
 
 
