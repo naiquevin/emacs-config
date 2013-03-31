@@ -3,11 +3,11 @@
 I have tried to keep the structure simple and organized by roughly
 dividing files/packages into following categories:
 
-A. 3rd party modes with just 1 file
-B. 3rd party modes with multiple files in a directory
-C. functions and modes written by me
-D. configuration files ie. where various modes will be configured
-E. Themes
+A. 3rd party modes with just 1 file  
+B. 3rd party modes with multiple files in a directory  
+C. functions and modes written by me  
+D. configuration files ie. where various modes will be configured  
+E. Themes  
 
 The code is organized as follows:
 
