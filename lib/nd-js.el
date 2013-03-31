@@ -5,7 +5,7 @@
   (when (string= major-mode "js-mode")
     (let ((jsdef (nd-js-match-def (current-line-string))))
       (if jsdef
-          (progn 
+          (progn
             (previous-line)
             (newline-and-indent)
             (let ((type (car jsdef))
@@ -56,19 +56,19 @@
   (if (string= argstr "")
       nil
     (mapcar (lambda (str)
-              (replace-regexp-in-string 
-               "\\`[ \t\n]*" "" 
+              (replace-regexp-in-string
+               "\\`[ \t\n]*" ""
                str))
             (split-string  argstr ","))))
 
 
 (defun nd-js-match-def (string)
   (cond ((string-match "\s*var\s?\\([a-zA-Z0-9_]+\\)\s?=\s?function\s?(\\(.*\\))\s?{" string)
-         (list "function" 
+         (list "function"
                (match-string 1 string)
                (nd-js-func-args (match-string 2 string))))
         ((string-match "\s*function\s?\\([a-zA-Z0-9_]+\\)\s?(\\(.*\\))\s?{" string)
-         (list "function" 
+         (list "function"
                (match-string 1 string)
                (nd-js-func-args (match-string 2 string))))
         ((string-match "\\([a-zA-Z0-9_]+\\):\s?function\s?(\\(.*\\))\s?{" string)
@@ -123,4 +123,3 @@
 
 
 ;; (nd-js-tests)
-
