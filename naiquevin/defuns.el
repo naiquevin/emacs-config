@@ -1,4 +1,4 @@
-;;;; Some self written utility functions
+;;;; Some self written commands
 
 ;;
 ;; Kill all buffers except "*scratch*" & minibuffer
@@ -40,3 +40,10 @@
     default-directory
     port)))
 
+
+(defun enable-nxhtml ()
+  "Load nxhtml when called"
+  (interactive)
+  (load "~/emacs/site/nxhtml/autostart.el")
+  (setq mumamo-background-colors nil)
+  (add-to-list 'auto-mode-alist '("\\.html$" . django-html-mumamo-mode)))

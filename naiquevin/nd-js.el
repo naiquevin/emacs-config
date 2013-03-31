@@ -1,5 +1,3 @@
-
-
 (defun nd-js-doc ()
   (interactive)
   (when (string= major-mode "js-mode")
@@ -25,9 +23,6 @@
               (insert "\n*/")
               (nd-js-indent-comment-region)))
         (message "Not a valid javascript definition")))))
-
-
-(global-set-key (kbd "C-c d") 'nd-js-doc)
 
 
 (defun nd-js-commentize (text &optional appendblank)
@@ -120,6 +115,5 @@
   (assert (string= (nd-js-doc-topic "variable" "hello") "Variable: hello"))
   (assert (string= (nd-js-doc-topic "function" "doThis") "Function: doThis"))
   )
-
 
 ;; (nd-js-tests)

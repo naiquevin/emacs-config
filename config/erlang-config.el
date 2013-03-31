@@ -10,12 +10,11 @@
              (string-match "rebar.config" (buffer-name)))
      (erlang-mode))))
 
-
-;; (defun flymake-erlang-init ()
-;;   (let* ((temp-file (flymake-init-create-temp-buffer-copy
-;; 		     'flymake-create-temp-inplace))
-;; 	 (local-file (file-relative-name temp-file
-;; 		(file-name-directory buffer-file-name))))
-;;     (list "/home/vineet/emacs/site/lib/eflymake" (list local-file))))
+(defun flymake-erlang-init ()
+  (let* ((temp-file (flymake-init-create-temp-buffer-copy
+		     'flymake-create-temp-inplace))
+	 (local-file (file-relative-name temp-file
+		(file-name-directory buffer-file-name))))
+    (list "/home/vineet/emacs/site/naiquevin/eflymake" (list local-file))))
 
 ;; (add-to-list 'flymake-allowed-file-name-masks '("\\.erl\\'" flymake-erlang-init))
