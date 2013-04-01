@@ -52,7 +52,7 @@ When in js-mode, it is bound to C-c d"
                   (insert (nd-js-commentize (format "  (<type>) %s - <describe %s>" a a))))
                 (insert (nd-js-commentize "")))
               (when (string= type "function")
-                (insert (nd-js-commentize "Returns:"))
+                (insert (nd-js-commentize "Returns:" t))
                 (insert (nd-js-commentize "  <describe return type>" t)))
               (insert "\n*/")
               (nd-js-indent-comment-region)))
