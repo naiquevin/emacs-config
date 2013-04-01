@@ -114,6 +114,10 @@ not a valid definition in js"
          (list "function"
                (match-string 1 string)
                (nd-js-func-args (match-string 2 string))))
+        ((string-match "\s*\\([a-zA-Z0-9_]+\\.[a-zA-Z0-9_.]+\\)\s?=\s?function\s?(\\(.*\\))\s?{" string)
+         (list "function"
+               (match-string 1 string)
+               (nd-js-func-args (match-string 2 string))))
         ((string-match "\s*function\s?\\([a-zA-Z0-9_]+\\)\s?(\\(.*\\))\s?{" string)
          (list "function"
                (match-string 1 string)
@@ -123,6 +127,8 @@ not a valid definition in js"
                (match-string 1 string)
                (nd-js-func-args (match-string 2 string))))
         ((string-match "\s*var\s?\\([a-zA-Z0-9_]+\\)\s?" string)
+         (list "variable" (match-string 1 string) nil))
+        ((string-match "\s*\\([a-zA-Z0-9_]+\\.[a-zA-Z0-9_.]+\\)\s?=" string)
          (list "variable" (match-string 1 string) nil))
         ((string-match "\\([a-zA-Z0-9_]+\\)\s?:\s?.*,?" string)
          (list "variable" (match-string 1 string) nil))))
@@ -145,6 +151,13 @@ not a valid definition in js"
                  '("variable" "helloWorld" nil)))
   (assert (equal (nd-js-match-def "helloworld: function (x, y) {")
                  '("function" "helloworld" ("x" "y"))))
+  (assert (equal (nd-js-match-def "Greeting.helloworld = function (x, y) {")
+                 '("function" "Greeting.helloworld" ("x" "y"))))
+  (assert (equal (nd-js-match-def "Greeting.answer = 42")
+                 '("variable" "Greeting.answer" nil)))
+
+  (assert (equal (nd-js-match-def "A.B.C = 42")
+                 '("variable" "A.B.C" nil)))
 
   ;; tests with/without whitespace and trailing semi-colon
   (assert (equal (nd-js-match-def "var helloworld=42;")
@@ -161,6 +174,10 @@ not a valid definition in js"
                  '("variable" "helloworld" nil)))
   (assert (equal (nd-js-match-def "    function hw901_88(){")
                  '("function" "hw901_88" nil)))
+  (assert (equal (nd-js-match-def "    Greeting.helloworld = function (x, y) {")
+                 '("function" "Greeting.helloworld" ("x" "y"))))
+  (assert (equal (nd-js-match-def "    Greeting.answer = 42")
+                 '("variable" "Greeting.answer" nil)))
 
   ;; tests for non-relevant lines (should return nil)
   (assert (equal (nd-js-match-def "x = y + 1;") nil))
