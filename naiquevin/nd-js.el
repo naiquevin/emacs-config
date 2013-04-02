@@ -3,7 +3,7 @@
 ;;
 ;; Author: Vineet Naik <naikvin@gmail.com>
 ;; Created: 31st March 2013
-;; License: MIT
+;; License: No license. Consider this as public domain.
 ;;
 ;; What?
 ;; =====
@@ -16,7 +16,7 @@
 ;;
 ;; Add the following lines to your emacs init file,
 ;;
-;;   (add-to-list 'load-path "/path/to/this/file")
+;;   (add-to-list 'load-path "/path/to/this/dir")
 ;;   (load "nd-js")
 ;;   (add-hook 'js-mode-hook
 ;;             (lambda () (local-set-key (kbd "C-c d") #'nd-js-doc)))
