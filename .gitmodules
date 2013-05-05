@@ -8,3 +8,6 @@
 [submodule "scala-mode2"]
 	path = scala-mode2
 	url = git://github.com/hvesalai/scala-mode2.git
+[submodule "yasnippet"]
+	path = yasnippet
+	url = git://github.com/capitaomorte/yasnippet.git
