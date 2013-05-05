@@ -24,3 +24,15 @@
 
 ;; Org mode
 (load "config/org-config.el")
+
+;; Yasnippet mode
+(add-to-list 'load-path "~/emacs/site/yasnippet")
+(require 'yasnippet)
+
+(setq yas-snippet-dirs
+      '("~/emacs/site/naiquevin/snippets" ;; personal snippets
+        "~/emacs/site/yasnippet/snippets" ;; the default collection
+        ))
+
+(yas-global-mode 1)
+
