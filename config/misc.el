@@ -36,3 +36,6 @@
 
 (yas-global-mode 1)
 
+;; Nginx mode for editing nginx conf files
+(require 'nginx-mode)
+
