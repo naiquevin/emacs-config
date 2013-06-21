@@ -39,3 +39,5 @@
 ;; Nginx mode for editing nginx conf files
 (require 'nginx-mode)
 
+(setq erc-nick "naiquevin")
+
