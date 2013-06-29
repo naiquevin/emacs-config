@@ -34,6 +34,11 @@
 (load "config/misc")          ; miscellaneous config
 (load "config/themes-config") ; theme config
 
+;; set package archive sources
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")))
+
 ;; Start Server
 (server-start)
 
