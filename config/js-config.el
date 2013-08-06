@@ -3,8 +3,8 @@
 ;; js-mode (earlier known as espresso mode, now packaged with emacs)
 (add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
 
-;; json (Josh's lite weight json major mode)
-(autoload 'json-mode "json-mode.el" "Major mode for editing json files" t)
+;; json (Josh's lite weight json major mode) (Installed via
+;; package-install)
 (add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
 
 ;; natural docs for js
