@@ -1,0 +1,6 @@
+ace-jump-mode
+geiser
+jinja2-mode
+json-mode
+nrepl
+clojure-mode
