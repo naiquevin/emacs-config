@@ -39,6 +39,8 @@
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 
+(load "~/emacs/site/pkg-tools.el")
+
 ;; Start Server
 (server-start)
 
