@@ -34,19 +34,6 @@
 ;;     file. Make sure you specify one in the location where it will
 ;;     be version controlled along with rest of your emacs config.
 ;;
-;; Usage
-;; =====
-;;
-;; pkg-tools.el provides 4 interactive functions that can be run as
-;; follows,
-;;
-;;   `M-x pkg-tools-freeze`
-;;
-;;     It will prompt for a path to a filename and on providing it,
-;;     the list of names of installed packages will be written to this
-;;     file. Make sure you specify one in the location where it will
-;;     be version controlled along with rest of your emacs config.
-;;
 ;;   `M-x pkg-tools-install`
 ;;
 ;;     It will ask you for the path to the requirements file and
