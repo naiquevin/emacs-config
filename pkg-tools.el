@@ -8,15 +8,64 @@
 ;; What?
 ;; =====
 ;;
-;; todo
+;; This is my attempt at building a little tool for tracking packages
+;; installed in emacs via package.el. It's inspired by how pip and
+;; requirements.txt file is used in python to track dependencies for a
+;; project
 ;;
-;; Installation and Usage
-;; ======================
+;; Installation
+;; ============
 ;;
-;; todo
+;; Just add the following line to yout ~/.emacs or ~/.emacs.d/init.el
+;; file and evaluate (or restart emacs),
+;;
+;;   (load "/path/to/pkg-tools.el")
+;;
+;; Usage
+;; =====
+;;
+;; pkg-tools.el provides 4 interactive functions that can be run as
+;; follows,
+;;
+;;   `M-x pkg-tools-freeze`
+;;
+;;     It will prompt for a path to a filename and on providing it,
+;;     the list of names of installed packages will be written to this
+;;     file. Make sure you specify one in the location where it will
+;;     be version controlled along with rest of your emacs config.
+;;
+;; Usage
+;; =====
+;;
+;; pkg-tools.el provides 4 interactive functions that can be run as
+;; follows,
+;;
+;;   `M-x pkg-tools-freeze`
+;;
+;;     It will prompt for a path to a filename and on providing it,
+;;     the list of names of installed packages will be written to this
+;;     file. Make sure you specify one in the location where it will
+;;     be version controlled along with rest of your emacs config.
+;;
+;;   `M-x pkg-tools-install`
+;;
+;;     It will ask you for the path to the requirements file and
+;;     install all the unmet packages from it. Note that before
+;;     installing any package, it will ask for a simple yes-or-no
+;;     comfirmation that any emacs user should be familiar with
+;;
+;;   `M-x pkg-tools-unmet`
+;;
+;;     It will ask for the path to the requirement file and output the
+;;     list of uninstalled packages to the minibuffer
+;;
+;;   `M-x pkg-tools-met`
+;;
+;;     It will ask for the path to the requirement file and output the
+;;     list of installed packages to the minibuffer
 ;;
 
-;; Code starts here
+;; Code begins from here
 
 (require 'cl-lib)
 
@@ -78,5 +127,5 @@
 (defun pkg-tools-printlist (packages)
   (message (mapconcat 'symbol-name packages ", ")))
 
-;; nd-js.el ends here
+;; pkg-tools.el ends here
 
