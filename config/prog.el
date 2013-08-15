@@ -2,7 +2,6 @@
 
 ;; Flymake 
 (add-hook 'find-file-hook 'flymake-find-file-hook)
-(require 'flymake-cursor)
 (setq flymake-gui-warnings-enabled nil)
 
 ;; load config files for specific languages

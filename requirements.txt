@@ -1,4 +1,5 @@
 ace-jump-mode
+flymake-cursor
 geiser
 jinja2-mode
 json-mode
