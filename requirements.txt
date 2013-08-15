@@ -6,3 +6,4 @@ markdown-mode
 nginx-mode
 nrepl
 clojure-mode
+rainbow-delimiters
