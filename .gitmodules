@@ -1,6 +1,3 @@
-[submodule "org-mode"]
-	path = org-mode
-	url = git://orgmode.org/org-mode.git
 [submodule "nxhtml"]
 	path = nxhtml
 	url = git://github.com/emacsmirror/nxhtml.git
