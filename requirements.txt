@@ -2,5 +2,6 @@ ace-jump-mode
 geiser
 jinja2-mode
 json-mode
+markdown-mode
 nrepl
 clojure-mode
