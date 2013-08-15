@@ -3,5 +3,6 @@ geiser
 jinja2-mode
 json-mode
 markdown-mode
+nginx-mode
 nrepl
 clojure-mode
