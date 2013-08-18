@@ -2,6 +2,3 @@
 	path = nxhtml
 	url = git://github.com/emacsmirror/nxhtml.git
     ignore = dirty
-[submodule "yasnippet"]
-	path = yasnippet
-	url = git://github.com/capitaomorte/yasnippet.git

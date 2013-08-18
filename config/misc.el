@@ -36,15 +36,14 @@
 (load "config/org-config.el")
 
 ;; Yasnippet mode
-(add-to-list 'load-path "~/emacs/site/yasnippet")
-(require 'yasnippet)
-
 (setq yas-snippet-dirs
-      '("~/emacs/site/naiquevin/snippets" ;; personal snippets
-        "~/emacs/site/yasnippet/snippets" ;; the default collection
+      '("~/emacs/site/naiquevin/snippets"                  ;; personal snippets
+        "~/.emacs.d/elpa/yasnippet-20130722.1832/snippets" ;; the default collection
         ))
 
-(yas-global-mode 1)
+(add-hook 'after-init-hook (lambda ()
+                             (progn
+                               (yas-global-mode 1))))
 
 (setq erc-nick "naiquevin")
 
