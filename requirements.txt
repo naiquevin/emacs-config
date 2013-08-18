@@ -8,3 +8,4 @@ nginx-mode
 nrepl
 clojure-mode
 rainbow-delimiters
+scala-mode2

@@ -11,10 +11,6 @@
 (load "config/php-config.el")
 (load "config/html-config.el")
 
-;; Scala
-(add-to-list 'load-path "~/emacs/site/scala-mode2/")
-(require 'scala-mode2)
-
 ;; Quack (Racket)
 (require 'quack)
 (setq quack-fontify-style 'emacs)
