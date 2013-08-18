@@ -2,6 +2,7 @@ ace-jump-mode
 flymake-cursor
 geiser
 jinja2-mode
+js2-mode
 json-mode
 markdown-mode
 nginx-mode
