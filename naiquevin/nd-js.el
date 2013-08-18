@@ -34,7 +34,8 @@ point.
 
 When in js-mode, it is bound to C-c d"
   (interactive)
-  (when (string= major-mode "js-mode")
+  (when (or (string= major-mode "js-mode")
+            (string= major-mode "js2-mode"))
     (let ((jsdef (nd-js-match-def (current-line-string))))
       (if jsdef
           (progn
