@@ -8,6 +8,7 @@ markdown-mode
 nginx-mode
 nrepl
 clojure-mode
+paredit
 rainbow-delimiters
 scala-mode2
 yasnippet

@@ -1,6 +1,6 @@
 ;;; Programming Configuration
 
-;; Flymake 
+;; Flymake
 (add-hook 'find-file-hook 'flymake-find-file-hook)
 (setq flymake-gui-warnings-enabled nil)
 
@@ -8,15 +8,8 @@
 (load "config/python-config.el")
 (load "config/js-config.el")
 (load "config/erlang-config.el")
+(load "config/racket-config.el")
+(load "config/clojure-config.el")
 (load "config/php-config.el")
 (load "config/html-config.el")
-
-;; Quack (Racket)
-(require 'quack)
-(setq quack-fontify-style 'emacs)
-
-;; Rainbow delimiters (for scheme)
-(add-hook 'scheme-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
 
