@@ -11,4 +11,5 @@ clojure-mode
 paredit
 rainbow-delimiters
 scala-mode2
+virtualenv
 yasnippet
