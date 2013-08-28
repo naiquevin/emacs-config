@@ -5,6 +5,7 @@
 
 ;; json (Josh's lite weight json major mode) (Installed via
 ;; package-install)
+(add-hook 'after-init-hook (lambda () (require 'json-mode)))
 (add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
 
 ;; natural docs for js
