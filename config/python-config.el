@@ -25,10 +25,6 @@
  python-shell-completion-string-code "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
 
 
-;; Enable rainbow-delimiters in python and inferior modes
+;; Enable rainbow-delimiters in python-mode
 (add-hook 'python-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'inferior-python-mode-hook 'rainbow-delimiters-mode)
-
-;; Enable eldoc only in inferior-python-mode
-(add-hook 'inferior-python-mode-hook 'turn-on-eldoc-mode)
 
