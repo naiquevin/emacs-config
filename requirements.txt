@@ -2,6 +2,12 @@ ace-jump-mode
 ess
 flymake-cursor
 geiser
+jedi
+auto-complete
+epc
+ctable
+concurrent
+deferred
 jinja2-mode
 js2-mode
 json-mode
@@ -11,6 +17,7 @@ nrepl
 dash
 clojure-mode
 paredit
+popup
 rainbow-delimiters
 scala-mode2
 virtualenv

@@ -28,3 +28,7 @@
 ;; Enable rainbow-delimiters in python-mode
 (add-hook 'python-mode-hook 'rainbow-delimiters-mode)
 
+;; Autocomplete/Jedi Setup
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:setup-keys t)
+
