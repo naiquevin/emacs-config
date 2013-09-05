@@ -25,6 +25,8 @@
 (which-function-mode t)               ; enable which function mode
 (global-linum-mode t)                 ; Show line nums on left
 (show-paren-mode t)                   ; Show matching paren
+(setq split-height-threshold nil)     ; Always split horizontally
+(setq split-width-threshold 0)        ; Always split horizontally
 
 ;; load various self written stuff
 (load "naiquevin/defuns")
