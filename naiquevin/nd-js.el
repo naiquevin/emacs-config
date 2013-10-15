@@ -87,7 +87,6 @@ type and name"
 
 (defun current-line-string ()
   "Return current line as string"
-  (interactive)
   (buffer-substring (point-at-bol) (point-at-eol)))
 
 
