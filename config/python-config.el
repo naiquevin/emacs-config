@@ -32,3 +32,7 @@
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:setup-keys t)
 
+(load "naiquevin/sphinx-doc")
+(add-hook 'python-mode-hook
+          (lambda () (local-set-key (kbd "C-c M-d") #'sphinx-doc)))
+
