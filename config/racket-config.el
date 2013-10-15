@@ -6,5 +6,4 @@
 
 ;; Rainbow delimiters (for scheme)
 (add-hook 'scheme-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
 

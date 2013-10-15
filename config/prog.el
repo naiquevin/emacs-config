@@ -8,6 +8,7 @@
 (add-hook 'after-init-hook (lambda () (require 'rainbow-delimiters)))
 
 ;; load config files for specific languages
+(load "config/elisp-config.el")
 (load "config/python-config.el")
 (load "config/js-config.el")
 (load "config/erlang-config.el")
