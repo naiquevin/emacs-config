@@ -1,4 +1,5 @@
 ;;; Jinja2 Templates
+(add-hook 'after-init-hook (lambda () (require 'jinja2-mode)))
 
 ;; For all .html under /python/../templates/, jinja2-mode activated on
 ;; find-file
