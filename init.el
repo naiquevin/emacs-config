@@ -21,13 +21,19 @@
 (setq c-basic-offset 4)               ; Basic ndentation to 4 spaces
 (setq-default indent-tabs-mode nil)   ; Disable tabs
 (setq-default truncate-lines t)       ; Disable line-wrapping
-(iswitchb-mode 1)                     ; Enable iswitch buffer
-(icomplete-mode t)                    ; Show completions in mini buffer
 (which-function-mode t)               ; Enable which function mode
 (global-linum-mode t)                 ; Show line nums on left
 (show-paren-mode t)                   ; Show matching paren
 (setq split-height-threshold nil)     ; Always split horizontally
 (setq split-width-threshold 0)        ; Always split horizontally
+
+;; ido-mode configs
+(ido-mode t)
+(setq ido-enable-prefix nil
+      ido-enable-flex-matching t
+      ido-create-new-buffer 'always
+      ido-use-filename-at-point 'guess
+      ido-max-prospects 10)
 
 ;; Load various self written stuff
 (load "naiquevin/defuns")
