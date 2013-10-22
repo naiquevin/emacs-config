@@ -21,6 +21,7 @@
 (setq c-basic-offset 4)               ; Basic ndentation to 4 spaces
 (setq-default indent-tabs-mode nil)   ; Disable tabs
 (setq-default truncate-lines t)       ; Disable line-wrapping
+(icomplete-mode 1)                    ; Incremental completions in minibuffer
 (which-function-mode t)               ; Enable which function mode
 (global-linum-mode t)                 ; Show line nums on left
 (show-paren-mode t)                   ; Show matching paren
