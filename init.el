@@ -14,19 +14,18 @@
 
 ;; General preferences
 (menu-bar-mode -1)                    ; Get rid of the menu bar first,
-(tool-bar-mode -1)                    ; .. then the tool bar,
-(setq inhibit-startup-message t)      ; .. then the startup message,
-(mouse-avoidance-mode 'cat-and-mouse) ; .. and finally the mouse!
+(tool-bar-mode -1)                    ; .. and the tool bar,
+(scroll-bar-mode -1)                  ; .. and the scroll bar,
+(setq inhibit-startup-message t)      ; .. and the startup message,
+(mouse-avoidance-mode 'cat-and-mouse) ; .. and finally the mouse pointer!
 (setq x-select-enable-clipboard t)    ; x-copy-paste
 (setq c-basic-offset 4)               ; Basic ndentation to 4 spaces
 (setq-default indent-tabs-mode nil)   ; Disable tabs
 (setq-default truncate-lines t)       ; Disable line-wrapping
 (icomplete-mode 1)                    ; Incremental completions in minibuffer
 (which-function-mode t)               ; Enable which function mode
-(global-linum-mode t)                 ; Show line nums on left
 (show-paren-mode t)                   ; Show matching paren
-(setq split-height-threshold nil)     ; Always split horizontally
-(setq split-width-threshold 0)        ; Always split horizontally
+
 
 ;; ido-mode configs
 (ido-mode t)
