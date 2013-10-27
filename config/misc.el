@@ -47,3 +47,6 @@
 
 (setq erc-nick "naiquevin")
 
+;; Toggle window split
+(require 'toggle-window-split)
+
