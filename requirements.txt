@@ -1,5 +1,6 @@
 ace-jump-mode
-dash
+cider
+clojure-mode
 ess
 flymake-cursor
 geiser
@@ -14,9 +15,10 @@ js2-mode
 json-mode
 markdown-mode
 nginx-mode
-nrepl
-clojure-mode
 paredit
+pkg-info
+epl
+dash
 popup
 rainbow-delimiters
 scala-mode2
