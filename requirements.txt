@@ -25,4 +25,5 @@ rainbow-delimiters
 scala-mode2
 sml-mode
 virtualenv
+yaml-mode
 yasnippet
