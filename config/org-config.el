@@ -8,9 +8,17 @@
 (setq org-hide-leading-stars t) ; hide leading stars
 (setq org-log-done t) ; display time when TODO was changed to DONE
 
+;; Customizing the org directory
+(setq org-directory "~/Dropbox/org")
+
 ;; Agenda files
-(setq org-agenda-files (list "~/Dropbox/org/work-gtd.org"
-                             "~/Dropbox/org/home-gtd.org"))
+(setq org-agenda-files (list (concat org-directory "/" "gtd.org")))
+
+;; Org Capture
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "gtd.org" "Tasks")
+         "* TODO %?\n %i\n")))
+
 
 
 
