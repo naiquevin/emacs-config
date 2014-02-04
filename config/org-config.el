@@ -12,13 +12,22 @@
 (setq org-directory "~/Dropbox/org")
 
 ;; Agenda files
-(setq org-agenda-files (list (concat org-directory "/" "gtd.org")))
+(setq org-agenda-files (mapcar (lambda (x)
+                                 (concat org-directory "/"  x))
+                               '("gtd.org"
+                                 "work.org"
+                                 "sideprojects.org"
+                                 "ideas.org")))
 
 ;; Org Capture
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline "gtd.org" "Tasks")
-         "* TODO %?\n %i\n")))
+         "* TODO %?\n %i\n")
+        ("i" "Idea" entry (file "ideas.org")
+         "* %?\n")))
 
-
-
-
+;; Setup refile targets
+(setq org-refile-targets
+      '((nil :maxlevel . 2) ; top level headlines in current buffer
+        (org-agenda-files :maxlevel . 2))) ;; top level headlines in
+                                           ;; other agenda files
