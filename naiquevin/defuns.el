@@ -47,3 +47,12 @@
   (load "~/emacs/site/nxhtml/autostart.el")
   (setq mumamo-background-colors nil)
   (add-to-list 'auto-mode-alist '("\\.html$" . django-html-mumamo-mode)))
+
+
+;; Copied from here -- http://www.emacswiki.org/emacs/UnfillParagraph
+(defun unfill-paragraph ()
+  "Takes a multi-line paragraph and makes it into a single line
+  of text."
+  (interactive)
+  (let ((fill-column (point-max)))
+    (fill-paragraph nil)))
