@@ -19,11 +19,12 @@ nginx-mode
 paredit
 pkg-info
 epl
-dash
 popup
 rainbow-delimiters
 scala-mode2
 sml-mode
-virtualenv
+virtualenvwrapper
+s
+dash
 yaml-mode
 yasnippet

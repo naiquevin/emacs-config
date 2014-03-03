@@ -1,17 +1,29 @@
 ;;; Python
 
 ;; Pyflakes
-(when (load "flymake" t) 
-  (defun flymake-pyflakes-init () 
-    (let* ((temp-file (flymake-init-create-temp-buffer-copy 
-                       'flymake-create-temp-inplace)) 
-           (local-file (file-relative-name 
-                        temp-file 
-                        (file-name-directory buffer-file-name)))) 
+(when (load "flymake" t)
+  (defun flymake-pyflakes-init ()
+    (let* ((temp-file (flymake-init-create-temp-buffer-copy
+                       'flymake-create-temp-inplace))
+           (local-file (file-relative-name
+                        temp-file
+                        (file-name-directory buffer-file-name))))
       (list "pyflakes" (list local-file))))
-  
-  (add-to-list 'flymake-allowed-file-name-masks 
+
+  (add-to-list 'flymake-allowed-file-name-masks
                '("\\.py\\'" flymake-pyflakes-init)))
+
+
+;; virtualenvwrapper.el
+(add-hook
+ 'after-init-hook
+ (lambda ()
+   (progn
+     (require 'virtualenvwrapper)
+     (venv-initialize-interactive-shells)
+     (setq venv-location "~/.virtualenvs/")
+     (setq-default mode-line-format
+                   (append mode-line-format '((:exec venv-current-name)))))))
 
 
 ;; Set ipython as the python interpreter
@@ -35,4 +47,3 @@
 (load "naiquevin/sphinx-doc")
 (add-hook 'python-mode-hook
           (lambda () (local-set-key (kbd "C-c M-d") #'sphinx-doc)))
-
