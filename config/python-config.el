@@ -44,6 +44,15 @@
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:setup-keys t)
 
-(load "naiquevin/sphinx-doc")
-(add-hook 'python-mode-hook
-          (lambda () (local-set-key (kbd "C-c M-d") #'sphinx-doc)))
+
+;; The sphinx-doc mode is required upon the after-init-hook because of
+;; it's dependence on the 3rd party lib `s.el` which is loaded by elpa
+;; after init.el. This is only a temporary arrangement until
+;; sphinx-doc.el is itself added to elpa and loaded from there
+
+(add-hook
+ 'after-init-hook
+ (lambda ()
+   (require 'sphinx-doc)
+   (add-hook 'python-mode-hook
+             (lambda () (local-set-key (kbd "C-c M-d") #'sphinx-doc)))))

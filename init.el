@@ -12,6 +12,8 @@
 ;; Add lib to load path so that any one-file-mode can be dropped here
 (add-to-list 'load-path (expand-file-name "~/emacs/site/lib"))
 
+(add-to-list 'load-path (expand-file-name "~/emacs/site/naiquevin"))
+
 ;; General preferences
 (menu-bar-mode -1)                    ; Get rid of the menu bar first,
 (tool-bar-mode -1)                    ; .. and the tool bar,
