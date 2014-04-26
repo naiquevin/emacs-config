@@ -40,10 +40,13 @@
 ;; Enable rainbow-delimiters in python-mode
 (add-hook 'python-mode-hook 'rainbow-delimiters-mode)
 
+
 ;; Autocomplete/Jedi Setup
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:setup-keys t)
 
 
-;; sphinx-doc :todo: publish sphinx-doc.el to MELPA
-(add-hook 'python-mode-hook (lambda () (require 'sphinx-doc)))
+;; sphinx-doc
+(add-hook 'python-mode-hook (lambda ()
+                              (require 'sphinx-doc)
+                              (sphinx-doc-mode t)))
