@@ -13,4 +13,3 @@
 
 ;; Prevent nrepl connection buffers appearing while buffer switching
 (setq nrepl-hide-special-buffers t)
-

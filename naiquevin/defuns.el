@@ -56,3 +56,6 @@
   (interactive)
   (let ((fill-column (point-max)))
     (fill-paragraph nil)))
+
+
+(provide 'defuns)

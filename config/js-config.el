@@ -10,7 +10,7 @@
 (add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
 
 ;; natural docs for js
-(load "naiquevin/nd-js")
+(load (expand-file-name "nd-js" my/self-lib-dir))
 (add-hook 'js2-mode-hook
           (lambda () (local-set-key (kbd "C-c d") #'nd-js-doc)))
 
