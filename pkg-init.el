@@ -28,8 +28,8 @@
 
 (defun pkg-init-packages-installed-p ()
   (cl-loop for p in pkg-init-packages
-	   when (not (package-installed-p p)) do (return nil)
-	   finally (return t)))
+	   when (not (package-installed-p p)) do (cl-return nil)
+	   finally (cl-return t)))
 
 
 (unless (pkg-init-packages-installed-p)
