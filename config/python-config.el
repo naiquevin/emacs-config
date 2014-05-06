@@ -15,15 +15,11 @@
 
 
 ;; virtualenvwrapper.el
-(add-hook
- 'after-init-hook
- (lambda ()
-   (progn
-     (require 'virtualenvwrapper)
-     (venv-initialize-interactive-shells)
-     (setq venv-location "~/.virtualenvs/")
-     (setq-default mode-line-format
-                   (append mode-line-format '((:exec venv-current-name)))))))
+(require 'virtualenvwrapper)
+(venv-initialize-interactive-shells)
+(setq venv-location "~/.virtualenvs/")
+(setq-default mode-line-format
+              (append mode-line-format '((:exec venv-current-name))))
 
 
 ;; Set ipython as the python interpreter

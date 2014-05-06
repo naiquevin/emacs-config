@@ -6,4 +6,4 @@
             (expand-file-name "yasnippet-20130722.1832/snippets"
                               my/elpa-dir))) ;; the default collection
 
-(add-hook 'after-init-hook (lambda () (yas-global-mode 1)))
+(yas-global-mode 1)
