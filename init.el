@@ -29,6 +29,13 @@
 (require 'defuns)
 
 
+;; Pre-config - Following lines need to be evaluated before config
+;; files are loaded
+
+;; Require Rainbow-delimiters
+(add-hook 'after-init-hook (lambda () (require 'rainbow-delimiters)))
+
+
 ;; Set load-dirs to a list containing the config dir so that
 ;; load-dir.el may load all files in the dir. Note that load-dir.el is
 ;; not packaged with emacs.

@@ -18,10 +18,6 @@
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
 
-;; Rainbow delimiters
-(add-hook 'after-init-hook (lambda () (require 'rainbow-delimiters)))
-
-
 ;; Toggle window split
 (require 'toggle-window-split)
 
