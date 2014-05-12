@@ -44,3 +44,8 @@
       ido-create-new-buffer 'always
       ido-use-filename-at-point 'guess
       ido-max-prospects 10)
+
+
+;; efficient switching between windows
+(windmove-default-keybindings)
+(setq windmove-wrap-around t)
