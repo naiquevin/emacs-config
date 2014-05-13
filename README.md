@@ -1,6 +1,6 @@
 # Emacs Configuration
 
-This is my emacs configuration which I use both at work and office.
+This is my emacs configuration which I use both at work and home.
 
 The organization of elisp code and configuration is as follows:
 
@@ -24,6 +24,11 @@ The organization of elisp code and configuration is as follows:
   convenient for me to actively work on it as the author of that
   mode. If you get an error related to this, just install it
   separately from MELPA).
+
+* All files inside the `config` directory contain language/mode wise
+  configuration and are loaded by
+  [load-dirs.el](http://elpa.gnu.org/packages/load-dir.html) using the
+  `after-init-hook`
 
 * Themes are added to `themes`.
 
