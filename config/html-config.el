@@ -1,5 +1,5 @@
 ;;; Jinja2 Templates
-(require 'jinja2-mode)
+;; (require 'jinja2-mode)
 
 ;; For all .html under /python/../templates/, jinja2-mode activated on
 ;; find-file

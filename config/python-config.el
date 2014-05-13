@@ -15,7 +15,7 @@
 
 
 ;; virtualenvwrapper.el
-(require 'virtualenvwrapper)
+;; (require 'virtualenvwrapper)
 (venv-initialize-interactive-shells)
 (setq venv-location "~/.virtualenvs/")
 (setq-default mode-line-format
