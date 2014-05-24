@@ -9,12 +9,3 @@
              (string-match "Emakefile" (buffer-name))
              (string-match "rebar.config" (buffer-name)))
      (erlang-mode))))
-
-(defun flymake-erlang-init ()
-  (let* ((temp-file (flymake-init-create-temp-buffer-copy
-		     'flymake-create-temp-inplace))
-	 (local-file (file-relative-name temp-file
-		(file-name-directory buffer-file-name))))
-    (list (expand-file-name "eflymake" my/self-lib-dir) (list local-file))))
-
-;; (add-to-list 'flymake-allowed-file-name-masks '("\\.erl\\'" flymake-erlang-init))
