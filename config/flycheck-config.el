@@ -5,6 +5,14 @@
 ;; Disable the error indicator on the fringe
 (setq flycheck-indication-mode nil)
 
+;; disable automatic syntax checks on new line
+(setq flycheck-check-syntax-automatically '(save
+                                            idle-change
+                                            mode-enabled))
+
+;; Immediate syntax checking quite annoying. Slow it down a bit.
+(setq flycheck-idle-change-delay 2.0)
+
 
 ;; Customize faces (Colors are copied from solarized definitions)
 
@@ -17,7 +25,3 @@
                     :background "#dc322f"
                     :foreground "#262626"
                     :underline nil)
-
-
-
-
