@@ -2,7 +2,8 @@
 
 This is my emacs configuration which I use both at work and home.
 
-The organization of elisp code and configuration is as follows:
+
+## Organization of code & config
 
 * `~/.emacs.d/init.el` file just loads the `init.el` file inside this
   repo and does nothing else. So no symlinking and such other things.
@@ -31,6 +32,20 @@ The organization of elisp code and configuration is as follows:
   `after-init-hook`
 
 * Themes are added to `themes`.
+
+
+## System wide dependencies
+
+It's assumed that you have `virtualenv`, `virtualenvwrapper` and
+`leiningen` installed on the system.
+
+Apart from these, following dependencies are required to be installed:
+
+* jedi and epc (autocomplete): `sudo pip install jedi epc` (When
+  working inside a virtualenv, these need to be installed inside the
+  virtualenv even if they are already globally installed.)
+
+* flake8 (flycheck): `sudo pip install flake8`
 
 
 A lot of code has been borrowed from init files of various people on
