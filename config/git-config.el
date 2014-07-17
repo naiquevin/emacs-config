@@ -5,3 +5,7 @@
 (require 'git-commit-mode)
 (require 'gitignore-mode)
 (require 'gitconfig-mode)
+
+
+;; magit
+(global-set-key (kbd "C-c M-g") 'magit-status)
