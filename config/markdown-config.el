@@ -15,3 +15,8 @@
               (file-exists-p
                (concat (file-name-directory (buffer-file-name)) ".git")))
      (gfm-mode))))
+
+
+;; Turn on flyspell mode when editing markdown files
+(add-hook 'markdown-mode-hook 'flyspell-mode)
+(add-hook 'gfm-mode-hook 'flyspell-mode)
