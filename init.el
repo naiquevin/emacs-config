@@ -42,6 +42,11 @@
 (setq load-dirs (list my/config-dir))
 
 
+;; platform specific config
+(cond ((eq system-type 'darwin) (require 'osx))
+      (t (require 'linux)))
+
+
 ;; Load the custom file
 (load custom-file)
 
