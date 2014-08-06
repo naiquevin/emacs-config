@@ -15,7 +15,7 @@
 
 
 (defvar pkg-init-packages
-  '(s dash load-dir nrepl cider clojure-mode
+  '(s dash load-dir cider clojure-mode
       ess flycheck geiser jedi php-mode
       auto-complete epc ctable concurrent
       deferred jinja2-mode js2-mode json-mode
