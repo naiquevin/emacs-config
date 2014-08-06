@@ -1,6 +1,6 @@
 ;; OSX specific configuration
 
-(set-default-font "Courier New 14")
+(set-default-font "Courier New 16")
 
 
 (defun live-copy-from-osx ()
