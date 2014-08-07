@@ -17,8 +17,7 @@
 
 ;; Work around a bug on OS X where system-name is a fully qualified
 ;; domain name
-(when (eq system-type 'darwin)
-  (setq system-name (car (split-string system-name "\\."))))
+(setq system-name (car (split-string system-name "\\.")))
 
 
 ;;; Set the path properly
