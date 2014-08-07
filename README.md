@@ -48,6 +48,13 @@ Apart from these, following dependencies are required to be installed:
 
 * flake8 (flycheck): `sudo pip install flake8`
 
+* Cider's own
+  [nREPL middleware](https://github.com/clojure-emacs/cider-nrepl) (as
+  required by the latest Cider release). The easiest way to set it up
+  is to add it as a leiningen plugin either in your project's
+  `project.clj` file or in the `:user` profile in
+  `~/.lein/profiles.clj`. [See also](https://github.com/clojure-emacs/cider#cider-nrepl-middleware).
+
 
 A lot of code has been borrowed from init files of various people on
 github and around the internets. All mistakes are most likely my own.
