@@ -20,6 +20,10 @@
 (setq system-name (car (split-string system-name "\\.")))
 
 
+(global-unset-key (kbd "s-p"))
+(global-unset-key (kbd "M-TAB"))
+
+
 ;;; Set the path properly
 (setenv "PATH"
         (concat
