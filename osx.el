@@ -21,6 +21,7 @@
 
 
 (global-unset-key (kbd "s-p"))
+(global-unset-key (kbd "s-q"))
 (global-unset-key (kbd "M-TAB"))
 
 
