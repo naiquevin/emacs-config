@@ -18,8 +18,9 @@
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
 
-;; Toggle window split
+;; Utilities for effective window management
 (require 'toggle-window-split)
+(require 'transpose-windows)
 
 
 ;; Multiple cursors
