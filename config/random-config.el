@@ -35,5 +35,13 @@
 (global-set-key (kbd "C-.") 'browse-url-at-point)
 
 
+;; fire up a google search
+(global-set-key (kbd "C-c g") 'google-search)
+
+
+;; edit as sudo
+(global-set-key (kbd "C-c f") 'sudo-edit)
+
+
 ;; Turn on flyspell mode when editing ReST docs
 (add-hook 'rst-mode-hook 'flyspell-mode)

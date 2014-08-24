@@ -1,4 +1,5 @@
 ;;;; Some self written commands
+;;;; TODO: Add namespace/prefix to these functions
 
 ;;
 ;; Kill all buffers except "*scratch*" & minibuffer
@@ -56,6 +57,38 @@
   (interactive)
   (let ((fill-column (point-max)))
     (fill-paragraph nil)))
+
+
+;;; Copied from Vedang's emacs config
+
+(defun sudo-edit (&optional arg)
+  "Edit as root"
+  (interactive "p")
+  (if (or arg (not buffer-file-name))
+      (find-file (concat "/sudo:root@localhost:" (ido-read-file-name "@sudo! File: ")))
+    (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
+
+
+(defun revert-all-buffers ()
+  "Refreshes all open buffers from their respective files."
+  (interactive)
+  (dolist (buf (buffer-list))
+    (with-current-buffer buf
+      (when (and (buffer-file-name) (not (buffer-modified-p)))
+        (revert-buffer t t t))))
+  (message "Refreshed open files."))
+
+
+;; Function to launch a google search
+(defun google-search ()
+  "googles a query or a selected region"
+  (interactive)
+  (browse-url
+   (concat
+    "http://www.google.com/search?q="
+    (if mark-active
+        (buffer-substring (region-beginning) (region-end))
+      (read-string "Google: ")))))
 
 
 (provide 'defuns)
