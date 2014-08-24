@@ -32,7 +32,7 @@
 
 
 ;; open link in the default browser
-(global-set-key (kbd "C-.") 'browse-url-xdg-open)
+(global-set-key (kbd "C-.") 'browse-url-at-point)
 
 
 ;; Turn on flyspell mode when editing ReST docs
