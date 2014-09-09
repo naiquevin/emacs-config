@@ -6,7 +6,8 @@
       inhibit-startup-message t       ; donot show the startup msg
       x-select-enable-clipboard t     ; x-copy-paste
       c-basic-offset 4                ; Basic indentation to 4 spaces
-      confirm-kill-emacs 'y-or-n-p)
+      confirm-kill-emacs 'y-or-n-p
+      ring-bell-function 'ignore)
 
 
 ;; more prefs
