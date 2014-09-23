@@ -45,3 +45,7 @@
 
 ;; Turn on flyspell mode when editing ReST docs
 (add-hook 'rst-mode-hook 'flyspell-mode)
+
+
+;; Open Vagrantfile in Ruby mode
+(setq auto-mode-alist (cons '("Vagrantfile" . ruby-mode) auto-mode-alist))
