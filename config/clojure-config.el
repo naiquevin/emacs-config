@@ -13,3 +13,5 @@
 
 ;; Prevent nrepl connection buffers appearing while buffer switching
 (setq nrepl-hide-special-buffers t)
+
+(setq cider-repl-history-file ".lein-repl-history")
