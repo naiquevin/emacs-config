@@ -5,7 +5,7 @@
 (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
 
 ;; Turn on eldoc mode
-(add-hook 'clojure-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'clojure-mode-hook 'cider-turn-on-eldoc-mode)
 
 ;; Turn on paredit mode on clojure and nrepl modes
 (add-hook 'clojure-mode-hook 'enable-paredit-mode)
