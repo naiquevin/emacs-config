@@ -23,6 +23,7 @@
 (icomplete-mode 1)                    ; Incremental completions in minibuffer
 (which-function-mode t)               ; Enable which function mode
 (show-paren-mode t)                   ; Show matching paren
+(column-number-mode 1)                ; Show column number in mode line
 
 
 ;; prefer everything in utf-8
