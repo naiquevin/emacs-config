@@ -9,6 +9,7 @@
       my/config-dir (expand-file-name "config" my/emacs-config-dir)
       my/elpa-dir (expand-file-name "elpa" user-emacs-directory)
       my/themes-dir (expand-file-name "themes" my/emacs-config-dir)
+      my/priv-dir (expand-file-name "priv" my/emacs-config-dir)
       custom-file (expand-file-name "custom.el" my/emacs-config-dir))
 
 
