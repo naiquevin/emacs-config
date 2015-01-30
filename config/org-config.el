@@ -29,5 +29,9 @@
 ;; Setup refile targets
 (setq org-refile-targets
       '((nil :maxlevel . 2) ; top level headlines in current buffer
-        (org-agenda-files :maxlevel . 2))) ;; top level headlines in
-                                           ;; other agenda files
+        (org-agenda-files :maxlevel . 2))) ; top level headlines in
+                                           ; other agenda files
+
+;; enable export to markdown
+(eval-after-load "org"
+  '(require 'ox-md nil t))
