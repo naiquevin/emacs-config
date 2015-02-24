@@ -17,8 +17,8 @@
 (defvar pkg-init-packages
   '(s dash load-dir cider clojure-mode
       erlang ess flycheck geiser jedi php-mode
-      auto-complete epc ctable concurrent
-      deferred jinja2-mode js2-mode json-mode
+      auto-complete epc ctable concurrent go-mode
+      deferred jinja2-mode js2-mode json-mode bats-mode
       git-commit-mode git-rebase-mode gitconfig-mode
       gitignore-mode magit markdown-mode multiple-cursors
       nginx-mode paredit pkg-info epl popup rainbow-delimiters
