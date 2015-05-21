@@ -18,6 +18,11 @@
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
 
+;; ace-window
+(global-set-key (kbd "M-p") 'ace-window)
+(setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+
+
 ;; Utilities for effective window management
 (require 'toggle-window-split)
 (require 'transpose-windows)
