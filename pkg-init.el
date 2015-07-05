@@ -19,11 +19,11 @@
       erlang ess flycheck geiser jedi php-mode
       auto-complete epc ctable concurrent go-mode
       deferred jinja2-mode js2-mode json-mode bats-mode
-      git-commit-mode git-rebase-mode gitconfig-mode
-      gitignore-mode magit markdown-mode multiple-cursors
-      nginx-mode paredit pkg-info epl popup rainbow-delimiters
-      scala-mode2 sml-mode virtualenvwrapper ace-jump-mode
-      ace-window yaml-mode yasnippet unbound ledger-mode)
+      git-commit gitconfig-mode gitignore-mode magit
+      markdown-mode multiple-cursors nginx-mode paredit
+      pkg-info epl popup rainbow-delimiters scala-mode2
+      sml-mode virtualenvwrapper ace-jump-mode ace-window
+      yaml-mode yasnippet unbound ledger-mode)
   "A list of packages to ensure are installed at launch")
 
 
