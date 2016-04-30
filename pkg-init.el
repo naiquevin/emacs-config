@@ -23,7 +23,8 @@
       markdown-mode multiple-cursors nginx-mode paredit
       pkg-info epl popup rainbow-delimiters scala-mode2
       sml-mode virtualenvwrapper ace-jump-mode ace-window
-      yaml-mode yasnippet unbound ledger-mode ansible-doc)
+      yaml-mode yasnippet unbound ledger-mode ansible-doc
+      persistent-scratch)
   "A list of packages to ensure are installed at launch")
 
 

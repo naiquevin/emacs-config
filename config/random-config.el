@@ -56,3 +56,8 @@
 (setq auto-mode-alist (cons '("Vagrantfile" . ruby-mode) auto-mode-alist))
 
 (add-to-list 'auto-mode-alist '("\\.ledger$" . ledger-mode))
+
+
+;; persistent scratch
+(global-set-key (kbd "C-c M-s") 'persistent-scratch-save)
+(global-set-key (kbd "C-c M-r") 'persistent-scratch-restore)
