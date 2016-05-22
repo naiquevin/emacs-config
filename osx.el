@@ -35,5 +35,8 @@
       (append '("/usr/local/bin") exec-path))
 
 
+(setq locate-command "mdfind")
+
+
 (provide 'osx)
 
