@@ -53,3 +53,8 @@
 ;; efficient switching between windows
 (windmove-default-keybindings)
 (setq windmove-wrap-around t)
+
+
+;; use projectile with all of it's default behaviour
+(projectile-global-mode)
+(setq projectile-mode-line '(:eval (format " Project:%s" (projectile-project-name))))
