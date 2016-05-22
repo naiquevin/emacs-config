@@ -42,11 +42,12 @@
 
 ;; ido-mode config and preferences
 (ido-mode t)
-(setq ido-enable-prefix nil
+(setq ido-enable-prefix t
       ido-enable-flex-matching t
       ido-create-new-buffer 'always
       ido-use-filename-at-point 'guess
-      ido-max-prospects 10)
+      ido-max-prospects 10
+      ido-everywhere t)
 
 
 ;; efficient switching between windows
