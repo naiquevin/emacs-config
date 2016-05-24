@@ -42,8 +42,8 @@
 
 ;; ido-mode config and preferences
 (ido-mode t)
-(setq ido-enable-prefix t
-      ido-enable-flex-matching t
+(setq ido-enable-prefix nil
+      ido-enable-flex-matching nil
       ido-create-new-buffer 'always
       ido-use-filename-at-point 'guess
       ido-max-prospects 10
