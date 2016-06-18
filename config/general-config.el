@@ -40,16 +40,6 @@
       default-process-coding-system '(utf-8 . utf-8))
 
 
-;; ido-mode config and preferences
-(ido-mode t)
-(setq ido-enable-prefix nil
-      ido-enable-flex-matching nil
-      ido-create-new-buffer 'always
-      ido-use-filename-at-point 'guess
-      ido-max-prospects 10
-      ido-everywhere t)
-
-
 ;; efficient switching between windows
 (windmove-default-keybindings)
 (setq windmove-wrap-around t)
