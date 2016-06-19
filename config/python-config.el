@@ -42,3 +42,7 @@
 (add-hook 'python-mode-hook (lambda ()
                               (require 'sphinx-doc)
                               (sphinx-doc-mode t)))
+
+;; pydoc
+(eval-after-load 'python
+  '(define-key python-mode-map (kbd "C-c C-d") 'pydoc-at-point))
