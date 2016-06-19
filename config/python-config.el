@@ -43,6 +43,12 @@
                               (require 'sphinx-doc)
                               (sphinx-doc-mode t)))
 
+
 ;; pydoc
 (eval-after-load 'python
   '(define-key python-mode-map (kbd "C-c C-d") 'pydoc-at-point))
+
+
+;; pytest
+(eval-after-load 'python
+  '(define-key python-mode-map (kbd "C-c C-y") 'pytest-module))
