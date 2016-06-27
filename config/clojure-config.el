@@ -21,3 +21,21 @@
           (lambda () (define-key cider-repl-mode-map
                        (kbd "C-c M-b")
                        'nrepl-connection-browser)))
+
+
+(defun cider-load-open-buffers ()
+  "Loads all open clojure buffers in the project.
+
+Requires projectile to limit the clojure buffers in the current
+project."
+  (interactive)
+  (dolist (buf (projectile-project-buffers))
+    (let ((buf-file-path (buffer-file-name buf)))
+      (when (and buf-file-path
+                 (string= (file-name-extension buf-file-path) "clj")
+                 (not (string= (file-name-nondirectory buf-file-path)
+                               "project.clj")))
+        (cider-load-buffer buf)))))
+
+(eval-after-load 'cider-mode
+  '(define-key cider-mode-map (kbd "C-c M-k") 'cider-load-open-buffers))
