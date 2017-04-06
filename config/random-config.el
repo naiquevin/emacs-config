@@ -22,7 +22,7 @@
 
 
 ;; ace-window
-(global-set-key (kbd "C-c p") 'ace-window)
+(global-set-key (kbd "C-c q") 'ace-window)
 (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
 
 
