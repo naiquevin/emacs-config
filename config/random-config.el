@@ -64,3 +64,8 @@
 ;; persistent scratch
 (global-set-key (kbd "C-c M-s") 'persistent-scratch-save)
 (global-set-key (kbd "C-c M-r") 'persistent-scratch-restore)
+
+(require 'yaml-path)
+(add-hook 'yaml-mode-hook
+          '(lambda ()
+             (define-key yaml-mode-map (kbd "C-c C-p") 'yaml-path/path)))
