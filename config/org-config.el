@@ -4,6 +4,7 @@
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
+(global-set-key "\C-co" 'org-mark-ring-goto)
 
 (setq org-hide-leading-stars t) ; hide leading stars
 (setq org-log-done t) ; display time when TODO was changed to DONE
