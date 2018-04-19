@@ -15,6 +15,7 @@
 (setq nrepl-hide-special-buffers t)
 
 (setq cider-repl-history-file ".lein-repl-history")
+(setq cider-repl-clear-help-banner nil)
 
 ;; bind shortcut to open nrepl connection browser
 (add-hook 'cider-repl-mode-hook
