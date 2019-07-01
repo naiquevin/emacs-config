@@ -23,7 +23,8 @@
 ;; Org Capture
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline "gtd.org" "Tasks")
-         "* TODO %?\n %i\n")
+         ;; Note that the 2 spaces before `%i` help in aligning the content
+         "* TODO %?\nSCHEDULED: %(org-insert-time-stamp (org-read-date nil t \"+0d\"))\n  %i\n")
         ("i" "Idea" entry (file+headline "gtd.org" "Ideas")
          "* %?\n")
         ("l" "Link" entry (file+headline "gtd.org" "Links")
@@ -32,7 +33,7 @@
         ;; Helpshift specific prefixed keys
         ("h" "Templates for Helpshift tasks")
         ("ht" "Task" entry (file+olp "work.org" "Todo @ Helpshift" "Tasks")
-         "* TODO %?\n %i - %a\n")))
+         "* TODO %?\nSCHEDULED: %(org-insert-time-stamp (org-read-date nil t \"+0d\"))\n  %i - %a\n")))
 
 ;; Setup refile targets
 (setq org-refile-targets
@@ -45,6 +46,12 @@
 (setq org-refile-use-outline-path t)
 
 (setq org-completion-use-ido t)
+
+;; Open agenda view in current window
+(setq org-agenda-window-setup (quote current-window))
+
+;; Don't show tasks as scheduled if deadline is shown
+(setq org-agenda-skip-scheduled-if-deadline-is-shown t)
 
 ;; TODO faces
 (setq org-todo-keyword-faces
