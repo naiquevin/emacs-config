@@ -1,11 +1,6 @@
 ;; Place to add config for random modes where adding a separate file
 ;; each one would be an overkill
 
-;; Flymake
-(add-hook 'find-file-hook 'flymake-find-file-hook)
-(setq flymake-gui-warnings-enabled nil)
-
-
 ;; unique buffer names
 (require 'uniquify)                      ; uniquify is packed in emacs
 (setq uniquify-buffer-name-style 'post-forward)
