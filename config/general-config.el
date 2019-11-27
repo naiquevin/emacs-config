@@ -40,13 +40,51 @@
       default-process-coding-system '(utf-8 . utf-8))
 
 
-;; efficient switching between windows
-(windmove-default-keybindings)
-(setq windmove-wrap-around t)
+(use-package uniquify
+  :custom
+  (uniquify-buffer-name-style 'post-forward)
+  (uniquify-separator "|")
+  (uniquify-after-kill-buffer-p t)
+  (uniquify-ignore-buffers-re "^\\*" "Leave special buffers alone"))
 
 
 (use-package projectile
+  :ensure t
   :custom
   (projectile-mode-line '(:eval (format " Project:%s" (projectile-project-name))))
   :config
   (projectile-global-mode))
+
+
+(use-package avy
+  :ensure t
+  :bind (("C-:" . avy-goto-char)
+         ("M-g f" . avy-goto-line)
+         ("M-g w" . avy-goto-word-1)))
+
+
+(use-package windmove
+  :config
+  (windmove-default-keybindings)
+  (setq windmove-wrap-around t))
+
+
+(use-package ace-window
+  :ensure t
+  :custom
+  (aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+  :bind (("C-c q" . ace-window)))
+
+
+(use-package multiple-cursors
+  :ensure t
+  :bind (("C-S-c C-S-c" . mc/edit-lines)
+         ("C->" . mc/mark-next-like-this)
+         ("C-<" . mc/mark-previous-like-this)
+         ("C-c C-<" . mc/mark-all-like-this)))
+
+
+(use-package persistent-scratch
+  :ensure t
+  :bind (("C-c M-s" . persistent-scratch-save)
+         ("C-c M-r" . persistent-scratch-restore)))
