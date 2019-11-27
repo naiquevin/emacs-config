@@ -25,7 +25,7 @@
       pkg-info epl popup rainbow-delimiters scala-mode2
       sml-mode virtualenvwrapper avy ace-window
       yaml-mode yasnippet unbound ledger-mode ansible-doc
-      persistent-scratch projectile pydoc pytest)
+      persistent-scratch projectile pytest)
   "A list of packages to ensure are installed at launch")
 
 
