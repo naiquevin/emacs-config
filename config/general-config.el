@@ -45,6 +45,8 @@
 (setq windmove-wrap-around t)
 
 
-;; use projectile with all of it's default behaviour
-(projectile-global-mode)
-(setq projectile-mode-line '(:eval (format " Project:%s" (projectile-project-name))))
+(use-package projectile
+  :custom
+  (projectile-mode-line '(:eval (format " Project:%s" (projectile-project-name))))
+  :config
+  (projectile-global-mode))

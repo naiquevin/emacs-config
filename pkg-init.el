@@ -15,6 +15,11 @@
 (package-initialize)
 
 
+(require 'use-package)
+
+
+;; DEPRECATED! Following code will be replaced with use-package
+
 (defvar pkg-init-packages
   '(s dash load-dir cider clojure-mode
       erlang ess flycheck geiser jedi php-mode
@@ -25,7 +30,7 @@
       pkg-info epl popup rainbow-delimiters scala-mode2
       sml-mode virtualenvwrapper avy ace-window
       yaml-mode yasnippet unbound ledger-mode ansible-doc
-      persistent-scratch projectile pytest)
+      persistent-scratch pytest)
   "A list of packages to ensure are installed at launch")
 
 
