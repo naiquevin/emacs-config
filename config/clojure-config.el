@@ -21,7 +21,7 @@
 (add-hook 'cider-repl-mode-hook
           (lambda () (define-key cider-repl-mode-map
                        (kbd "C-c M-b")
-                       'nrepl-connection-browser)))
+                       'sesman-browser)))
 
 
 (defun cider-load-open-buffers ()
