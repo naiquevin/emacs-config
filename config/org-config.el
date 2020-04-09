@@ -6,6 +6,8 @@
 (global-set-key "\C-cb" 'org-iswitchb)
 (global-set-key "\C-co" 'org-mark-ring-goto)
 
+(global-set-key (kbd "s-<f11>") 'org-clock-goto)
+
 (setq org-hide-leading-stars t) ; hide leading stars
 (setq org-log-done t) ; display time when TODO was changed to DONE
 
