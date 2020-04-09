@@ -12,11 +12,15 @@ This is my emacs configuration which I use both on my work laptop
 * Customize is set to write to a separate `custom.el` file and not
   `init.el` itself.
 
-* Whatever that can be installed using `package.el` is installed using
-  it. To keep track, the list of the modes installed by package.el is
-  added to the var `pkg-init-packages` in `pkg-init.el`. (Note: This
-  method to ensure installed packages is stolen from
-  [emacs prelude](https://github.com/bbatsov/prelude/)).
+* The new method for package management is via `use-package`. However,
+  there are still some modes that are tracked using the
+  `pkg-init-packages` var (see next point).
+
+* [Deprecated] Whatever that can be installed using `package.el` is
+  installed using it. To keep track, the list of the modes installed
+  by package.el is added to the var `pkg-init-packages` in
+  `pkg-init.el`. (Note: This method to ensure installed packages is
+  stolen from [emacs prelude](https://github.com/bbatsov/prelude/)).
 
 * Single file 3rd party modes not found via elpa are added to `lib`
   dir.
