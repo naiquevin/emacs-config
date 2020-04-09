@@ -88,3 +88,20 @@
   :ensure t
   :bind (("C-c M-s" . persistent-scratch-save)
          ("C-c M-r" . persistent-scratch-restore)))
+
+
+(use-package mermaid-mode
+  :mode ("\\.mmd\\'" . mermaid-mode)
+  :config
+  (setq mermaid-mmdc-location "/Users/naiquevin/.nvm/versions/node/v12.14.0/bin/mmdc"))
+
+
+(use-package plantuml-mode
+  :mode ("\\.plantuml\\'" . plantuml-mode)
+  :config
+  (setq plantuml-default-exec-mode 'jar)
+  (setq plantuml-jar-path "/Users/naiquevin/helpshift/vendor/PlantUML/plantuml.jar"))
+
+
+(use-package csv-mode
+  :ensure t)
