@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+set -e
+
+SOLARIZED_VERSION=f3ca8902ea056fb8e46cb09f09c96294e31cd4ee
+
+if [ ! -d "themes/solarized" ]; then
+    cd vendor
+    if [ ! -d "emacs-color-theme-solarized" ]; then
+        git clone git@github.com:sellout/emacs-color-theme-solarized.git
+    fi
+    cd emacs-color-theme-solarized
+    git checkout $SOLARIZED_VERSION
+    cd ../themes
+    ln -sv ../vendor/emacs-color-theme-solarized ./solarized
+    cd ../
+else
+    cd vendor/emacs-color-theme-solarized
+    if [ "$(git rev-parse HEAD)" != "$SOLARIZED_VERSION" ]; then
+        echo "Current SHA of emacs-color-theme-solarized: $(git rev-parse HEAD)"
+        while true; do
+            read -p "Are you sure you want to checkout the pinned version? (yes/no)" yn
+            case $yn in
+                [Yy]* ) git checkout $SOLARIZED_VERSION; break;;
+                [Nn]* ) exit;;
+                * ) echo "Please answer yes or no.";;
+            esac
+        done
+    fi
+    cd ../../
+fi
