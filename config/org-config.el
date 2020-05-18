@@ -67,3 +67,6 @@
 ;; enable export to markdown
 (eval-after-load "org"
   '(require 'ox-md nil t))
+
+
+(add-hook 'org-mode-hook (lambda () (hl-line-mode 1)))
