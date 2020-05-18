@@ -1,11 +1,15 @@
 ;; Config for Yasnippet mode
 
-(setq yas-snippet-dirs
-      (list (expand-file-name "snippets"
-                              my/self-lib-dir) ;; personal snippets
-            (expand-file-name "snippets"
-                              my/priv-dir) ;; private snippets (not tracked in git)
-            (expand-file-name "yasnippet-20141223.303/snippets"
-                              my/elpa-dir))) ;; the default collection
+(use-package yasnippet-snippets)
 
-(yas-global-mode 1)
+(use-package yasnippet
+  :requires yasnippet-snippets
+  :config
+  (setq yas-snippet-dirs
+        (list (expand-file-name "snippets"
+                                my/self-lib-dir) ;; personal snippets
+              (expand-file-name "snippets"
+                                my/priv-dir) ;; private snippets (not tracked in git)
+              (expand-file-name "yasnippet-snippets-20200508.936/snippets"
+                                my/elpa-dir)))
+  (yas-global-mode 1))

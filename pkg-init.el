@@ -30,7 +30,7 @@
       magit markdown-mode nginx-mode paredit
       pkg-info epl popup rainbow-delimiters scala-mode2
       sml-mode virtualenvwrapper
-      yaml-mode yasnippet unbound ledger-mode ansible-doc
+      yaml-mode unbound ledger-mode ansible-doc
       pytest)
   "A list of packages to ensure are installed at launch")
 
