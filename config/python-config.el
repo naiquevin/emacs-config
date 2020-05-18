@@ -1,5 +1,8 @@
 ;;; Python
 
+;; Electric pairs
+(add-hook 'python-mode-hook 'electric-pair-mode)
+
 ;; Flycheck
 (add-hook 'python-mode-hook 'flycheck-mode)
 
