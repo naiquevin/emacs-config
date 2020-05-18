@@ -8,11 +8,13 @@
 
 
 ;; virtualenvwrapper.el
-;; (require 'virtualenvwrapper)
-(venv-initialize-interactive-shells)
-(setq venv-location "~/.virtualenvs/")
-(setq-default mode-line-format
-              (append mode-line-format '((:exec venv-current-name))))
+(use-package virtualenvwrapper
+  :ensure t
+  :config
+  (venv-initialize-interactive-shells)
+  (setq venv-location "~/.virtualenvs/")
+  (setq-default mode-line-format
+              (append mode-line-format '((:exec venv-current-name)))))
 
 
 ;; Set ipython as the python interpreter
