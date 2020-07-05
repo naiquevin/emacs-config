@@ -69,4 +69,12 @@
   '(require 'ox-md nil t))
 
 
+(setq org-agenda-custom-commands
+      '(("w" "Agenda view for work" agenda ""
+         ((org-agenda-category-filter-preset '("+work"))
+          (org-agenda-skip-function '(org-agenda-skip-entry-if 'todo '("PARKED")))))
+        ("p" "Agenda view for personal" agenda ""
+         ((org-agenda-category-filter-preset '("+gtd"))))))
+
+
 (add-hook 'org-mode-hook (lambda () (hl-line-mode 1)))
