@@ -13,8 +13,6 @@
                          ("melpa-stable" . "https://stable.melpa.org/packages/")
                          ("org" . "http://orgmode.org/elpa/")))
 
-(package-initialize)
-
 
 (require 'use-package)
 
