@@ -105,3 +105,13 @@
 
 (use-package csv-mode
   :ensure t)
+
+
+(use-package lilypond-mode
+  :ensure nil
+  :load-path "/Users/naiquevin/emacs/site/vendor/lilypond/"
+  :mode ("\\.ly\\'" . LilyPond-mode)
+  :custom
+  (LilyPond-lilypond-command "/Applications/LilyPond.app/Contents/Resources/bin/lilypond")
+  ;; FIXME: Open in emacs buffer
+  (LilyPond-pdf-command "open"))
