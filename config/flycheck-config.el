@@ -3,7 +3,7 @@
 (require 'flycheck)
 
 ;; Disable the error indicator on the fringe
-(setq flycheck-indication-mode nil)
+(setq flycheck-indication-mode 'left-fringe)
 
 ;; disable automatic syntax checks on new line
 (setq flycheck-check-syntax-automatically '(save
