@@ -2,7 +2,12 @@
 
 
 (use-package flycheck-clj-kondo
-  :ensure t)
+  :ensure t
+  :init
+  (with-eval-after-load 'projectile
+    (add-to-list 'projectile-globally-ignored-directories ".clj-kondo"))
+  (with-eval-after-load 'grep
+    (add-to-list 'grep-find-ignored-directories ".clj-kondo")))
 
 
 (use-package clojure-mode
