@@ -107,6 +107,12 @@
   :ensure t)
 
 
+(use-package smartparens
+  :ensure t
+  :config
+  (require 'smartparens-config))
+
+
 (use-package lilypond-mode
   :ensure nil
   :load-path "/Users/naiquevin/emacs/site/vendor/lilypond/"

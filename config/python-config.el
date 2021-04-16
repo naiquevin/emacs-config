@@ -3,6 +3,9 @@
 ;; Electric pairs
 (add-hook 'python-mode-hook 'electric-pair-mode)
 
+;; Smartparens for python
+(add-hook 'python-mode-hook 'smartparens-mode)
+
 ;; Flycheck
 (add-hook 'python-mode-hook 'flycheck-mode)
 
