@@ -35,6 +35,11 @@
       (append '("/usr/local/bin") exec-path))
 
 
+;; Set env for finding and running perl scripts
+(setq exec-path (append exec-path (cons (expand-file-name "~/perl5/bin/") '())))
+(setenv "PERL5LIB" (expand-file-name "~/perl5/lib/perl5"))
+
+
 (setq locate-command "mdfind")
 
 
