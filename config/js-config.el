@@ -10,6 +10,7 @@
 (add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
 ;; This sets the json indentation to 2 (default is 4)
 (setq js-indent-level 2)
+(add-hook 'json-mode-hook 'flycheck-mode)
 
 ;; natural docs for js
 (load (expand-file-name "nd-js" my/self-lib-dir))
