@@ -1,15 +1,5 @@
 ;;; Python
 
-;; Electric pairs
-(add-hook 'python-mode-hook 'electric-pair-mode)
-
-;; Smartparens for python
-(add-hook 'python-mode-hook 'smartparens-mode)
-
-;; Flycheck
-(add-hook 'python-mode-hook 'flycheck-mode)
-
-
 ;; virtualenvwrapper.el
 (use-package virtualenvwrapper
   :ensure t
@@ -17,7 +7,27 @@
   (venv-initialize-interactive-shells)
   (setq venv-location "~/.virtualenvs/")
   (setq-default mode-line-format
-              (append mode-line-format '((:exec venv-current-name)))))
+                (append mode-line-format '((:exec venv-current-name)))))
+
+
+;; Autocomplete/Jedi Setup
+(use-package jedi
+  :ensure t
+
+  :init
+  (setq jedi:setup-keys t)
+  (setq jedi:use-shortcuts t)
+  (setq jedi:complete-on-dot t)
+  ;; show function signatures in mini-buffer instead of popup
+  (setq jedi:tooltip-method nil)
+
+  :hook ((python-mode . jedi:setup)
+         (inferior-python-mode . jedi:setup)))
+
+
+(use-package pytest
+  :ensure t
+  :bind ("C-c C-y" . pytest-module))
 
 
 ;; Set ipython as the python interpreter
@@ -31,26 +41,21 @@
  python-shell-completion-string-code "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
 
 
+;; Electric pairs
+(add-hook 'python-mode-hook 'electric-pair-mode)
+
+;; Smartparens for python
+(add-hook 'python-mode-hook 'smartparens-mode)
+
+;; Flycheck
+(add-hook 'python-mode-hook 'flycheck-mode)
+
+
 ;; Enable rainbow-delimiters in python-mode
 (add-hook 'python-mode-hook 'rainbow-delimiters-mode)
-
-
-;; Autocomplete/Jedi Setup
-(add-hook 'python-mode-hook 'jedi:setup)
-(add-hook 'inferior-python-mode-hook 'jedi:setup)
-(setq jedi:setup-keys t)
-(setq jedi:use-shortcuts t)
-(setq jedi:complete-on-dot t)
-;; show function signatures in mini-buffer instead of popup
-(setq jedi:tooltip-method nil)
 
 
 ;; sphinx-doc
 (add-hook 'python-mode-hook (lambda ()
                               (require 'sphinx-doc)
                               (sphinx-doc-mode t)))
-
-
-;; pytest
-(eval-after-load 'python
-  '(define-key python-mode-map (kbd "C-c C-y") 'pytest-module))

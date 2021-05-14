@@ -8,7 +8,7 @@
 
 ;; Set package archive sources
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ;; ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "https://melpa.org/packages/")
                          ("melpa-stable" . "https://stable.melpa.org/packages/")
                          ("org" . "http://orgmode.org/elpa/")))
@@ -20,15 +20,14 @@
 ;; DEPRECATED! Following code will be replaced with use-package
 
 (defvar pkg-init-packages
-  '(s dash load-dir erlang ess flycheck geiser jedi php-mode
+  '(s dash load-dir erlang ess flycheck geiser php-mode
       auto-complete epc ctable concurrent go-mode
       deferred jinja2-mode js2-mode nodejs-repl json-mode
       bats-mode git-commit gitconfig-mode gitignore-mode
       magit markdown-mode nginx-mode paredit
       pkg-info epl popup rainbow-delimiters scala-mode2
-      sml-mode virtualenvwrapper
-      yaml-mode unbound ledger-mode ansible-doc
-      pytest)
+      sml-mode
+      yaml-mode unbound ledger-mode ansible-doc)
   "A list of packages to ensure are installed at launch")
 
 
