@@ -84,6 +84,11 @@
          ("C-c C-<" . mc/mark-all-like-this)))
 
 
+(use-package imenu-anywhere
+  :ensure t
+  :bind (("C-=" . imenu-anywhere)))
+
+
 (use-package persistent-scratch
   :ensure t
   :bind (("C-c M-s" . persistent-scratch-save)
