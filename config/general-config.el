@@ -113,6 +113,13 @@
   (require 'smartparens-config))
 
 
+(use-package sqlformat
+  :ensure t
+  :config
+  (setq sqlformat-command 'pgformatter)
+  :bind (("C-c C-f" . sqlformat-buffer)))
+
+
 (use-package lilypond-mode
   :ensure nil
   :load-path "/Users/naiquevin/emacs/site/vendor/lilypond/"
