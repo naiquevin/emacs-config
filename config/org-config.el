@@ -78,3 +78,8 @@
 
 
 (add-hook 'org-mode-hook (lambda () (hl-line-mode 1)))
+
+(require 'org-crypt)
+(org-crypt-use-before-save-magic)
+(setq org-tags-exclude-from-inheritance '("crypt"))
+(setq org-crypt-key "4930D5CB")
