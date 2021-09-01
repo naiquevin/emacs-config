@@ -23,7 +23,7 @@
   '(s dash load-dir erlang ess flycheck geiser php-mode
       auto-complete epc ctable concurrent go-mode
       deferred jinja2-mode js2-mode nodejs-repl json-mode
-      bats-mode git-commit gitconfig-mode gitignore-mode
+      bats-mode
       nginx-mode paredit
       pkg-info epl popup rainbow-delimiters scala-mode2
       sml-mode

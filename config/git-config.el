@@ -69,3 +69,15 @@
   :hook ((magit-mode . naiq/magit-set-faces))
   :bind (("C-c C-g" . magit-status)
          ("C-c M-g" . magit-status)))
+
+
+(use-package git-commit
+  :ensure t)
+
+
+(use-package gitconfig-mode
+  :ensure t)
+
+
+(use-package gitignore-mode
+  :ensure t)
