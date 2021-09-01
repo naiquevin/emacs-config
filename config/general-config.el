@@ -58,6 +58,10 @@
   ("C-c p" . projectile-command-map))
 
 
+(use-package flx
+  :ensure t)
+
+
 (use-package avy
   :ensure t
   :bind (("C-:" . avy-goto-char)
