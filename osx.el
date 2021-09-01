@@ -40,6 +40,10 @@
 (setenv "PERL5LIB" (expand-file-name "~/perl5/lib/perl5"))
 
 
+;; For finding and running tools written rust
+(setq exec-path (append exec-path (cons (expand-file-name "~/.cargo/bin/") '())))
+
+
 (setq locate-command "mdfind")
 
 
