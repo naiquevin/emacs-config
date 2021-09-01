@@ -47,8 +47,6 @@
 (setq org-outline-path-complete-in-steps nil)
 (setq org-refile-use-outline-path t)
 
-(setq org-completion-use-ido t)
-
 ;; Open agenda view in current window
 (setq org-agenda-window-setup (quote current-window))
 
