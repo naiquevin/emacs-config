@@ -1,5 +1,10 @@
 ;;; Emacs config for Erlang development
 
+
+(use-package erlang
+  :ensure t)
+
+
 (add-hook
  'find-file-hook
  (lambda ()

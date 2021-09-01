@@ -20,7 +20,7 @@
 ;; DEPRECATED! Following code will be replaced with use-package
 
 (defvar pkg-init-packages
-  '(s dash load-dir erlang ess flycheck geiser php-mode
+  '(s dash load-dir ess flycheck geiser php-mode
       auto-complete epc ctable concurrent go-mode
       deferred jinja2-mode js2-mode nodejs-repl json-mode
       bats-mode
