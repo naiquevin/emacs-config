@@ -53,7 +53,9 @@
   :custom
   (projectile-mode-line '(:eval (format " Project:%s" (projectile-project-name))))
   :config
-  (projectile-global-mode))
+  (projectile-mode +1)
+  :bind-keymap
+  ("C-c p" . projectile-command-map))
 
 
 (use-package avy
