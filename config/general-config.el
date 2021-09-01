@@ -118,6 +118,10 @@
   :ensure t)
 
 
+(use-package paredit
+  :ensure t)
+
+
 (use-package smartparens
   :ensure t
   :config

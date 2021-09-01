@@ -24,7 +24,7 @@
       auto-complete epc ctable concurrent go-mode
       deferred jinja2-mode js2-mode nodejs-repl json-mode
       bats-mode
-      nginx-mode paredit
+      nginx-mode
       pkg-info epl popup rainbow-delimiters scala-mode2
       sml-mode
       yaml-mode unbound ledger-mode ansible-doc)
