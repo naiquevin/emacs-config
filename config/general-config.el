@@ -95,6 +95,11 @@
   :bind (("C-=" . imenu-anywhere)))
 
 
+(use-package imenu-list
+  :ensure t
+  :bind (("C-\"" . imenu-list-smart-toggle)))
+
+
 (use-package persistent-scratch
   :ensure t
   :bind (("C-c M-s" . persistent-scratch-save)
@@ -126,6 +131,11 @@
   :ensure t
   :config
   (require 'smartparens-config))
+
+
+(use-package dumb-jump
+  :ensure t
+  :bind (("C-c ." . dumb-jump-go)))
 
 
 (use-package sqlformat
