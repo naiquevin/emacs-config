@@ -40,6 +40,9 @@
       default-process-coding-system '(utf-8 . utf-8))
 
 
+(add-hook 'c-mode-hook 'electric-pair-mode)
+
+
 (use-package uniquify
   :custom
   (uniquify-buffer-name-style 'post-forward)
