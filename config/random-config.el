@@ -22,9 +22,6 @@
 (add-hook 'rst-mode-hook 'flyspell-mode)
 
 
-;; Open Vagrantfile in Ruby mode
-(setq auto-mode-alist (cons '("Vagrantfile" . ruby-mode) auto-mode-alist))
-
 (add-to-list 'auto-mode-alist '("\\.ledger$" . ledger-mode))
 
 
