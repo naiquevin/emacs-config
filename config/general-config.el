@@ -149,6 +149,16 @@
   :bind (("C-c C-f" . sqlformat-buffer)))
 
 
+(use-package filladapt
+  :ensure t)
+
+
+(use-package yaml-mode
+  :ensure t
+  :config
+  (add-hook 'yaml-mode-hook 'filladapt-mode))
+
+
 (use-package lilypond-mode
   :ensure nil
   :load-path "/Users/naiquevin/emacs/site/vendor/lilypond/"
