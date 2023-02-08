@@ -36,9 +36,9 @@
       deferred jinja2-mode js2-mode nodejs-repl json-mode
       bats-mode
       nginx-mode
-      pkg-info epl popup rainbow-delimiters scala-mode2
+      pkg-info epl popup rainbow-delimiters
       sml-mode
-      yaml-mode unbound ledger-mode ansible-doc)
+      yaml-mode ansible-doc)
   "A list of packages to ensure are installed at launch")
 
 
