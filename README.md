@@ -59,6 +59,8 @@ Apart from these, following dependencies are required to be installed:
   `project.clj` file or in the `:user` profile in
   `~/.lein/profiles.clj`. [See also](https://github.com/clojure-emacs/cider#cider-nrepl-middleware).
 
+* [clj-kondo](https://github.com/clj-kondo/clj-kondo) is required for
+  flycheck to work in Clojure buffers
 
 A lot of code has been borrowed from init files of various people on
 github and around the internets. All mistakes are most likely my own.
