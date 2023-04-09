@@ -9,6 +9,7 @@
 (global-set-key (kbd "s-<f11>") 'org-clock-goto)
 
 (setq org-hide-leading-stars t) ; hide leading stars
+(setq org-adapt-indentation t)  ; indent relative to the outline level
 (setq org-log-done t) ; display time when TODO was changed to DONE
 
 ;; Customizing the org directory
