@@ -43,14 +43,6 @@
 (add-hook 'c-mode-hook 'electric-pair-mode)
 
 
-(use-package uniquify
-  :custom
-  (uniquify-buffer-name-style 'post-forward)
-  (uniquify-separator "|")
-  (uniquify-after-kill-buffer-p t)
-  (uniquify-ignore-buffers-re "^\\*" "Leave special buffers alone"))
-
-
 (use-package projectile
   :ensure t
   :custom
