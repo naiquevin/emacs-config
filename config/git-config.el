@@ -75,9 +75,5 @@
   :ensure t)
 
 
-(use-package gitconfig-mode
-  :ensure t)
-
-
-(use-package gitignore-mode
+(use-package git-modes
   :ensure t)
