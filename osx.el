@@ -46,8 +46,9 @@
 
 (setq locate-command "mdfind")
 
-;; Use gpg (GnuPG) 1.4.18. `gpg` was upgraded during last system upgrade
-(custom-set-variables '(epg-gpg-program "/opt/homebrew/bin/gpg"))
+(custom-set-variables '(epg-gpg-program "/usr/local/bin/gpg"))
+(setq epa-pinentry-mode 'loopback)
+
 
 (provide 'osx)
 
