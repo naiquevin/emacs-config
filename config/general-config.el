@@ -111,8 +111,9 @@
   :ensure t
   :mode ("\\.plantuml\\'" . plantuml-mode)
   :config
-  (setq plantuml-default-exec-mode 'jar)
-  (setq plantuml-jar-path "/Users/naiquevin/helpshift/vendor/PlantUML/plantuml.jar"))
+  (setq plantuml-default-exec-mode 'executable)
+  ;; Until the problem with svg is fixed - https://emacs.stackexchange.com/a/74504
+  (plantuml-set-output-type "png"))
 
 
 (use-package csv-mode
