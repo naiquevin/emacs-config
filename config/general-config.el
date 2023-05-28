@@ -121,7 +121,12 @@
 
 
 (use-package paredit
-  :ensure t)
+  :ensure t
+  :config
+  ;; Disable C-j keybinding of paredit as it overrides paredit-return
+  ;; in ielm mode. C-j is redundant as M-j practically does the same
+  ;; thing.
+  (define-key paredit-mode-map (kbd "C-j") nil))
 
 
 (use-package smartparens
