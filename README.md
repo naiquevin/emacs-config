@@ -68,5 +68,9 @@ Apart from these, following dependencies are required to be installed:
 * [ripgrep](https://github.com/BurntSushi/ripgrep) is required for
   search functionality in projectile mode
 
+* [rust-analyzer](https://rust-analyzer.github.io/) is required for
+  rust development. Install using homebrew `brew install
+  rust-analyzer`
+
 A lot of code has been borrowed from init files of various people on
 github and around the internets. All mistakes are most likely my own.
