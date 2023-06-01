@@ -10,24 +10,16 @@
                 (append mode-line-format '((:exec venv-current-name)))))
 
 
-;; Autocomplete/Jedi Setup
-(use-package jedi
-  :ensure t
-
-  :init
-  (setq jedi:setup-keys t)
-  (setq jedi:use-shortcuts t)
-  (setq jedi:complete-on-dot t)
-  ;; show function signatures in mini-buffer instead of popup
-  (setq jedi:tooltip-method nil)
-
-  :hook ((python-mode . jedi:setup)
-         (inferior-python-mode . jedi:setup)))
-
-
 (use-package pytest
   :ensure t
   :bind ("C-c C-y" . pytest-module))
+
+
+(use-package sphinx-doc
+  :ensure t)
+
+
+(setq python-shell-completion-native-enable nil)
 
 
 ;; Set ipython as the python interpreter

@@ -46,10 +46,6 @@ It's assumed that you have `virtualenv`, `virtualenvwrapper` and
 
 Apart from these, following dependencies are required to be installed:
 
-* jedi and epc (autocomplete): `sudo pip install jedi epc` (When
-  working inside a virtualenv, these need to be installed inside the
-  virtualenv even if they are already globally installed.)
-
 * flake8 (flycheck): `sudo pip install flake8`
 
 * Cider's own
