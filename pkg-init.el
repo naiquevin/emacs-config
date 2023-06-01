@@ -36,7 +36,7 @@
       deferred jinja2-mode js2-mode nodejs-repl json-mode
       bats-mode
       nginx-mode
-      pkg-info epl popup rainbow-delimiters
+      pkg-info epl popup
       sml-mode
       yaml-mode ansible-doc)
   "A list of packages to ensure are installed at launch")

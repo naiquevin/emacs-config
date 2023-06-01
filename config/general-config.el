@@ -135,6 +135,10 @@
   (require 'smartparens-config))
 
 
+(use-package rainbow-delimiters
+  :ensure t)
+
+
 (use-package dumb-jump
   :ensure t
   :bind (("C-c ." . dumb-jump-go)))
