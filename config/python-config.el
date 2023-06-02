@@ -19,10 +19,16 @@
   :ensure t)
 
 
+(defun eglot-w-flycheck ()
+  (eglot-ensure)
+  (flycheck-mode)
+  (flycheck-eglot-mode 1))
+
+
 (use-package python
   :ensure t
 
-  :after (smartparens rainbow-delimiters sphinx-doc)
+  :after (smartparens rainbow-delimiters sphinx-doc flycheck-eglot)
 
   :config
   ;; Set ipython as the python interpreter
@@ -35,9 +41,13 @@
         python-shell-completion-string-code "';'.join(module_completion('''%s'''))\n"
         python-shell-completion-string-code "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
 
+  (add-to-list 'eglot-server-programs
+               '(python-mode . ("jedi-language-server")))
+
   :hook
   (python-mode . electric-pair-mode)
   (python-mode . smartparens-mode)
   (python-mode . smartparens-mode)
   (python-mode . rainbow-delimiters-mode)
-  (python-mode . sphinx-doc-mode))
+  (python-mode . sphinx-doc-mode)
+  (python-mode . eglot-w-flycheck))
