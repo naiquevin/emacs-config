@@ -19,6 +19,16 @@
   :ensure t)
 
 
+(use-package company-jedi
+  :ensure t
+  :after (company))
+
+
+(defun company-python ()
+  (company-mode)
+  (add-to-list 'company-backends 'company-jedi))
+
+
 (defun eglot-w-flycheck ()
   (eglot-ensure)
   (flycheck-mode)
@@ -50,4 +60,5 @@
   (python-mode . smartparens-mode)
   (python-mode . rainbow-delimiters-mode)
   (python-mode . sphinx-doc-mode)
-  (python-mode . eglot-w-flycheck))
+  (python-mode . eglot-w-flycheck)
+  (python-mode . company-python))
