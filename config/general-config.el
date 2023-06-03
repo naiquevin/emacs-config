@@ -5,7 +5,6 @@
       erc-nick "naiquevin"
       inhibit-startup-message t       ; donot show the startup msg
       x-select-enable-clipboard t     ; x-copy-paste
-      c-basic-offset 4                ; Basic indentation to 4 spaces
       confirm-kill-emacs 'y-or-n-p
       ring-bell-function 'ignore)
 
@@ -21,8 +20,6 @@
 (scroll-bar-mode -1)                  ; .. and the scroll bar,
 (mouse-avoidance-mode 'cat-and-mouse) ; .. and finally the mouse pointer!
 (icomplete-mode 1)                    ; Incremental completions in minibuffer
-(which-function-mode t)               ; Enable which function mode
-(show-paren-mode t)                   ; Show matching paren
 (column-number-mode 1)                ; Show column number in mode line
 
 
@@ -38,19 +35,6 @@
       buffer-file-coding-system 'utf-8
       coding-system-for-write 'utf-8
       default-process-coding-system '(utf-8 . utf-8))
-
-
-(add-hook 'c-mode-hook 'electric-pair-mode)
-
-
-(use-package projectile
-  :ensure t
-  :custom
-  (projectile-mode-line '(:eval (format " Project:%s" (projectile-project-name))))
-  :config
-  (projectile-mode +1)
-  :bind-keymap
-  ("C-c p" . projectile-command-map))
 
 
 (use-package flx
@@ -101,64 +85,8 @@
          ("C-c M-r" . persistent-scratch-restore)))
 
 
-(use-package mermaid-mode
-  :mode ("\\.mmd\\'" . mermaid-mode)
-  :config
-  (setq mermaid-mmdc-location "/Users/naiquevin/.nvm/versions/node/v12.14.0/bin/mmdc"))
-
-
-(use-package plantuml-mode
-  :ensure t
-  :mode ("\\.plantuml\\'" . plantuml-mode)
-  :config
-  (setq plantuml-default-exec-mode 'executable)
-  ;; Until the problem with svg is fixed - https://emacs.stackexchange.com/a/74504
-  (plantuml-set-output-type "png"))
-
-
-(use-package csv-mode
-  :ensure t)
-
-
-(use-package paredit
-  :ensure t
-  :config
-  ;; Disable C-j keybinding of paredit as it overrides paredit-return
-  ;; in ielm mode. C-j is redundant as M-j practically does the same
-  ;; thing.
-  (define-key paredit-mode-map (kbd "C-j") nil))
-
-
-(use-package smartparens
-  :ensure t
-  :config
-  (require 'smartparens-config))
-
-
-(use-package rainbow-delimiters
-  :ensure t)
-
-
-(use-package dumb-jump
-  :ensure t
-  :bind (("C-c ." . dumb-jump-go)))
-
-
-(use-package sqlformat
-  :ensure t
-  :config
-  (setq sqlformat-command 'pgformatter)
-  :bind (("C-c C-f" . sqlformat-buffer)))
-
-
 (use-package filladapt
   :ensure t)
-
-
-(use-package yaml-mode
-  :ensure t
-  :config
-  (add-hook 'yaml-mode-hook 'filladapt-mode))
 
 
 (use-package lilypond-mode
@@ -169,7 +97,3 @@
   (LilyPond-lilypond-command "/Applications/LilyPond.app/Contents/Resources/bin/lilypond")
   ;; FIXME: Open in emacs buffer
   (LilyPond-pdf-command "open"))
-
-
-(use-package company
-  :ensure t)
