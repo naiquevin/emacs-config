@@ -31,14 +31,11 @@
 ;; DEPRECATED! Following code will be replaced with use-package
 
 (defvar pkg-init-packages
-  '(s dash load-dir ess geiser php-mode
-      ctable concurrent go-mode
-      deferred jinja2-mode js2-mode nodejs-repl json-mode
-      bats-mode
-      nginx-mode
+  '(s dash load-dir
+      ctable concurrent
+      deferred jinja2-mode js2-mode nodejs-repl
       pkg-info epl popup
-      sml-mode
-      yaml-mode ansible-doc)
+      ansible-doc)
   "A list of packages to ensure are installed at launch")
 
 

@@ -104,3 +104,47 @@
                       :background "#dc322f"
                       :foreground "#262626"
                       :underline nil))
+
+
+(use-package nginx-mode
+  :ensure t)
+
+
+(use-package bats-mode
+  :ensure t)
+
+
+;; (Josh's lite weight json major mode)
+(use-package json-mode
+  :ensure t
+  :after (flycheck)
+
+  :config
+  (add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
+
+  :hook
+  (json-mode . flycheck-mode))
+
+
+;; Config for programming languages that I don't use often, hence that
+;; don't need much customization.
+
+(use-package php-mode
+  :ensure nil)
+
+
+(use-package go-mode
+  :ensure t)
+
+
+(use-package sml-mode
+  :ensure nil)
+
+
+(use-package geiser
+  :ensure nil)
+
+
+;; Emacs Speaks Statistics (For editing R files)
+(use-package ess
+  :ensure nil)

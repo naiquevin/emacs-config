@@ -4,13 +4,8 @@
 ;; (require 'js2-mode)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
-;; json (Josh's lite weight json major mode) (Installed via
-;; package-install)
-;; (require 'json-mode)
-(add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
 ;; This sets the json indentation to 2 (default is 4)
 (setq js-indent-level 2)
-(add-hook 'json-mode-hook 'flycheck-mode)
 
 ;; natural docs for js
 (load (expand-file-name "nd-js" my/self-lib-dir))
