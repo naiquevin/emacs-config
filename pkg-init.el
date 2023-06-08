@@ -33,7 +33,7 @@
 (defvar pkg-init-packages
   '(s dash load-dir
       ctable concurrent
-      deferred jinja2-mode js2-mode nodejs-repl
+      deferred jinja2-mode
       pkg-info epl popup
       ansible-doc)
   "A list of packages to ensure are installed at launch")

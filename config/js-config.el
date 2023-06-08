@@ -1,23 +1,28 @@
-;;; Javascript 
+;;; Javascript
 
-;; js2-mode
-;; (require 'js2-mode)
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+(use-package js2-mode
+  :ensure t
 
-;; This sets the json indentation to 2 (default is 4)
-(setq js-indent-level 2)
+  :init
+  (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+  (load (expand-file-name "nd-js" my/self-lib-dir))
 
-;; natural docs for js
-(load (expand-file-name "nd-js" my/self-lib-dir))
-(add-hook 'js2-mode-hook
-          (lambda () (local-set-key (kbd "C-c d") #'nd-js-doc)))
+  :config
+  (setq js-indent-level 2)
+  (setq js2-basic-offset 2)
 
-(setq js2-basic-offset 2)
+  :bind
+  (("C-c d" . nd-js-doc)))
 
-(add-hook 'js2-mode-hook
-          (lambda ()
-            (define-key js2-mode-map (kbd "C-x C-e") 'nodejs-repl-send-last-sexp)
-            (define-key js2-mode-map (kbd "C-c C-r") 'nodejs-repl-send-region)
-            (define-key js2-mode-map (kbd "C-c C-k") 'nodejs-repl-send-buffer)
-            (define-key js2-mode-map (kbd "C-c C-l") 'nodejs-repl-load-file)
-            (define-key js2-mode-map (kbd "C-c C-z") 'nodejs-repl-switch-to-repl)))
+
+(use-package nodejs-repl
+  :ensure t
+
+  :after (js2-mode)
+
+  :bind
+  (("C-x C-e" . nodejs-repl-send-last-sexp))
+  (("C-c C-r" . nodejs-repl-send-region))
+  (("C-c C-k" . nodejs-repl-send-buffer))
+  (("C-c C-l" . nodejs-repl-load-file))
+  (("C-c C-z" . nodejs-repl-switch-to-repl)))
