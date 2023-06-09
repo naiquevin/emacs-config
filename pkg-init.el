@@ -31,11 +31,10 @@
 ;; DEPRECATED! Following code will be replaced with use-package
 
 (defvar pkg-init-packages
-  '(s dash load-dir
-      ctable concurrent
-      deferred jinja2-mode
-      pkg-info epl popup
-      ansible-doc)
+  '(load-dir
+    jinja2-mode
+    epl popup
+    ansible-doc)
   "A list of packages to ensure are installed at launch")
 
 

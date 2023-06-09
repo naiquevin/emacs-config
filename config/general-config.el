@@ -37,6 +37,34 @@
       default-process-coding-system '(utf-8 . utf-8))
 
 
+;; All the library packages
+
+(use-package s
+  :ensure t)
+
+
+(use-package dash
+  :ensure t)
+
+
+(use-package concurrent
+  :ensure t)
+
+
+(use-package deferred
+  :ensure t)
+
+
+;; Other generic packages
+
+(use-package ctable
+  :ensure t)
+
+
+(use-package pkg-info
+  :ensure t)
+
+
 (use-package flx
   :ensure t)
 
