@@ -31,9 +31,7 @@
 ;; DEPRECATED! Following code will be replaced with use-package
 
 (defvar pkg-init-packages
-  '(jinja2-mode
-    epl popup
-    ansible-doc)
+  '(ansible-doc)
   "A list of packages to ensure are installed at launch")
 
 

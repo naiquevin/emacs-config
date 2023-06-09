@@ -42,6 +42,11 @@
   :ensure t)
 
 
+(use-package jinja2-mode
+  :ensure t
+  :mode "\\.j2")
+
+
 (use-package dumb-jump
   :ensure t
   :bind (("C-c ." . dumb-jump-go)))
