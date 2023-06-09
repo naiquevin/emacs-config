@@ -133,6 +133,16 @@
   :ensure nil)
 
 
+(use-package ruby-mode
+  :ensure t
+  :mode "\\(\\.rb\\|Vagrantfile\\)\\'"
+  :interpreter "ruby"
+  :hook
+  ;; Use filladapt mode for ruby as 'fill-paragraph' doesn't work well
+  ;; with the builtin ruby-mode
+  (ruby-mode . filladapt-mode))
+
+
 (use-package go-mode
   :ensure t)
 
