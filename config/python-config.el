@@ -10,6 +10,39 @@
                 (append mode-line-format '((:exec venv-current-name)))))
 
 
+(defun naiq/venv-activate ()
+  "Wrapper to activate a virtualenv. Supports activating a
+virtualenv by `venv-lookup-names` in the projectile root dir or a
+`venv-location` (as a fallback)
+
+Depends on packages:
+
+  - virtualenvwrapper
+  - projectile
+  - ivy
+"
+  (interactive)
+  (let ((path (concat (projectile-project-root) ".venv")))
+    (if (file-exists-p path)
+        (ivy-read "Virtualenv found inside the project:" (cons path '())
+                  :action (lambda (vdir)
+                            ;; @NOTE: The following code is copied
+                            ;; from `venv-workon` implementation
+                            ;; inside virtualenvwrapper.el as it
+                            ;; doesn't provide a function to activate
+                            ;; a virtualenv by dir
+                            (let ((vname (venv-dir-to-name vdir)))
+                              ;; deactivate
+                              (venv-deactivate)
+                              ;; then switch
+                              (setq venv-current-name vname)
+                              ;; push it onto the history
+                              (add-to-list 'venv-history venv-current-name)
+                              ;; actually activate it
+                              (venv--activate-dir vdir))))
+      (venv-workon))))
+
+
 (use-package pytest
   :ensure t
   :bind ("C-c C-y" . pytest-module))
@@ -38,7 +71,12 @@
 (use-package python
   :ensure t
 
-  :after (smartparens rainbow-delimiters sphinx-doc flycheck-eglot)
+  :after (smartparens
+          rainbow-delimiters
+          sphinx-doc
+          flycheck-eglot
+          projectile
+          virtualenvwrapper)
 
   :config
   ;; Set ipython as the python interpreter
@@ -53,6 +91,7 @@
 
   (add-to-list 'eglot-server-programs
                '(python-mode . ("jedi-language-server")))
+  (diminish 'python " Py")
 
   :hook
   (python-mode . electric-pair-mode)
@@ -61,4 +100,7 @@
   (python-mode . rainbow-delimiters-mode)
   (python-mode . sphinx-doc-mode)
   (python-mode . eglot-w-flycheck)
-  (python-mode . company-python))
+  (python-mode . company-python)
+
+  :bind
+  (("C-c v" . naiq/venv-activate)))
