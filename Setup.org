@@ -1,0 +1,87 @@
+* Setup
+
+** Download Emacs
+
+** Common system dependencies
+
+** Programming environments
+
+*** Python
+
+**** Install python
+     Even though python is installed using xcode command line tools,
+     it has complications. So we will first install python again using
+     ~homebrew~
+
+     #+begin_src bash
+       brew install python
+     #+end_src
+
+     This would install python3 executable in the ~/usr/local/bin~
+     directory.
+
+**** Ensure that python executable is available on the machine
+     On later MacOS versions, ~python~ is not available as it was
+     meant for python2 which is deprecated. However, many emacs modes
+     assume ~python~ executable to be available. In that case, create
+     a symlink to it
+
+     #+begin_src bash
+       bin_dir=$(dirname $(which python3))
+       sudo ln -sv $bin_dir/python3 $bin_dir/python
+     #+end_src
+
+**** Install python dependencies
+     Before anything, first upgrade the version of ~pip~
+
+     #+begin_src bash
+       python -m pip install -U pip
+     #+end_src
+
+     Now install the requirements
+
+***** IPython
+      We need IPython because the python shell interpreter is
+      configured to be "ipython".
+
+      #+begin_src bash
+        python -m pip install ipython
+      #+end_src
+
+***** flake8
+      Flake8 is required as a backend for flycheck
+      in python
+      mode. Unless flake8 is installed, flycheck won't work in python
+      buffers. Once flake8 is installed, flycheck will start working
+      automatically (no config is required).
+
+      #+begin_src bash
+        python -m pip install flake8
+      #+end_src
+
+***** jedi-language-server
+      This is used as lsp server
+
+      #+begin_src bash
+        python -m pip install jedi-language-server
+      #+end_src
+
+***** Virtualenv (optional)
+      Since Python 3.3, venv module is built into python so virtualenv
+      is not required. But it may be installed for older versions of
+      python if required.
+
+
+*** Rust
+    Follow the rust documentation to install rust on the machine.
+
+    Besides rust itself, there are no external dependencies for rust
+    development.
+
+    For rust development, we're using 3 emacs modes:
+
+    1. rust mode: Provides indentation, syntax highlighting and
+       integration with cargo, rustfmt (formatter) and clippy (lint)
+    2. rustic mode: Builds on top of the rust-mode and provides
+       missing features
+    3. cargo: To perform cargo tasks from emacs
