@@ -117,6 +117,18 @@
   :ensure t)
 
 
+(use-package diminish
+  :ensure t
+  :config
+  (diminish 'eldoc-mode)
+  (diminish 'auto-revert-mode)
+  (diminish 'ivy-mode)
+  (diminish 'yas-minor-mode)  ; enabled everywhere
+  (diminish 'sphinx-doc-mode)
+  (diminish 'paredit-mode " [P]")
+  (diminish 'company-mode " Cmpy"))
+
+
 (use-package lilypond-mode
   :ensure nil
   :load-path "/Users/naiquevin/emacs/site/vendor/lilypond/"
