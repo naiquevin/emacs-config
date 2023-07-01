@@ -91,6 +91,17 @@
   :hook
   (org-mode . (lambda () (hl-line-mode 1))))
 
+
+(use-package org-contrib
+  :ensure t
+  :config
+  (org-edna-mode))
+
+
+(use-package org-edna
+  :ensure t)
+
+
 (use-package org-roam
   :ensure t
   :custom
