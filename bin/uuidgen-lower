@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+uuidgen | tr "[:upper:]" "[:lower:]"

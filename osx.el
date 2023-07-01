@@ -50,5 +50,13 @@
 (setq epa-pinentry-mode 'loopback)
 
 
+;; Custom uuidgen implementation to generate lower case uuids on
+;; MacOS. The `uuidgen-lower` script is available under `bin/`
+;; directory that needs to be copied to a directory in PATH
+(if (executable-find "uuidgen-lower")
+    (setq my/uuidgen-program (setq org-id-uuid-program (executable-find "uuidgen-lower")))
+  (setq my/uuidgen-program "uuidgen"))
+
+
 (provide 'osx)
 

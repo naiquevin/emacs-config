@@ -85,3 +85,16 @@
     2. rustic mode: Builds on top of the rust-mode and provides
        missing features
     3. cargo: To perform cargo tasks from emacs
+
+
+** Org mode
+
+*** Custom script for lower case UUIDs on MacOS
+
+    On macos, the default ~uuidgen~ script generates UUIDs in
+    uppercase. For consistency, enforce lower case UUID generation by
+    copying the ~uuidgen-lower~ provided in this repo
+
+    #+begin_src bash
+      ln -sv bin/uuidgen-lower /usr/local/bin/
+    #+end_src
