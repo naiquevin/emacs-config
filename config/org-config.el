@@ -17,10 +17,11 @@
         '(("TODO" :foreground "#dc322f" :weight bold)
           ("DONE" :foreground "#859900" :weight bold)
           ("WIP" :foreground "#b58900" :weight bold)
+          ("INPROGRESS" :foreground "#b58900" :weight bold)
           ("BLOCKED" :foreground "#cb4b16" :weight bold)
           ("PARKED" :foreground "#586e75" :weight bold)
           ("IMPROV" :foreground "#268bd2" :weight bold)
-          ("NEXT" :foreground "#b58900" :weight bold)))
+          ("NEXT" :foreground "#268bd2" :weight bold)))
 
   ;;---------------------------------------------------------
 
