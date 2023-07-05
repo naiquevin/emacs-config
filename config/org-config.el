@@ -91,7 +91,10 @@
   ;;---------------------------------------------------------
 
   :hook
-  (org-mode . (lambda () (hl-line-mode 1))))
+  (org-mode . (lambda () (hl-line-mode 1)))
+
+  :bind
+  (("C-c i" . org-id-get-create)))
 
 
 (use-package org-contrib
