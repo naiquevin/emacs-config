@@ -12,18 +12,10 @@ This is my emacs configuration which I use both on my work laptop
 * Customize is set to write to a separate `custom.el` file and not
   `init.el` itself.
 
-* The new method for package management is via `use-package`. However,
-  there are still some modes that are tracked using the
-  `pkg-init-packages` var (see next point).
+* The new method for package management is via `use-package`.
 
-* [Deprecated] Whatever that can be installed using `package.el` is
-  installed using it. To keep track, the list of the modes installed
-  by package.el is added to the var `pkg-init-packages` in
-  `pkg-init.el`. (Note: This method to ensure installed packages is
-  stolen from [emacs prelude](https://github.com/bbatsov/prelude/)).
-
-* Single file 3rd party modes not found via elpa are added to `lib`
-  dir.
+* Single file 3rd party modes not found in popular and reliable
+  package repositories are added to `lib` dir.
 
 * Functions and modes written by me are added to `naiquevin`
   dir. (Note: `sphinx-doc.el` file in this dir is a symlink since it's
@@ -37,6 +29,23 @@ This is my emacs configuration which I use both on my work laptop
   `after-init-hook`
 
 * Themes are added to `themes`.
+
+* The repo also provides some scripts which can be found under `bin`
+  directory. These may have to be copied to relevant
+  locations. Separate sections in this Setup document will cover it.
+
+* The `naiquevin` dir contains utils and snippets written by me.
+
+* The `priv` dir is empty but is meant for adding any files that we
+  don't want to track in git. For eg. snippets relevant to my
+  employer that I use at work.
+
+* The `vendor` dir contains third party open source libs that may have
+  to be cloned and included manually for whatever reason eg. package
+  not being published in any of the package repositories. An example
+  of this is the [solarized
+  theme](https://github.com/sellout/emacs-color-theme-solarized) for
+  emacs by Greg Pfeil.
 
 
 ## System wide dependencies
