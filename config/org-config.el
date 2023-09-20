@@ -26,34 +26,26 @@
   ;;---------------------------------------------------------
 
   ;; Agenda related config
-  (setq org-agenda-files (mapcar (lambda (x)
-                                   (concat org-directory "/"  x))
-                                 '("gtd.org"
-                                   "work.org"
-                                   "sideprojects.org"
-                                   "ideas.org")))
+  (setq org-agenda-files
+        (mapcar (lambda (x)
+                  (concat org-directory "/"  x))
+                '("finance/"
+                  "projects/"
+                  "inbox.org")))
 
   ;; Org Capture
   (setq org-capture-templates
-        '(("t" "Todo" entry (file+headline "gtd.org" "Tasks")
-           ;; Note that the 2 spaces before `%i` help in aligning the content
-           "* TODO %?\nSCHEDULED: %(org-insert-time-stamp (org-read-date nil t \"+0d\"))\n  %i\n")
-          ("i" "Idea" entry (file+headline "gtd.org" "Ideas")
-           "* %?\n")
-          ("l" "Link" entry (file+headline "gtd.org" "Links")
-           "* %?\n %i\n")
-
-          ;; Helpshift specific prefixed keys
-          ("h" "Templates for Helpshift tasks")
-          ("ht" "Task" entry (file+olp "work.org" "Todo @ Helpshift" "Tasks")
-           "* TODO %?\nSCHEDULED: %(org-insert-time-stamp (org-read-date nil t \"+0d\"))\n  %i - %a\n")))
+        '(("t" "Todo" entry (file+headline "inbox.org" "Inbox")
+           ;; Note that the 2 spaces before `SCHEDULE` and `%i` help
+           ;; in aligning the content
+           "* TODO %?\n  SCHEDULED: %(org-insert-time-stamp (org-read-date nil t \"+0d\"))\n  %i\n")))
 
   ;; Setup refile targets
   (setq org-refile-targets
         ;; top level headlines in current buffer
-        '((nil :maxlevel . 9)
+        '((nil :maxlevel . 4)
           ;; top level headlines in other agenda files
-          (org-agenda-files :maxlevel . 9)))
+          (org-agenda-files :maxlevel . 1)))
 
   (setq org-outline-path-complete-in-steps nil)
   (setq org-refile-use-outline-path t)
@@ -65,11 +57,8 @@
   (setq org-agenda-skip-scheduled-if-deadline-is-shown t)
 
   (setq org-agenda-custom-commands
-        '(("w" "Agenda view for work" agenda ""
-           ((org-agenda-category-filter-preset '("+work"))
-            (org-agenda-skip-function '(org-agenda-skip-entry-if 'todo '("PARKED")))))
-          ("p" "Agenda view for personal" agenda ""
-           ((org-agenda-category-filter-preset '("+gtd"))))))
+        '(("i" "Agenda view for Inbox (to be refiled)" agenda ""
+           ((org-agenda-category-filter-preset '("+inbox"))))))
 
   ;;---------------------------------------------------------
 
