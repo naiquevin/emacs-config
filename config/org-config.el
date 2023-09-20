@@ -10,6 +10,13 @@
   (setq org-id-method 'uuid)
   (setq org-id-uuid-program my/uuidgen-program)
 
+  ;; Store backups for org files in a separate dir.
+  ;;
+  ;; Why? Most of my org files are synced using dropbox so this
+  ;; prevents the dropbox dir from getting clutterred.
+  (add-to-list 'backup-directory-alist
+               `("[^.]+org" . ,temporary-file-directory))
+
   ;;---------------------------------------------------------
 
   ;; Appearance related config
