@@ -124,4 +124,5 @@
          ("C-c n j" . org-roam-dailies-capture-today))
   :config
   (org-roam-setup)
-  (org-roam-db-autosync-mode))
+  (org-roam-db-autosync-mode)
+  (setq org-roam-dailies-directory "daily/"))
