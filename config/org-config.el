@@ -128,3 +128,7 @@
   (org-roam-setup)
   (org-roam-db-autosync-mode)
   (setq org-roam-dailies-directory "daily/"))
+
+
+(use-package org-roam-ui
+  :ensure t)

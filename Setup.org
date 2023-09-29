@@ -98,3 +98,11 @@
     #+begin_src bash
       ln -sv bin/uuidgen-lower /usr/local/bin/
     #+end_src
+
+*** Graphviz for visualizing org roam graph
+    Graphviz can be handy for visualizing org-roam graph although
+    org-roam-ui is a much better interface.
+    #+begin_src bash
+      brew install graphviz
+    #+end_src
+    Note that graphviz is not required for org-roam-ui
