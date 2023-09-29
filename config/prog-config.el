@@ -21,9 +21,8 @@
 
 (use-package projectile
   :ensure t
-  :custom
-  (projectile-mode-line '(:eval (format " Project:%s" (projectile-project-name))))
   :config
+  (setq projectile-mode-line-prefix " Project")
   (projectile-mode +1)
   :bind-keymap
   ("C-c p" . projectile-command-map))
