@@ -22,3 +22,7 @@
   :ensure t
   :hook
   (rust-mode . cargo-minor-mode))
+
+
+(use-package rust-playground
+  :ensure t)

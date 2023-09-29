@@ -76,16 +76,16 @@
     Follow the rust documentation to install rust on the machine.
 
     Besides rust itself, there are no external dependencies for rust
-    development.
+    development. For rust development, we're using 3 emacs modes:
 
-    For rust development, we're using 3 emacs modes:
-
-    1. rust mode: Provides indentation, syntax highlighting and
+    1. ~rust-mode~: Provides indentation, syntax highlighting and
        integration with cargo, rustfmt (formatter) and clippy (lint)
-    2. rustic mode: Builds on top of the rust-mode and provides
+    2. ~rustic~ mode: Builds on top of the rust-mode and provides
        missing features
-    3. cargo: To perform cargo tasks from emacs
-
+    3. ~cargo~: To perform cargo tasks from emacs
+    4. ~rust-playground~ mode: Minor mode for quickly running snippets
+       of code from within emacs as an alternative to the online rust
+       playground - https://play.rust-lang.org
 
 ** Org mode
 
