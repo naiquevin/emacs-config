@@ -21,14 +21,11 @@
 
   ;; Appearance related config
   (setq org-todo-keyword-faces
-        '(("TODO" :foreground "#dc322f" :weight bold)
-          ("DONE" :foreground "#859900" :weight bold)
-          ("WIP" :foreground "#b58900" :weight bold)
-          ("INPROGRESS" :foreground "#b58900" :weight bold)
-          ("BLOCKED" :foreground "#cb4b16" :weight bold)
-          ("PARKED" :foreground "#586e75" :weight bold)
-          ("IMPROV" :foreground "#268bd2" :weight bold)
-          ("NEXT" :foreground "#268bd2" :weight bold)))
+        '(("TODO" :foreground "#dc322f" :weight normal)
+          ("DONE" :foreground "#859900" :weight normal)
+          ("PROG" :foreground "#268bd2" :weight bold)
+          ("WAIT" :foreground "#cb4b16" :weight bold)
+          ("NEXT" :foreground "#6c71c4" :weight normal)))
 
   ;;---------------------------------------------------------
 
