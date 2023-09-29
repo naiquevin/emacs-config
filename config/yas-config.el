@@ -3,7 +3,9 @@
 (use-package yasnippet-snippets)
 
 (use-package yasnippet
+  :after (diminish)
   :requires yasnippet-snippets
+  :diminish yas-minor-mode
   :config
   (setq yas-snippet-dirs
         (list (expand-file-name "snippets"

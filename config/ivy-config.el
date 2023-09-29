@@ -11,6 +11,7 @@
 
 (use-package ivy
   :ensure t
+  :after (diminish)
   :init
   (setq ivy-use-virtual-buffers t
         ivy-re-builders-alist '((swiper . ivy--regex-plus)
@@ -22,7 +23,8 @@
   (icomplete-mode -1)
   :bind (("C-x b" . ivy-switch-buffer)
          ("C-x B" . ivy-switch-buffer-other-window)
-         ("C-c C-r" . ivy-resume)))
+         ("C-c C-r" . ivy-resume))
+  :diminish ivy-mode)
 
 
 (use-package counsel

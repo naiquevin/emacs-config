@@ -49,7 +49,9 @@ Depends on packages:
 
 
 (use-package sphinx-doc
-  :ensure t)
+  :ensure t
+  :after (diminish)
+  :diminish sphinx-doc-mode)
 
 
 (use-package company-jedi
@@ -91,7 +93,6 @@ Depends on packages:
 
   (add-to-list 'eglot-server-programs
                '(python-mode . ("jedi-language-server")))
-  (diminish 'python " Py")
 
   :hook
   (python-mode . electric-pair-mode)

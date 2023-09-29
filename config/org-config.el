@@ -106,7 +106,9 @@
 
 
 (use-package org-edna
-  :ensure t)
+  :ensure t
+  :after (diminish)
+  :diminish org-edna-mode)
 
 
 (use-package org-roam

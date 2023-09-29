@@ -118,15 +118,7 @@
 
 
 (use-package diminish
-  :ensure t
-  :config
-  (diminish 'eldoc-mode)
-  (diminish 'auto-revert-mode)
-  (diminish 'ivy-mode)
-  (diminish 'yas-minor-mode)  ; enabled everywhere
-  (diminish 'sphinx-doc-mode)
-  (diminish 'paredit-mode " [P]")
-  (diminish 'company-mode " Cmpy"))
+  :ensure t)
 
 
 (use-package lilypond-mode

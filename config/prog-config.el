@@ -13,6 +13,12 @@
 (add-hook 'c-mode-hook 'electric-pair-mode)
 
 
+;; @NOTE: This use-package block for `eldoc-mode' has been added only
+;; to diminish the lighter for it.
+(use-package eldoc-mode
+  :diminish eldoc-mode)
+
+
 (use-package projectile
   :ensure t
   :custom
@@ -25,11 +31,13 @@
 
 (use-package paredit
   :ensure t
+  :after (diminish)
   :config
   ;; Disable C-j keybinding of paredit as it overrides paredit-return
   ;; in ielm mode. C-j is redundant as M-j practically does the same
   ;; thing.
-  (define-key paredit-mode-map (kbd "C-j") nil))
+  (define-key paredit-mode-map (kbd "C-j") nil)
+  :diminish (paredit-mode . " [P]"))
 
 
 (use-package smartparens
@@ -66,7 +74,9 @@
 
 
 (use-package company
-  :ensure t)
+  :ensure t
+  :after (diminish)
+  :diminish (company-mode . " CY"))
 
 
 (use-package csv-mode
