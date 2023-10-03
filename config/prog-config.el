@@ -75,6 +75,8 @@
 (use-package company
   :ensure t
   :after (diminish)
+  :config
+  (setq company-idle-delay 2)
   :diminish (company-mode . " CY"))
 
 
