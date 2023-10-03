@@ -9,7 +9,12 @@
 
   :hook
   (rust-mode . eldoc-mode)
-  (rust-mode . eglot-ensure))
+  ;; @TODO: Check if the current file is in a typical rust project dir
+  ;; (using cargo) and initialize eglot only in that case. This is to
+  ;; allow creating random rustc files which can be simply compiled
+  ;; and run using rustc
+  (rust-mode . eglot-ensure)
+  (rust-mode . filladapt-mode))
 
 
 (use-package rustic
