@@ -21,7 +21,12 @@
   :after (js2-mode)
 
   :bind
-  (("C-x C-e" . nodejs-repl-send-last-sexp))
+  ;; @TODO: The following overrides expression evaluation of elisp as
+  ;; well. Bind within local key map here -
+  ;; https://github.com/jwiegley/use-package#binding-within-local-keymaps
+  ;;
+  ;;
+  ;; (("C-x C-e" . nodejs-repl-send-last-sexp))
   (("C-c C-r" . nodejs-repl-send-region))
   (("C-c C-k" . nodejs-repl-send-buffer))
   (("C-c C-l" . nodejs-repl-load-file))
