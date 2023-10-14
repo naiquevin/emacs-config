@@ -14,6 +14,6 @@
               (expand-file-name "snippets"
                                 my/priv-dir) ;; private snippets (not tracked in git)
               ;; @TODO: Make the following dynamic
-              (expand-file-name "yasnippet-snippets-20230314.2056"
+              (expand-file-name "yasnippet-snippets-20230314.2056/snippets"
                                 my/elpa-dir)))
   (yas-global-mode 1))
