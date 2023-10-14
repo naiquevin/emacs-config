@@ -4,6 +4,12 @@
 (setq my/cargo-dir (expand-file-name "~/.cargo"))
 
 
+(defun naiq/read-only-cargo-lock-file ()
+  (when (and (string= (file-name-nondirectory (buffer-file-name)) "Cargo.lock")
+             (not buffer-read-only))
+    (read-only-mode 1)))
+
+
 (use-package rust-mode
   :ensure t
 
@@ -12,6 +18,11 @@
         '(:documentHighlightProvider
           :signatureHelpProvider
           :inlayHintProvider))
+  ;; Open cargo lock file in read-only mode
+  ;;
+  ;; @TODO: Find out why defining this in the `:hook` section doesn't
+  ;; work
+  (add-hook 'find-file-hook 'naiq/read-only-cargo-lock-file)
 
   :hook
   (rust-mode . eldoc-mode)
