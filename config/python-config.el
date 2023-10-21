@@ -54,16 +54,6 @@ Depends on packages:
   :diminish sphinx-doc-mode)
 
 
-(use-package company-jedi
-  :ensure t
-  :after (company))
-
-
-(defun company-python ()
-  (company-mode)
-  (add-to-list 'company-backends 'company-jedi))
-
-
 (defun eglot-w-flycheck ()
   (eglot-ensure)
   (flycheck-mode)
@@ -101,7 +91,7 @@ Depends on packages:
   (python-mode . rainbow-delimiters-mode)
   (python-mode . sphinx-doc-mode)
   (python-mode . eglot-w-flycheck)
-  (python-mode . company-python)
+  (python-mode . company-mode)
 
   :bind
   (("C-c v" . naiq/venv-activate)))
