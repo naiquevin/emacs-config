@@ -63,7 +63,7 @@
   :ensure t
   :config
   (setq sqlformat-command 'pgformatter)
-  :bind (("C-c C-f" . sqlformat-buffer)))
+  :bind (:map sql-mode-map ("C-c C-f" . sqlformat-buffer)))
 
 
 (use-package yaml-mode

@@ -87,6 +87,12 @@
        of code from within emacs as an alternative to the online rust
        playground - https://play.rust-lang.org
 
+*** SQL
+    - Install pgformatter for formatting sql buffers
+      #+begin_src bash
+        brew install pgformatter
+      #+end_src
+
 ** Org mode
 
 *** Custom script for lower case UUIDs on MacOS
