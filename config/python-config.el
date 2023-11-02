@@ -54,12 +54,6 @@ Depends on packages:
   :diminish sphinx-doc-mode)
 
 
-(defun eglot-w-flycheck ()
-  (eglot-ensure)
-  (flycheck-mode)
-  (flycheck-eglot-mode 1))
-
-
 (use-package python
   :ensure t
 
@@ -100,8 +94,9 @@ Depends on packages:
   (python-mode . smartparens-mode)
   (python-mode . rainbow-delimiters-mode)
   (python-mode . sphinx-doc-mode)
-  (python-mode . eglot-w-flycheck)
+  (python-mode . flycheck-mode)
   (python-mode . company-mode)
+  (python-mode . eglot-ensure)
 
   :bind
   (("C-c v" . naiq/venv-activate)))

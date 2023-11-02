@@ -22,6 +22,7 @@
 
   :hook
   (rust-mode . eldoc-mode)
+  (rust-mode . flycheck-mode)
   (rust-mode . company-mode)
   ;; @TODO: Check if the current file is in a typical rust project dir
   ;; (using cargo) and initialize eglot only in that case. This is to
