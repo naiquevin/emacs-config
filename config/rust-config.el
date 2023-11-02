@@ -14,10 +14,6 @@
   :ensure t
 
   :config
-  (setq eglot-ignored-server-capabilities
-        '(:documentHighlightProvider
-          :signatureHelpProvider
-          :inlayHintProvider))
   ;; Open cargo lock file in read-only mode
   ;;
   ;; @TODO: Find out why defining this in the `:hook` section doesn't

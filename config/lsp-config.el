@@ -1,7 +1,12 @@
 ;; Config related to lsp (Language server protocol)
 
 (use-package eglot
-  :ensure t)
+  :ensure t
+  :config
+  (setq eglot-ignored-server-capabilities
+        '(:documentHighlightProvider
+          :signatureHelpProvider
+          :inlayHintProvider)))
 
 
 (use-package flycheck-eglot
