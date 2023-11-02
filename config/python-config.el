@@ -82,7 +82,17 @@ Depends on packages:
         python-shell-completion-string-code "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
 
   (add-to-list 'eglot-server-programs
-               '(python-mode . ("jedi-language-server")))
+               `(python-mode . ("jedi-language-server"
+                                ;; Set initial options to configure
+                                ;; the active virtualenv (if any) as
+                                ;; documented here -
+                                ;; https://www.gnu.org/software/emacs/manual/html_mono/eglot.html#User_002dspecific-configuration
+                                :initializationOptions
+                                ,(lambda (s)
+                                   (let ((ve (getenv "VIRTUAL_ENV")))
+                                     (if ve
+                                         `(:workspace (:environmentPath ,(concat ve "bin/python")))
+                                       eglot-{}))))))
 
   :hook
   (python-mode . electric-pair-mode)
