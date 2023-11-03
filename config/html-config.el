@@ -1,12 +1,14 @@
 ;;; Jinja2 Templates
 
-;; For all .html under /python/../templates/, jinja2-mode activated on
-;; find-file
+;; @TODO: Extend the following code so that a static var can be
+;; defined with a list of project paths and jinja2-mode should be
+;; enabled for all html files under that projet.
 (add-hook
  'find-file-hook
  (lambda ()
    (when (and (string= (file-name-extension (buffer-file-name)) "html")
-              (string-match-p "/python/" (buffer-file-name))
-              (string-match-p "/templates/" (buffer-file-name)))
+              (projectile-project-root)
+              (string-match-p (expand-file-name "~/blog/blog-src")
+                              (projectile-project-root)))
      (jinja2-mode))))
 
