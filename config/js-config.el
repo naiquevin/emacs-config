@@ -31,3 +31,21 @@
   (("C-c C-k" . nodejs-repl-send-buffer))
   (("C-c C-l" . nodejs-repl-load-file))
   (("C-c C-z" . nodejs-repl-switch-to-repl)))
+
+
+(use-package web-mode
+  :ensure t
+  :mode ("\\.html\\'" "\\.vue\\'")
+  :config
+  ;; Adjust indentation
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+
+  ;; Adjust font faces to suite solarized dark theme
+  (set-face-attribute 'web-mode-html-tag-bracket-face nil :foreground "#839496")
+  (set-face-attribute 'web-mode-html-tag-face nil :foreground "#268bd2")
+  (set-face-attribute 'web-mode-doctype-face nil :foreground "#859900")
+  (set-face-attribute 'web-mode-html-attr-name-face nil :foreground "#b58900")
+  (set-face-attribute 'web-mode-html-attr-custom-face nil :foreground "#cb4b16")
+  (set-face-attribute 'web-mode-html-attr-equal-face nil :foreground "#839496"))
