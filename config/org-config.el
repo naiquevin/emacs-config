@@ -15,7 +15,7 @@
   ;; Why? Most of my org files are synced using dropbox so this
   ;; prevents the dropbox dir from getting clutterred.
   (add-to-list 'backup-directory-alist
-               `("[^.]+org" . ,temporary-file-directory))
+               `("[^.]+\.org" . ,temporary-file-directory))
 
   ;;---------------------------------------------------------
 
