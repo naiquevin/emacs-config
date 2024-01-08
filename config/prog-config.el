@@ -16,7 +16,9 @@
 ;; @NOTE: This use-package block for `eldoc-mode' has been added only
 ;; to diminish the lighter for it.
 (use-package eldoc-mode
-  :diminish eldoc-mode)
+  :diminish eldoc-mode
+  :config
+  (setq eldoc-echo-area-use-multiline-p nil))
 
 
 (use-package projectile
