@@ -70,7 +70,7 @@
   (require 'org-crypt)
   (org-crypt-use-before-save-magic)
   (setq org-tags-exclude-from-inheritance '("crypt"))
-  (setq org-crypt-key "4096R/4930D5CB")
+  (setq org-crypt-key "naikvin@gmail.com")
 
   ;;---------------------------------------------------------
 
