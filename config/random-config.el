@@ -27,5 +27,5 @@
 
 (require 'yaml-path)
 (add-hook 'yaml-mode-hook
-          '(lambda ()
-             (define-key yaml-mode-map (kbd "C-c C-p") 'yaml-path/path)))
+          (lambda ()
+            (define-key yaml-mode-map (kbd "C-c C-p") 'yaml-path/path)))
