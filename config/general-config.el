@@ -37,6 +37,13 @@
       default-process-coding-system '(utf-8 . utf-8))
 
 
+(global-whitespace-mode)
+(setq whitespace-style '(face tabs tab-mark trailing))
+(custom-set-faces
+ '(whitespace-tab ((t (:foreground "#636363")))))
+(setq whitespace-display-mappings
+  '((tab-mark 9 [124 9] [92 9])))
+
 ;; All the library packages
 
 (use-package s
