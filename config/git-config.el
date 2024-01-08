@@ -61,7 +61,7 @@
                       :background "#268bd2")
 
   (set-face-attribute 'magit-log-graph nil
-                      :background nil))
+                      :background 'unspecified))
 
 
 (use-package magit
