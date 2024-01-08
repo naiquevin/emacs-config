@@ -45,4 +45,5 @@
 
 
 (use-package rust-playground
-  :ensure t)
+  :ensure t
+  :bind (("C-c e" . rust-playground-exec)))
