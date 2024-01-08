@@ -4,6 +4,7 @@
   :ensure t
   :config
   (add-to-list 'eglot-stay-out-of 'flymake)
+  (setq eglot-report-progress nil)
   (setq eglot-ignored-server-capabilities
         '(:documentHighlightProvider
           :signatureHelpProvider
