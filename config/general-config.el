@@ -136,3 +136,6 @@
   (LilyPond-lilypond-command "/Applications/LilyPond.app/Contents/Resources/bin/lilypond")
   ;; FIXME: Open in emacs buffer
   (LilyPond-pdf-command "open"))
+
+(use-package ledger-mode
+  :ensure t)
