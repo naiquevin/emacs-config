@@ -21,6 +21,8 @@
   (add-hook 'find-file-hook 'naiq/read-only-cargo-lock-file)
 
   :hook
+  (rust-mode . electric-pair-mode)
+  (rust-mode . turn-on-auto-revert-mode)
   (rust-mode . eldoc-mode)
   (rust-mode . flycheck-mode)
   (rust-mode . company-mode)
