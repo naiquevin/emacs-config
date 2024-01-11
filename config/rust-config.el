@@ -48,4 +48,5 @@
 
 (use-package rust-playground
   :ensure t
-  :bind (("C-c e" . rust-playground-exec)))
+  :bind (("C-c e" . rust-playground-exec)
+         ("C-c t" . rust-playground-switch-between-cargo-and-main)))
