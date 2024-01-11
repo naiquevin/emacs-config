@@ -3,11 +3,35 @@
 This is my emacs configuration which I use both on my work laptop
 (running OS X) as well as personal laptop (running Ubuntu).
 
+## Installing Emacs
+
+I am currently using this config on MacOS. Until a few years ago, I
+was using it on linux too, but the current config is not tested on
+linux for a while.
+
+On MacOS I install emacs using the [emacs-plus homebrew
+formula](https://github.com/d12frosted/homebrew-emacs-plus).
+
+To install follow the instructions in the README of the above git
+repo. For quick reference, you just need to run,
+
+
+``` shell
+    brew tap d12frosted/emacs-plus
+    brew install emacs-plug@29
+
+    # Create a link in Applications folder
+    osascript -e 'tell application "Finder" to make alias file to posix file "/usr/local/opt/emacs-plus@29/Emacs.app" at POSIX file "/Applications"'
+```
 
 ## Organization of code & config
 
 * `~/.emacs.d/init.el` file just loads the `init.el` file inside this
-  repo and does nothing else. So no symlinking and such other things.
+  repo and does nothing else. So no symlinking and such other
+  things. I am managing `~/.emacs.d/init.el` and
+  `~/.emacs.d/early-init.el` as dotfiles using stow. You can find them
+  in my [dotfiles](https://github.com/naiquevin/dotfiles) repo on
+  github.
 
 * Customize is set to write to a separate `custom.el` file and not
   `init.el` itself.
