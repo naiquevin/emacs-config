@@ -96,7 +96,13 @@ Depends on packages:
   (python-mode . sphinx-doc-mode)
   (python-mode . flycheck-mode)
   (python-mode . company-mode)
-  (python-mode . eglot-ensure)
+  (python-mode . (lambda ()
+                   ;; The LSP backend for python
+                   ;; `jedi-language-server` doesn't provide flycheck
+                   ;; capabilities. So we configure flycheck-eglot to
+                   ;; consider other syntax checkers too
+                   (setq flycheck-eglot-exclusive nil)
+                   (eglot-ensure)))
 
   :bind
   (("C-c v" . naiq/venv-activate)))
