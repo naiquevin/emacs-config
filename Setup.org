@@ -1,22 +1,28 @@
 * Setup
 
 ** Download Emacs
+   On MacOS I install emacs using the [[https://github.com/d12frosted/homebrew-emacs-plus][homebrew-emacs-plus]] formula. To
+   install follow the instructions in the README of the above git
+   repo. For quick reference, you just need to run,
+   #+begin_src bash
+     brew tap d12frosted/emacs-plus
+     brew install emacs-plug@29
+
+     # Create a link in Applications folder
+     osascript -e 'tell application "Finder" to make alias file to posix file "/usr/local/opt/emacs-plus@29/Emacs.app" at POSIX file "/Applications"'
+   #+end_src
 
 ** Common system dependencies
 
 ** Programming environments
-
 *** Python
-
 **** Install python
      Even though python is installed using xcode command line tools,
      it has complications. So we will first install python again using
      ~homebrew~
-
      #+begin_src bash
        brew install python
      #+end_src
-
      This would install python3 executable in the ~/usr/local/bin~
      directory.
 
@@ -25,7 +31,6 @@
      meant for python2 which is deprecated. However, many emacs modes
      assume ~python~ executable to be available. In that case, create
      a symlink to it
-
      #+begin_src bash
        bin_dir=$(dirname $(which python3))
        sudo ln -sv $bin_dir/python3 $bin_dir/python
@@ -33,7 +38,6 @@
 
 **** Install python dependencies
      Before anything, first upgrade the version of ~pip~
-
      #+begin_src bash
        python -m pip install -U pip
      #+end_src
@@ -43,7 +47,6 @@
 ***** IPython
       We need IPython because the python shell interpreter is
       configured to be "ipython".
-
       #+begin_src bash
         python -m pip install ipython
       #+end_src
@@ -54,14 +57,12 @@
       mode. Unless flake8 is installed, flycheck won't work in python
       buffers. Once flake8 is installed, flycheck will start working
       automatically (no config is required).
-
       #+begin_src bash
         python -m pip install flake8
       #+end_src
 
 ***** jedi-language-server
       This is used as lsp server
-
       #+begin_src bash
         python -m pip install jedi-language-server
       #+end_src
@@ -71,13 +72,11 @@
       is not required. But it may be installed for older versions of
       python if required.
 
-
 *** Rust
     Follow the rust documentation to install rust on the machine.
 
     The only external dependency for rust development is
     [[https://rust-analyzer.github.io/][rust-analyzer]]. It can be installed using homebrew
-
     #+begin_src bash
       brew install rust-analyzer
     #+end_src
@@ -104,7 +103,6 @@
       #+end_src
 
 ** Org mode
-
 *** Custom script for lower case UUIDs on MacOS
 
     On macos, the default ~uuidgen~ script generates UUIDs in
@@ -122,3 +120,9 @@
       brew install graphviz
     #+end_src
     Note that graphviz is not required for org-roam-ui
+
+*** org-ledger
+    Ledger needs to be installed 
+    #+begin_src bash
+      brew install ledger
+    #+end_src
