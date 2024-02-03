@@ -140,4 +140,11 @@
   (LilyPond-pdf-command "open"))
 
 (use-package ledger-mode
-  :ensure t)
+  :ensure t
+  :config
+  ;; Store backups for ledger files in a separate dir.
+  ;;
+  ;; Why? Most of my org files are synced using dropbox so this
+  ;; prevents the dropbox dir from getting clutterred.
+  (add-to-list 'backup-directory-alist
+               `("[^.]+\.ledger" . ,temporary-file-directory)))
