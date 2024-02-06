@@ -4,8 +4,9 @@
 (setq my/cargo-dir (expand-file-name "~/.cargo"))
 
 
-(defun naiq/read-only-cargo-lock-file ()
-  (when (and (string= (file-name-nondirectory (buffer-file-name)) "Cargo.lock")
+(defun naiq/rust-setup-read-only-files ()
+  (when (and (or (string= (file-name-nondirectory (buffer-file-name)) "Cargo.lock")
+                 (naiq/dependency-crate-buffer-p))
              (not buffer-read-only))
     (read-only-mode 1)))
 
@@ -24,7 +25,7 @@
   ;;
   ;; @TODO: Find out why defining this in the `:hook` section doesn't
   ;; work
-  (add-hook 'find-file-hook 'naiq/read-only-cargo-lock-file)
+  (add-hook 'find-file-hook 'naiq/rust-setup-read-only-files)
 
   :hook
   (rust-mode . electric-pair-mode)
