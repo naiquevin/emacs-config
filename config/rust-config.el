@@ -10,6 +10,12 @@
     (read-only-mode 1)))
 
 
+(defun naiq/dependency-crate-buffer-p (&optional buf)
+  (let ((filepath (buffer-file-name (or buf (current-buffer))))
+        (cargo-registry-path (expand-file-name "registry/src" my/cargo-dir)))
+    (string-prefix-p cargo-registry-path filepath)))
+
+
 (use-package rust-mode
   :ensure t
 
@@ -30,13 +36,25 @@
   ;; (using cargo) and initialize eglot only in that case. This is to
   ;; allow creating random rustc files which can be simply compiled
   ;; and run using rustc
-  (rust-mode . eglot-ensure)
+  (rust-mode . (lambda ()
+                 (when (not (naiq/dependency-crate-buffer-p))
+                   (eglot-ensure))))
   (rust-mode . filladapt-mode))
 
 
 (use-package rustic
   :ensure t
+  :init
+  (setq rustic-lsp-setup-p nil)
+
   :config
+  ;; @NOTE: Setting the `rustic-lsp-client' to eglot for consistency but
+  ;; rustic will not configure eglot for rust files because
+  ;; `rustic-lsp-setup-p' is set to nil in the init block.
+  ;;
+  ;;  This is done so as to be able to call `eglot-ensure' with some
+  ;;  additional logic. Refer to the hooks section of `rust-mode'
+  ;;  above.
   (setq rustic-lsp-client 'eglot))
 
 
