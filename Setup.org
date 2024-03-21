@@ -105,6 +105,12 @@
         brew install pgformatter
       #+end_src
 
+*** C langs i.e. C, C++
+**** Install the clangd language server
+     #+begin_src bash
+       brew install llvm
+     #+end_src
+
 ** Org mode
 *** Custom script for lower case UUIDs on MacOS
 
