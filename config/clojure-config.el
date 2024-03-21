@@ -3,6 +3,7 @@
 
 (use-package flycheck-clj-kondo
   :ensure t
+  :after (flycheck)
   :init
   (with-eval-after-load 'projectile
     (add-to-list 'projectile-globally-ignored-directories ".clj-kondo"))
