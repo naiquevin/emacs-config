@@ -78,7 +78,7 @@
     The only external dependency for rust development is
     [[https://rust-analyzer.github.io/][rust-analyzer]]. It can be installed using homebrew
     #+begin_src bash
-      brew install rust-analyzer
+      rustup component add rust-analyzer
     #+end_src
 
     For rust development, we're using 3 emacs modes:
@@ -86,7 +86,10 @@
     1. ~rust-mode~: Provides indentation, syntax highlighting and
        integration with cargo, rustfmt (formatter) and clippy (lint)
     2. ~rustic~ mode: Builds on top of the rust-mode and provides
-       missing features
+       missing features. One of the thing that ~rustic~ does is
+       configure eglot but I have disabed that and doing it separately
+       instead for more control. So at this point, I am not sure what
+       exactly is ~rustic~ being used for.
     3. ~cargo~: To perform cargo tasks from emacs
     4. ~rust-playground~ mode: Minor mode for quickly running snippets
        of code from within emacs as an alternative to the online rust
