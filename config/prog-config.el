@@ -12,6 +12,12 @@
 
 (add-hook 'c-mode-hook 'electric-pair-mode)
 
+;;;; Tree-sitter config (not working for some reason)
+;; (setq treesit-language-source-alist
+;;       '((python "https://github.com/tree-sitter/tree-sitter-python")))
+;;
+;; (setq major-mode-remap-alist
+;;       '((python-mode . python-ts-mode)))
 
 (use-package eldoc
   :after (diminish)
