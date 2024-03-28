@@ -6,6 +6,7 @@
   (setq org-directory "~/Dropbox/org")
   (setq org-hide-leading-stars t)       ; hide leading stars
   (setq org-adapt-indentation t) ; indent relative to the outline level
+  (setq org-list-allow-alphabetical t)
   (setq org-log-done t)   ; display time when TODO was changed to DONE
   (setq org-id-method 'uuid)
   (setq org-id-uuid-program my/uuidgen-program)
