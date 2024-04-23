@@ -66,6 +66,15 @@
   :bind (("C-c ." . dumb-jump-go)))
 
 
+(use-package sql-indent
+  :ensure t
+  :config
+  :hook
+  (sql-mode . (lambda ()
+                (sqlind-minor-mode)
+                (setq sqlind-basic-offset 4))))
+
+
 (use-package sqlformat
   :ensure t
   :config
