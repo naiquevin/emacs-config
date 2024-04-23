@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: ledger balance
+# key: ledger/balance
+# --
+
+ledger -f $(date +%Y-%m).ledger balance$0

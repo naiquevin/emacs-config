@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: minify sql (requires pg_format)
+# key: sql/minify
+# --
+
+${1:echo} "$0" | pg_format --nocomment | grep -o -E '\S.*\S|\S' | tr '\n' ' '

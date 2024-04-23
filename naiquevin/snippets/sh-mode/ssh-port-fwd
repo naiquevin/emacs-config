@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: ssh port forward
+# key: ssh/port-fwd
+# --
+
+ssh -A -nNT -L ${1:8080}:localhost:$1 ${2:server}$0
