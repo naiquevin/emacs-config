@@ -40,7 +40,9 @@
   (rust-mode . (lambda ()
                  (when (not (naiq/dependency-crate-buffer-p))
                    (eglot-ensure))))
-  (rust-mode . filladapt-mode))
+  (rust-mode . filladapt-mode)
+
+  :bind ("C-c C-e" . eglot-code-actions))
 
 
 (use-package rustic
