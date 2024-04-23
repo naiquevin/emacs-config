@@ -17,3 +17,11 @@
               (expand-file-name "yasnippet-snippets-20230314.2056/snippets"
                                 my/elpa-dir)))
   (yas-global-mode 1))
+
+(use-package axy
+  :ensure nil
+  :requires (yasnippet dash)
+  :after (yasnippet)
+  :load-path my/self-lib-dir
+  :config
+  (global-set-key (kbd "C-c C-;") 'axy/find-&-expand-snippet))
