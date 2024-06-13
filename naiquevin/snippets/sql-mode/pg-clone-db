@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: postgres sql to clone a db
+# key: sql/pg-clone-db
+# --
+
+CREATE DATABASE ${1:target} WITH TEMPLATE ${2:src} OWNER ${3:postgres};

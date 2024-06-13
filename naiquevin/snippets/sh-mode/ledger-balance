@@ -3,4 +3,4 @@
 # key: ledger/balance
 # --
 
-ledger -f $(date +%Y-%m).ledger balance$0
+hledger -f $(date +%Y-%m).ledger balance -t$0
