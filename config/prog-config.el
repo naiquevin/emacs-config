@@ -79,7 +79,6 @@
   :ensure t
   :config
   (setq sqlformat-command 'pgformatter)
-  (setq sqlformat-args '("--extra-function" "/Users/vineet/.pg_format/functions.txt"))
   :bind (:map sql-mode-map ("C-c C-f" . sqlformat-buffer)))
 
 
