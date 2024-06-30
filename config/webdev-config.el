@@ -11,6 +11,9 @@
   (setq js-indent-level 2)
   (setq js2-basic-offset 2)
 
+  :hook
+  (js2-mode . electric-pair-mode)
+
   :bind
   (("C-c d" . nd-js-doc)))
 
