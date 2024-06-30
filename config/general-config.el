@@ -148,3 +148,12 @@
   ;; prevents the dropbox dir from getting clutterred.
   (add-to-list 'backup-directory-alist
                `("[^.]+\.ledger" . ,temporary-file-directory)))
+
+
+(use-package elfeed
+  :ensure t
+  :config
+  (setq elfeed-feeds
+        '("https://ochagavia.nl/blog/index.xml"
+          "https://blog.rust-lang.org/inside-rust/feed.xml"))
+  (global-set-key (kbd "C-x w") 'elfeed))
