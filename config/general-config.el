@@ -155,5 +155,7 @@
   :config
   (setq elfeed-feeds
         '("https://ochagavia.nl/blog/index.xml"
-          "https://blog.rust-lang.org/inside-rust/feed.xml"))
+          "https://blog.rust-lang.org/inside-rust/feed.xml"
+          "https://notes.eatonphil.com/rss.xml"
+          ))
   (global-set-key (kbd "C-x w") 'elfeed))
