@@ -132,10 +132,10 @@
 
 (use-package lilypond-mode
   :ensure nil
-  :load-path "/Users/naiquevin/emacs/site/vendor/lilypond/"
+  :load-path "/Users/vineet/emacs/site/vendor/lilypond/"
   :mode ("\\.ly\\'" . LilyPond-mode)
   :custom
-  (LilyPond-lilypond-command "/Applications/LilyPond.app/Contents/Resources/bin/lilypond")
+  (LilyPond-lilypond-command "lilypond")
   ;; FIXME: Open in emacs buffer
   (LilyPond-pdf-command "open"))
 
