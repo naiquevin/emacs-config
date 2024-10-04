@@ -53,7 +53,10 @@
   (set-face-attribute 'web-mode-doctype-face nil :foreground "#859900")
   (set-face-attribute 'web-mode-html-attr-name-face nil :foreground "#b58900")
   (set-face-attribute 'web-mode-html-attr-custom-face nil :foreground "#cb4b16")
-  (set-face-attribute 'web-mode-html-attr-equal-face nil :foreground "#839496"))
+  (set-face-attribute 'web-mode-html-attr-equal-face nil :foreground "#839496")
+
+  :hook
+  (web-mode . electric-pair-mode))
 
 
 ;; @TODO: Extend the following code so that a static var can be
