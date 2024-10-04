@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: ssh port forward via jump
+# key: ssh/jump-port-fwd
+# --
+
+ssh -A -L ${1:8080}:localhost:$1 ${2:jump-node} ssh -L $1:${3:localhost}:$1 -N ${4:dest-node}$0

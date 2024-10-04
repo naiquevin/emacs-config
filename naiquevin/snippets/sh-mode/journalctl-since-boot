@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: journalctl logs since boot
+# key: journalctl/since-boot
+# --
+
+sudo journalctl -o short-precise -k -b -1$0

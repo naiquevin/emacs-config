@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: ls but recursive
+# key: ls/recursive
+# --
+
+find ${1:.} -print$0

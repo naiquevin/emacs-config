@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: mitm reverse proxy
+# key: mitm-reverse-proxy
+# --
+
+mitmproxy --listen-port ${1:8080} --mode reverse:http://${2:localhost}:${3:9000}$0

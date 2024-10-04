@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: pg statement timeout
+# key: pg/stmt-timeout
+# --
+
+SET statement_timeout = ${1:30000};$0

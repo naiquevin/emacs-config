@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: rsync upload via jump
+# key: rsync/jump-upload
+# --
+
+rsync -av -e "ssh -A ${1:jump-node} ssh ${2:dest-node}" --progress ${3:src-dir} :~/${4:target-dir}$0

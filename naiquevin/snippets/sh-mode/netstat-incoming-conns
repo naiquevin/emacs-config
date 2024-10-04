@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: netstat incoming connections
+# key: netstat/incoming-conns
+# --
+
+netstat -tn 2>/dev/null | grep :${1:8080} | awk '{print \$5}' | cut -d: -f1 | sort | uniq -c | sort -nr | head$0

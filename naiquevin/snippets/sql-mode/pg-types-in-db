@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: pg types in db
+# key: pg/types-in-db
+# --
+
+SELECT
+    c.table_name,
+    c.column_name,
+    c.data_type
+FROM
+    information_schema.columns c
+WHERE
+    c.table_catalog = '${1:dbname}'
+    AND c.table_schema = '${2:public}';$0
+

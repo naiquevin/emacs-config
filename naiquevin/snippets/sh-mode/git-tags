@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: git list tags
+# key: git/list-tags
+# --
+
+git for-each-ref --format '%(refname:short) | %(creatordate:short)' --sort='*creatordate' refs/tags$0

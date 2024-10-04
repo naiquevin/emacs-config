@@ -1,0 +1,24 @@
+# -*- mode: snippet -*-
+# name: pg find columns in db
+# key: pg/cols-in-db
+# --
+
+SELECT
+    col.table_schema,
+    col.table_name,
+    col.ordinal_position AS column_id,
+    col.column_name,
+    col.data_type
+FROM
+    information_schema.columns col
+    JOIN information_schema.tables tab ON tab.table_schema = col.table_schema
+        AND tab.table_name = col.table_name
+        AND tab.table_type = 'BASE TABLE'
+WHERE
+    col.table_schema NOT IN ('information_schema', 'pg_catalog')
+    AND col.data_type = '${1:json}'
+ORDER BY
+    col.table_schema,
+    col.table_name,
+    col.ordinal_position;$0
+

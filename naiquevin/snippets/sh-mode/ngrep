@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: ngrep
+# key: ngrep
+# --
+
+sudo ngrep -d any $1 port ${2:8125}$0

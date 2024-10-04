@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: pg import to csv
+# key: pg/csv-import
+# --
+
+\copy ${1:tablename} from '${2:filepath.csv}' with (format csv);$0

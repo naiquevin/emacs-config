@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: docker compose verify ports
+# key: docker-compose-verify-ports
+# --
+
+grep -E '^[^#]+- "\d+:\d+"' ${1:compose.yml} | grep -Eo '\d+:\d+' | cut -d ':' -f 1 | xargs nc -vz ${2:localhost}$0

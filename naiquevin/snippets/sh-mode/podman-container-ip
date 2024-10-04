@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: podman container ip address
+# key: podmain/container-ip
+# --
+
+podman container inspect -f '{{.NetworkSettings.IPAddress}}' ${1:container-name}$0

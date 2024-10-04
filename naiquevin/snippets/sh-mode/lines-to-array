@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: lines-to-array
+# key: lines-to-array
+# --
+
+echo '$1' | jq -R -s -c 'split(""\n"")[:-1]'$0

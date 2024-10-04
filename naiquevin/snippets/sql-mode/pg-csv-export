@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: pg export to csv
+# key: pg/csv-export
+# --
+
+\copy ($0) to '${1:output}.csv' with csv

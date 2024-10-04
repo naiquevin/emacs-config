@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Better df
+# key: df-better
+# --
+
+df -h -x squashfs -x tmpfs -x devtmpfs$0

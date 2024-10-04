@@ -3,4 +3,4 @@
 # key: ssh/port-fwd
 # --
 
-ssh -A -nNT -L ${1:8080}:localhost:$1 ${2:server}$0
+ssh -A -nNT -L ${1:8080}:localhost:$1 ${2:dest-node}$0

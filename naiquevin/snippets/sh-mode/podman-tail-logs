@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: podman tail logs
+# key: podman/tail-logs
+# --
+
+podman logs --follow --since ${1:1}m ${2:container-name}$0

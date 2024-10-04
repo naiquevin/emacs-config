@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: pg calculate index size
+# key: pg/index-size
+# --
+
+SELECT pg_size_pretty(pg_indexes_size('${1:mytable}'));$0
+

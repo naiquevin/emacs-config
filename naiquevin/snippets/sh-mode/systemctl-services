@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: systemd systemctl list services
+# key: systemctl/services
+# --
+
+systemctl list-units --type=service$0
