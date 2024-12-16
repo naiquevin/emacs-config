@@ -9,7 +9,9 @@
   (setq org-list-allow-alphabetical t)
   (setq org-log-done t)   ; display time when TODO was changed to DONE
   (setq org-id-method 'uuid)
-  (setq org-id-uuid-program my/uuidgen-program)
+
+  ;; @TODO: Fix on windows
+  ;; (setq org-id-uuid-program my/uuidgen-program)
 
   ;; Store backups for org files in a separate dir.
   ;;
@@ -97,22 +99,22 @@
   (("C-c i" . org-id-get-create)))
 
 
-(use-package org-contrib
-  :ensure t
-  :config
-  (org-edna-mode))
-
-
 (use-package org-edna
   :ensure t
   :after (diminish)
   :diminish org-edna-mode)
 
 
+(use-package org-contrib
+  :ensure t
+  :config
+  (org-edna-mode))
+
+
 (use-package org-roam
   :ensure t
   :custom
-  (org-roam-directory "~/Dropbox/RoamNotes")
+  (org-roam-directory "C:/Users/Vineet/Dropbox/RoamNotes")
   :init
   (setq org-roam-v2-ack t)
   :bind (("C-c n l" . org-roam-buffer-toggle)

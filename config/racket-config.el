@@ -1,16 +1,18 @@
-;; Config for editing Racket (& Scheme) files
+;; Commented out to work on windows
 
-;; Quack (Racket)
-(require 'quack)
+;; ;; Config for editing Racket (& Scheme) files
 
-; use emacs font style instead of the default drracket one
-(setq quack-fontify-style 'emacs)
+;; ;; Quack (Racket)
+;; (require 'quack)
 
-; don't override find-file, ido is good
-(setq quack-remap-find-file-bindings-p nil)
+;; ; use emacs font style instead of the default drracket one
+;; (setq quack-fontify-style 'emacs)
 
-;; Rainbow delimiters (for scheme)
-(add-hook 'scheme-mode-hook 'rainbow-delimiters-mode)
+;; ; don't override find-file, ido is good
+;; (setq quack-remap-find-file-bindings-p nil)
 
-;; Paredit mode
-(add-hook 'scheme-mode-hook 'enable-paredit-mode)
+;; ;; Rainbow delimiters (for scheme)
+;; (add-hook 'scheme-mode-hook 'rainbow-delimiters-mode)
+
+;; ;; Paredit mode
+;; (add-hook 'scheme-mode-hook 'enable-paredit-mode)

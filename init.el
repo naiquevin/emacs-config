@@ -44,6 +44,7 @@
 
 ;; platform specific config
 (cond ((eq system-type 'darwin) (require 'osx))
+      ((eq system-type 'windows-nt) (require 'win))
       (t (require 'linux)))
 
 

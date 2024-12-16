@@ -1,6 +1,6 @@
 ;; Config for Yasnippet mode
 
-(use-package yasnippet-snippets)
+;; (use-package yasnippet-snippets)
 
 (use-package yasnippet
   :after (diminish)

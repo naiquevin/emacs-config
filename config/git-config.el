@@ -71,9 +71,11 @@
          ("C-c M-g" . magit-status)))
 
 
-(use-package git-commit
-  :ensure t)
+;; @TODO: Check if this mode works on MacOs
+;; (use-package git-commit
+;;   :ensure t)
 
 
+;; Major modes for various git config files
 (use-package git-modes
   :ensure t)

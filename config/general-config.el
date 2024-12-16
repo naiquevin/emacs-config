@@ -44,7 +44,7 @@
 (setq whitespace-display-mappings
   '((tab-mark 9 [124 9] [92 9])))
 
-(setq debug-on-quit t)
+(setq debug-on-quit nil)
 
 ;; All the library packages
 

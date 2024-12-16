@@ -163,7 +163,7 @@
 ;; don't need much customization.
 
 (use-package php-mode
-  :ensure nil)
+  :ensure t)
 
 
 (use-package ruby-mode
@@ -195,13 +195,18 @@
 
 
 (use-package sml-mode
-  :ensure nil)
+  :ensure t)
 
 
 (use-package geiser
-  :ensure nil)
+  :ensure t)
 
 
 ;; Emacs Speaks Statistics (For editing R files)
 (use-package ess
-  :ensure nil)
+  :ensure t)
+
+
+(use-package powershell
+  :ensure t
+  :if (eq system-type 'windows-nt))
