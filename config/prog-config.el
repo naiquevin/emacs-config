@@ -53,7 +53,9 @@
 
 
 (use-package rainbow-delimiters
-  :ensure t)
+  :ensure t
+  :config
+  (add-hook 'after-init-hook (lambda () (require 'rainbow-delimiters))))
 
 
 (use-package jinja2-mode

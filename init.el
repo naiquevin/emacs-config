@@ -33,10 +33,6 @@
 ;; Pre-config - Following lines need to be evaluated before config
 ;; files are loaded
 
-;; Require Rainbow-delimiters
-(add-hook 'after-init-hook (lambda () (require 'rainbow-delimiters)))
-
-
 (use-package load-dir
   :ensure t
   :init (setq load-dirs (list my/config-dir)))
