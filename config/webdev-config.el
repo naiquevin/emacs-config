@@ -1,5 +1,7 @@
 ;;; Javascript
 
+(add-to-list 'auto-mode-alist '("\\.tsx?$" . typescript-ts-mode))
+
 (use-package js2-mode
   :ensure t
 
