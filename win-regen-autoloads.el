@@ -1,16 +1,10 @@
+;; Snippet to regenerate autoloads files for all installed packages
+;; using the correct coding system on Windows.
+
+(add-to-list 'load-path my/self-lib-dir)
 
 (require 'dash)
-
-(defun elpa-pkg-dirs ()
-  (let ((elpa-dir (expand-file-name "elpa" user-emacs-directory)))
-    (mapcar (lambda (x)
-                    (concat (file-name-as-directory elpa-dir)
-                            (file-name-as-directory x)))
-                  (-remove (lambda (x)
-                             (or (string= x "..")
-                                 (string= x ".")
-                                 (string= x "archives")))
-                           (directory-files my/elpa-dir)))))
+(require 'defuns)
 
 (defun autoload-prefix (path)
   (car (-remove (lambda (x) (not x))
