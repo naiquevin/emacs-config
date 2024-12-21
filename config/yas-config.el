@@ -1,21 +1,35 @@
 ;; Config for Yasnippet mode
 
-;; (use-package yasnippet-snippets)
+(use-package yasnippet-snippets
+  :ensure t)
 
 (use-package yasnippet
+  :ensure t
   :after (diminish)
   :requires yasnippet-snippets
   :diminish yas-minor-mode
+
   :config
   (setq yas-snippet-dirs
-        (list (expand-file-name "snippets"
-                                my/self-lib-dir) ;; personal snippets
-              ;; @TODO: Include this only if it exists
-              (expand-file-name "snippets"
-                                my/priv-dir) ;; private snippets (not tracked in git)
-              ;; @TODO: Make the following dynamic
-              (expand-file-name "yasnippet-snippets-20230314.2056/snippets"
-                                my/elpa-dir)))
+        ;; Snippets can possibly be loaded from 4 different places.
+        ;;
+        ;; Order matters (Refer to documentation of
+        ;; `yas-snippet-dirs`)
+        (-filter (lambda (dir) dir)
+                 (list (expand-file-name "snippets" user-emacs-directory)
+
+                       ;; personal snippets
+                       (expand-file-name "snippets" my/self-lib-dir)
+
+                       ;; private snippets (not tracked in git)
+                       (let ((priv-snip-dir (expand-file-name "snippets" my/priv-dir)))
+                         (when (file-directory-p priv-snip-dir)
+                           priv-snip-dir))
+
+                       ;; yasnippet-snippets
+                       (concat (file-name-as-directory (elpa-pkg-dir "yasnippet-snippets"))
+                               "snippets")
+                       )))
   (yas-global-mode 1))
 
 (use-package axy

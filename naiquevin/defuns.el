@@ -91,4 +91,29 @@
       (read-string "Google: ")))))
 
 
+(defun elpa-pkg-dirs ()
+  "Lists all package dirs
+
+Lists the all paths ~/.emacs.d/elpa directory where packages are
+actually installed"
+  (let ((elpa-dir (expand-file-name "elpa" user-emacs-directory)))
+    (mapcar (lambda (x)
+              (concat (file-name-as-directory elpa-dir)
+                      (file-name-as-directory x)))
+            (-remove (lambda (x)
+                       (or (string= x "..")
+                           (string= x ".")
+                           (string= x "archives")
+                           (string= x ".DS_Store")))
+                     (directory-files my/elpa-dir)))))
+
+
+(defun elpa-pkg-dir (pkg-name)
+  "Returns the dir path where a package is installed"
+  (car (-filter (lambda (path)
+                  (let ((dirname (file-name-nondirectory (directory-file-name path))))
+                    (s-starts-with? (concat pkg-name "-") dirname)))
+                (elpa-pkg-dirs))))
+
+
 (provide 'defuns)
