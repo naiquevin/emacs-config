@@ -21,7 +21,8 @@
 
 (setq treesit-language-source-alist
       '((typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
-        (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")))
+        (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
+        (kotlin "https://github.com/fwcd/tree-sitter-kotlin" "main")))
 
 (use-package eldoc
   :after (diminish)
@@ -216,3 +217,9 @@
 (use-package powershell
   :ensure t
   :if (eq system-type 'windows-nt))
+
+
+(use-package kotlin-ts-mode
+  :ensure t
+  :config
+  (add-to-list 'auto-mode-alist '("\\.kt$" . kotlin-ts-mode)))
