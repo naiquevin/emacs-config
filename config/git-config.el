@@ -1,6 +1,5 @@
 ;; Config for git and magit
 
-
 (defun naiq/magit-set-faces ()
   (set-face-foreground 'magit-section-heading "#b58900")
   (set-face-attribute 'magit-section-highlight nil
@@ -66,6 +65,7 @@
 
 (use-package magit
   :ensure t
+  :after (paredit rainbow-delimiters)
   :hook ((magit-mode . naiq/magit-set-faces))
   :bind (("C-c C-g" . magit-status)
          ("C-c M-g" . magit-status)))
