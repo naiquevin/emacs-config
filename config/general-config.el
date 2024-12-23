@@ -44,6 +44,8 @@
 
 (setq debug-on-quit nil)
 
+(setq native-comp-async-report-warnings-errors 'silent)
+
 ;; All the library packages
 
 (use-package s
