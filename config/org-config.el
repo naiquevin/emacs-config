@@ -3,7 +3,7 @@
 (use-package org
   :config
   ;; Basics
-  (setq org-directory "~/Dropbox/org")
+  (setq org-directory "~/organon/agenda")
   (setq org-hide-leading-stars t)       ; hide leading stars
   (setq org-adapt-indentation t) ; indent relative to the outline level
   (setq org-list-allow-alphabetical t)
@@ -114,7 +114,7 @@
 (use-package org-roam
   :ensure t
   :custom
-  (org-roam-directory "~/OrgRoamNotes")
+  (org-roam-directory "~/organon/roam")
   :init
   (setq org-roam-v2-ack t)
   :bind (("C-c n l" . org-roam-buffer-toggle)
