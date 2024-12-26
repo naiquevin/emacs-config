@@ -114,7 +114,7 @@
 (use-package org-roam
   :ensure t
   :custom
-  (org-roam-directory "~/Dropbox/RoamNotes")
+  (org-roam-directory "~/OrgRoamNotes")
   :init
   (setq org-roam-v2-ack t)
   :bind (("C-c n l" . org-roam-buffer-toggle)
