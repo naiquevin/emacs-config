@@ -108,7 +108,8 @@
 (use-package org-contrib
   :ensure t
   :config
-  (org-edna-mode))
+  (org-edna-mode)
+  (require 'org-checklist))
 
 
 (use-package org-roam
