@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Find symlinks to a file
+# key: find-symlinks
+# --
+
+find -L ${1:./} -samefile $0
