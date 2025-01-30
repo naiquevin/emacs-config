@@ -65,7 +65,8 @@
 
 (use-package jinja2-mode
   :ensure t
-  :mode "\\.j2")
+  :mode (("\\.j2$" . jinja2-mode)
+         ("\\.jinja$" . jinja2-mode)))
 
 
 (use-package dumb-jump
