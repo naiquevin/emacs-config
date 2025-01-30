@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: tidy-html
+# key: tidy-html
+# --
+
+tidy --tidy-mark no -i ${1:2} -w 0 -quiet --force-output y -wrap ${2:80} -m $3 2>/dev/null$0
