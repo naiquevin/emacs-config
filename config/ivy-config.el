@@ -41,4 +41,5 @@
 (use-package counsel-projectile
   :ensure t
   :config
+  (projectile-known-projects)
   (counsel-projectile-mode))
