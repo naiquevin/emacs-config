@@ -1,5 +1,4 @@
 * Setup
-
 ** Download Emacs
    On MacOS I install emacs using the [[https://github.com/d12frosted/homebrew-emacs-plus][homebrew-emacs-plus]] formula. To
    install follow the instructions in the README of the above git
@@ -109,6 +108,12 @@
 **** Install the clangd language server
      #+begin_src bash
        brew install llvm
+     #+end_src
+*** Javascript/Typescript
+**** Install node and npm
+**** Install the typescript and typescript-language-server
+     #+begin_src bash
+       npm install -g typescript-language-server typescript
      #+end_src
 
 ** Org mode

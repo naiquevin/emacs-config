@@ -19,6 +19,7 @@
 ;; (setq major-mode-remap-alist
 ;;       '((python-mode . python-ts-mode)))
 
+;; [tag: treesitter-language-sources]
 (setq treesit-language-source-alist
       '((typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
         (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
