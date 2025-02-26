@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: ifconfig
+# key: ifconfig
+# --
+
+ip -c a
