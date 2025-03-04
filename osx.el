@@ -28,7 +28,8 @@
 ;;; Set the path properly
 (setenv "PATH"
         (concat
-         "/usr/local/bin" ":"
+         "/usr/local/bin"
+         os/path-envvar-delimiter
          (getenv "PATH")))
 
 (setq exec-path
