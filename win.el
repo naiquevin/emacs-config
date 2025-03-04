@@ -1,5 +1,5 @@
 ;; Windows specific configuration
 
-(set-frame-font "Courier New 11")
+(set-frame-font "Courier New 13")
 
 (provide 'win)
