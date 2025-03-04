@@ -37,6 +37,13 @@
   :config
   (setq projectile-mode-line-prefix " Project")
   (projectile-mode +1)
+
+  ;; NOTE: On Windows, cygwin needs to be installed and the path to
+  ;; cygwin binaries must be found in PATH (which is being ensured in
+  ;; ../win.el file)
+  (when (eq system-type 'windows-nt)
+    (setq projectile-indexing-method 'alien))
+
   :bind-keymap
   ("C-c p" . projectile-command-map))
 

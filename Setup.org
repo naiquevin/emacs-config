@@ -140,3 +140,11 @@
     #+begin_src bash
       brew install ledger
     #+end_src
+
+** Projectile
+
+*** Cygwin on Windows
+    On windows, cygwin needs to be installed
+    #+begin_src ps1
+      choco install Cygwin
+    #+end_src
