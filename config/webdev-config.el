@@ -2,7 +2,7 @@
 
 (use-package web-mode
   :ensure t
-  :mode ("\\.html\\'" "\\.vue\\'")
+  :mode ("\\.html\\'" "\\.jinja\\'" "\\.vue\\'")
   :config
   ;; Adjust indentation
   (setq web-mode-style-padding 2)
