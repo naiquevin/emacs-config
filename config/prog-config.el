@@ -232,3 +232,18 @@
   :ensure t
   :config
   (add-to-list 'auto-mode-alist '("\\.kt$" . kotlin-ts-mode)))
+
+
+(defun naiq/toggle-relative-line-numbers ()
+  "Toggle relative line numbers in the current buffer"
+  (interactive)
+  (let ((is-enabled (if (string= display-line-numbers "relative")
+                        t
+                      nil)))
+    (if is-enabled
+        (display-line-numbers-mode 0)
+      (progn
+       (setq display-line-numbers-type 'relative)
+       (display-line-numbers-mode 1)))))
+
+(global-set-key (kbd "C-c n r") 'naiq/toggle-relative-line-numbers)
