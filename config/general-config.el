@@ -166,3 +166,11 @@
 (use-package auctex
   :ensure t)
 
+
+(when (not (elpa-pkg-dir "hurl-mode"))
+  (package-vc-install "https://github.com/JasZhe/hurl-mode"))
+
+(use-package hurl-mode
+  :mode "\\.hurl\\'"
+  :config
+  (setq hurl-mode-use-json-ts-mode nil))

@@ -112,7 +112,11 @@ actually installed"
   "Returns the dir path where a package is installed"
   (car (-filter (lambda (path)
                   (let ((dirname (file-name-nondirectory (directory-file-name path))))
-                    (s-starts-with? (concat pkg-name "-") dirname)))
+                    ; pkgs installed with `package-vc-install` don't
+                    ; have `-<version>` suffix, so check for that
+                    ; first
+                    (or (string= pkg-name dirname)
+                        (s-starts-with? (concat pkg-name "-") dirname))))
                 (elpa-pkg-dirs))))
 
 
