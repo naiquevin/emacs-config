@@ -161,3 +161,8 @@
           "https://melodyofcuts.com/feed/?type=rss"
           "https://nadh.in/index.xml"))
   (global-set-key (kbd "C-x w") 'elfeed))
+
+
+(use-package auctex
+  :ensure t)
+
