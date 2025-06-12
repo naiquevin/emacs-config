@@ -157,5 +157,7 @@
         '("https://ochagavia.nl/blog/index.xml"
           "https://blog.rust-lang.org/inside-rust/feed.xml"
           "https://notes.eatonphil.com/rss.xml"
-          "https://smallcultfollowing.com/babysteps/atom.xml"))
+          "https://smallcultfollowing.com/babysteps/atom.xml"
+          "https://melodyofcuts.com/feed/?type=rss"
+          "https://nadh.in/index.xml"))
   (global-set-key (kbd "C-x w") 'elfeed))
