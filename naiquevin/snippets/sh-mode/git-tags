@@ -3,4 +3,4 @@
 # key: git/list-tags
 # --
 
-git for-each-ref --format '%(refname:short) | %(creatordate:short)' --sort='*creatordate' refs/tags$0
+git for-each-ref --format '%(creatordate:short) | %(refname:short)' refs/tags | sort -r$0
