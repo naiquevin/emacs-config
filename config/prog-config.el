@@ -170,6 +170,7 @@
 
   :config
   (add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
+  (add-to-list 'auto-mode-alist '("tsconfig\\.json$" . jsonc-mode))
 
   :hook
   (json-mode . flycheck-mode))
