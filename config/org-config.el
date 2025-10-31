@@ -133,3 +133,9 @@
 
 (use-package org-roam-ui
   :ensure t)
+
+
+(use-package org-noter
+  :config
+  (setq org-noter-always-create-frame nil)
+  :ensure t)
