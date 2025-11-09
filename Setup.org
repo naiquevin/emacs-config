@@ -11,7 +11,30 @@
      osascript -e 'tell application "Finder" to make alias file to posix file "/usr/local/opt/emacs-plus@29/Emacs.app" at POSIX file "/Applications"'
    #+end_src
 
-** Common system dependencies
+** System dependencies
+   This emacs setup depends on external tools and programs, so they
+   need to be installed and ensured to be available in the ~PATH~ that
+   emacs is started with
+
+*** Configuring PATH
+**** TODO MacOS
+**** Ubuntu
+     GNOME uses PATH variable from the systemd environment. To modify
+     the PATH, create a conf file at
+     =~/.config/environment.d/path.conf= as follows,
+     #+begin_src bash
+       # Dirs to be added to PATH in the env of apps launched from GUI
+
+       PATH=$HOME/.local/bin:$HOME/.nvm/versions/node/v22.12.0/bin:$PATH
+     #+end_src
+     Then restart the machine. Or re-import environment to avoid restart
+     #+begin_src bash
+       systemctl --user import-environment PATH
+     #+end_src
+     Verify that the PATH was picked up by systemd environment
+     #+begin_src bash
+       systemctl --user show-environment | grep PATH
+     #+end_src
 
 ** Programming environments
 *** Python
