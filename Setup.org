@@ -1,15 +1,26 @@
 * Setup
-** Download Emacs
-   On MacOS I install emacs using the [[https://github.com/d12frosted/homebrew-emacs-plus][homebrew-emacs-plus]] formula. To
-   install follow the instructions in the README of the above git
-   repo. For quick reference, you just need to run,
-   #+begin_src bash
-     brew tap d12frosted/emacs-plus
-     brew install emacs-plug@29
+  Currently I use emacs on Linux (Ubuntu) primarily. But at some point
+  I have used emacs on Linux (ubuntu), MacOS as well as Windows. So
+  this setup has different section for specific OS where applicable.
 
-     # Create a link in Applications folder
-     osascript -e 'tell application "Finder" to make alias file to posix file "/usr/local/opt/emacs-plus@29/Emacs.app" at POSIX file "/Applications"'
-   #+end_src
+** Download Emacs
+*** Ubuntu 24.04
+    Emacs (with wayland) is installed via apt
+    #+begin_src bash
+      sudo apt-get install emacs-pgtk
+    #+end_src
+*** MacOS
+    On MacOS I install emacs using the [[https://github.com/d12frosted/homebrew-emacs-plus][homebrew-emacs-plus]] formula. To
+    install follow the instructions in the README of the above git
+    repo. For quick reference, you just need to run,
+    #+begin_src bash
+      brew tap d12frosted/emacs-plus
+      brew install emacs-plug@29
+
+      # Create a link in Applications folder
+      osascript -e 'tell application "Finder" to make alias file to posix file "/usr/local/opt/emacs-plus@29/Emacs.app" at POSIX file "/Applications"'
+    #+end_src
+*** TODO Windows
 
 ** System dependencies
    This emacs setup depends on external tools and programs, so they
@@ -17,7 +28,6 @@
    emacs is started with
 
 *** Configuring PATH
-**** TODO MacOS
 **** Ubuntu
      GNOME uses PATH variable from the systemd environment. To modify
      the PATH, create a conf file at
@@ -35,64 +45,35 @@
      #+begin_src bash
        systemctl --user show-environment | grep PATH
      #+end_src
+**** TODO MacOS
+**** TODO Windows
 
 ** Programming environments
 *** Python
-**** Install python
-     Even though python is installed using xcode command line tools,
-     it has complications. So we will first install python again using
+**** Install Python
+***** MacOS
+     Even though python is installed using xcode command line tools, it
+     has complications. So we will first install python again using
      ~homebrew~
      #+begin_src bash
        brew install python
      #+end_src
      This would install python3 executable in the ~/usr/local/bin~
      directory.
-
-**** Ensure that python executable is available on the machine
-     On later MacOS versions, ~python~ is not available as it was
-     meant for python2 which is deprecated. However, many emacs modes
-     assume ~python~ executable to be available. In that case, create
-     a symlink to it
-     #+begin_src bash
-       bin_dir=$(dirname $(which python3))
-       sudo ln -sv $bin_dir/python3 $bin_dir/python
-     #+end_src
-
-**** Install python dependencies
-     Before anything, first upgrade the version of ~pip~
-     #+begin_src bash
-       python -m pip install -U pip
-     #+end_src
-
-     Now install the requirements
-
-***** IPython
-      We need IPython because the python shell interpreter is
-      configured to be "ipython".
-      #+begin_src bash
-        python -m pip install ipython
-      #+end_src
-
-***** flake8
-      Flake8 is required as a backend for flycheck
-      in python
-      mode. Unless flake8 is installed, flycheck won't work in python
-      buffers. Once flake8 is installed, flycheck will start working
-      automatically (no config is required).
-      #+begin_src bash
-        python -m pip install flake8
-      #+end_src
-
-***** jedi-language-server
-      This is used as lsp server
-      #+begin_src bash
-        python -m pip install jedi-language-server
-      #+end_src
-
-***** Virtualenv (optional)
-      Since Python 3.3, venv module is built into python so virtualenv
-      is not required. But it may be installed for older versions of
-      python if required.
+****** Ensure that python executable is available on the machine
+       On later MacOS versions, ~python~ is not available as it was
+       meant for python2 which is deprecated. However, many emacs modes
+       assume ~python~ executable to be available. In that case, create
+       a symlink to it
+       #+begin_src bash
+         bin_dir=$(dirname $(which python3))
+         sudo ln -sv $bin_dir/python3 $bin_dir/python
+       #+end_src
+****** TODO Move to uv based installation on MacOS
+***** Ubuntu
+      ~uv~ is a much better way to work with Python. It's all you need!
+***** TODO Windows
+****** TODO Move to uv based installation on Windows
 
 *** Rust
     Follow the rust documentation to install rust on the machine.
@@ -132,20 +113,32 @@
      #+begin_src bash
        brew install llvm
      #+end_src
+
 *** Javascript/Typescript
 **** Install node and npm
 **** Install the typescript and typescript-language-server
      #+begin_src bash
        npm install -g typescript-language-server typescript
      #+end_src
+*** Clojure
+**** Leiningen
+**** nREPL middleware
+     - https://github.com/clojure-emacs/cider-nrepl
+     - Required by the latest Cider release
+     - The easiest way to set it up is to add it as a leiningen plugin
+       either in your project's ~project.clj~ file or in the ~:user~
+       profile in ~~/.lein/profiles.clj~.
+     - https://github.com/clojure-emacs/cider#cider-nrepl-middleware
+**** clj-kondo
+     - https://github.com/clj-kondo/clj-kondo
+     - For flycheck in clojure buffers
+
 
 ** Org mode
 *** Custom script for lower case UUIDs on MacOS
-
     On macos, the default ~uuidgen~ script generates UUIDs in
     uppercase. For consistency, enforce lower case UUID generation by
     copying the ~uuidgen-lower~ provided in this repo
-
     #+begin_src bash
       ln -sv bin/uuidgen-lower /usr/local/bin/
     #+end_src
@@ -159,13 +152,14 @@
     Note that graphviz is not required for org-roam-ui
 
 *** org-ledger
-    Ledger needs to be installed 
+    Ledger needs to be installed
     #+begin_src bash
       brew install ledger
     #+end_src
 
-** Projectile
 
+** Projectile
+*** [[https://github.com/BurntSushi/ripgrep][Ripgrep]] is required for search functionality in projectile mode
 *** Cygwin on Windows
     On windows, cygwin needs to be installed
     #+begin_src ps1
