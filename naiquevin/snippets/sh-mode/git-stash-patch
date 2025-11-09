@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: git stash to patch
+# key: git/stash-patch
+# --
+
+git stash show stash@{$1} --binary  > $2.patch$0
