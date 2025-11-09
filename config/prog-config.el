@@ -117,10 +117,10 @@
   :ensure t)
 
 
-(use-package mermaid-mode
-  :mode ("\\.mmd\\'" . mermaid-mode)
-  :config
-  (setq mermaid-mmdc-location "/Users/naiquevin/.nvm/versions/node/v12.14.0/bin/mmdc"))
+(when (executable-find "mmdc")
+  (use-package mermaid-mode
+    :ensure t
+    :mode ("\\.mmd\\'" . mermaid-mode)))
 
 
 (use-package plantuml-mode
