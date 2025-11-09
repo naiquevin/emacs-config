@@ -26,6 +26,8 @@
 
 
 ;;; Set the path properly
+;;;
+;;; @TODO: Add default path for nodejs
 (setenv "PATH"
         (concat
          "/usr/local/bin"
@@ -41,7 +43,10 @@
 (setenv "PERL5LIB" (expand-file-name "~/perl5/lib/perl5"))
 
 
-;; For finding and running tools written rust
+;;; For finding and running tools written rust
+;;;
+;;; @TODO: Check if this is
+;;; redundant (because rustup seems to set it up)
 (setq exec-path (append exec-path (cons (expand-file-name "~/.cargo/bin/") '())))
 
 

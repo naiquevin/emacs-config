@@ -1,12 +1,4 @@
 
-;; Add node's bin path to PATH. All nodejs related tooling
-;; e.g. typescript-language-server etc. are expected to be found here
-(setenv "PATH"
-        (concat
-         (getenv "PATH")
-         os/path-envvar-delimiter
-         "/home/vineet/.nvm/versions/node/v22.12.0/bin"))
-
 (use-package js2-mode
   :ensure t
 
