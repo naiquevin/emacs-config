@@ -123,13 +123,17 @@
     :mode ("\\.mmd\\'" . mermaid-mode)))
 
 
-(use-package plantuml-mode
-  :ensure t
-  :mode ("\\.plantuml\\'" . plantuml-mode)
-  :config
-  (setq plantuml-default-exec-mode 'executable)
-  ;; Until the problem with svg is fixed - https://emacs.stackexchange.com/a/74504
-  (plantuml-set-output-type "png"))
+(let ((jar-path (expand-file-name "~/.local/share/plantuml/plantuml.jar")))
+  (when (file-exists-p jar-path)
+    (use-package plantuml-mode
+      :ensure t
+      :mode ("\\.plantuml\\'" . plantuml-mode)
+      :config
+      (setq plantuml-default-exec-mode 'jar)
+      (setq plantuml-jar-path jar-path)
+      (setq plantuml-indent-level 4)
+      ;; Until the problem with svg is fixed - https://emacs.stackexchange.com/a/74504
+      (plantuml-set-output-type "png"))))
 
 
 (use-package flycheck
