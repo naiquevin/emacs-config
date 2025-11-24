@@ -1,5 +1,7 @@
 ;;; Python programming environment
 
+(require 'cl-lib)
+
 ;; virtualenvwrapper.el
 (use-package virtualenvwrapper
   :ensure t
@@ -12,8 +14,8 @@
 
 (defun naiq/venv-activate ()
   "Wrapper to activate a virtualenv. Supports activating a
-virtualenv by `venv-lookup-names` in the projectile root dir or a
-`venv-location` (as a fallback)
+virtualenv by `venv-dirlookup-names` in the projectile root dir or
+the current directory or the `venv-location` (as a fallback)
 
 Depends on packages:
 
@@ -22,9 +24,16 @@ Depends on packages:
   - ivy
 "
   (interactive)
-  (let ((path (concat (projectile-project-root) ".venv")))
-    (if (file-exists-p path)
-        (ivy-read "Virtualenv found inside the project:" (cons path '())
+  (let* ((lookup-dirs (list (file-name-directory buffer-file-name)
+                            (projectile-project-root)))
+         (paths (mapcan (lambda (dir)
+                          (mapcar (lambda (file)
+                                    (expand-file-name file dir))
+                                  venv-dirlookup-names))
+                        lookup-dirs))
+         (existing-paths (cl-remove-if-not 'file-exists-p paths)))
+    (if existing-paths
+        (ivy-read "Virtualenvs found inside the project:" existing-paths
                   :action (lambda (vdir)
                             ;; @NOTE: The following code is copied
                             ;; from `venv-workon` implementation
