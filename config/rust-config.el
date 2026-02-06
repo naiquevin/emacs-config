@@ -13,8 +13,10 @@
 
 (defun naiq/dependency-crate-buffer-p (&optional buf)
   (let ((filepath (buffer-file-name (or buf (current-buffer))))
-        (cargo-registry-path (expand-file-name "registry/src" my/cargo-dir)))
-    (string-prefix-p cargo-registry-path filepath)))
+        (cargo-registry-path (expand-file-name "registry/src" my/cargo-dir))
+        (rust-toolchains-path (expand-file-name ".rustup/toolchains" "~/")))
+    (or (string-prefix-p cargo-registry-path filepath)
+        (string-prefix-p rust-toolchains-path filepath))))
 
 
 (use-package rust-mode
