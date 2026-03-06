@@ -1,7 +1,7 @@
 # Emacs Configuration
 
-This is my emacs configuration which I use both on my work laptop
-(running OS X) as well as personal laptop (running Ubuntu).
+This is my emacs configuration which I use on MacOS, Ubuntu and
+sometimes on Windows as well.
 
 ## Installing Emacs
 
