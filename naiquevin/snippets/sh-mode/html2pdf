@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Convert HTML to PDF
+# key: html2pdf
+# --
+
+pandoc $1 -t latex --pdf-engine=lualatex -o $2$0
