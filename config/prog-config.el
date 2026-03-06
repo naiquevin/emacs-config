@@ -23,7 +23,8 @@
 (setq treesit-language-source-alist
       '((typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
         (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
-        (kotlin "https://github.com/fwcd/tree-sitter-kotlin" "main")))
+        (kotlin "https://github.com/fwcd/tree-sitter-kotlin" "main")
+        (yaml "https://github.com/tree-sitter-grammars/tree-sitter-yaml" "master")))
 
 (use-package eldoc
   :after (diminish)
@@ -103,6 +104,10 @@
   :ensure t
   :config
   (add-hook 'yaml-mode-hook 'filladapt-mode))
+
+
+(use-package yaml-pro
+  :ensure t)
 
 
 (use-package company
