@@ -73,3 +73,12 @@
   :ensure t
   :bind (("C-c e" . rust-playground-exec)
          ("C-c t" . rust-playground-switch-between-cargo-and-main)))
+
+
+;; To run lsp server (rust-analyzer) with custom config, add something
+;; like this to the `.'dir-locals.el`
+;;
+;; ((rust-mode . ((eglot-workspace-configuration . (:rust-analyzer (:procMacro (:enable t)
+;;                                                                  :cargo (:buildScripts (:enable t)
+;;                                                                         :features "all")))))))
+
