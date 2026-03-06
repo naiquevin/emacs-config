@@ -239,6 +239,14 @@
   (add-to-list 'auto-mode-alist '("\\.kt$" . kotlin-ts-mode)))
 
 
+(use-package lua-mode
+  :ensure t)
+
+
+(use-package graphviz-dot-mode
+  :ensure t)
+
+
 (defun naiq/toggle-relative-line-numbers ()
   "Toggle relative line numbers in the current buffer"
   (interactive)
@@ -248,7 +256,7 @@
     (if is-enabled
         (display-line-numbers-mode 0)
       (progn
-       (setq display-line-numbers-type 'relative)
-       (display-line-numbers-mode 1)))))
+        (setq display-line-numbers-type 'relative)
+        (display-line-numbers-mode 1)))))
 
 (global-set-key (kbd "C-c n r") 'naiq/toggle-relative-line-numbers)
