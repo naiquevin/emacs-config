@@ -251,6 +251,18 @@
 (use-package graphviz-dot-mode
   :ensure t)
 
+(use-package ape-mode
+  :ensure nil
+  :load-path my/self-lib-dir
+
+  :init
+  (setq ape-cli-command "/home/vineet/code/ape/target/release/ape-cli")
+
+  :config
+  (ape-mode 1)
+
+  :diminish ape-mode)
+
 
 (defun naiq/toggle-relative-line-numbers ()
   "Toggle relative line numbers in the current buffer"
