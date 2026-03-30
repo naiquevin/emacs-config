@@ -174,3 +174,7 @@
   :mode "\\.hurl\\'"
   :config
   (setq hurl-mode-use-json-ts-mode nil))
+
+
+(use-package command-log-mode
+  :ensure t)
