@@ -7,7 +7,6 @@
   (load (expand-file-name "nd-js" my/self-lib-dir))
 
   :config
-  (setq js-indent-level 2)
   (setq js2-basic-offset 2)
 
   :hook
