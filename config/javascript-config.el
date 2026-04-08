@@ -41,7 +41,14 @@
 (use-package typescript-ts-mode
   :ensure t
 
+  :after (company flycheck-eglot)
+
   :config
+
+  (add-to-list 'eglot-server-programs
+               '((typescript-ts-mode js-mode js-ts-mode)
+                 . ("typescript-language-server" "--stdio")))
+
   ;; @FIXME: Adding hooks using the `:hook` keyword doesn't work. It
   ;; causes recursive calls (excessive-lisp-nesting) whereas
   ;; `add-hook` works just fine.
