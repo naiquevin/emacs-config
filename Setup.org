@@ -6,7 +6,9 @@
 ** Download Emacs
 *** Ubuntu 24.04
     Install emacs from source. Detailed steps in my org-roam notes
-    (closed-sourced)
+    (closed-sourced). Also note that to compile emacs 30 from source,
+    treesitter-lib needs to be compiled from version v0.24.0. Don't
+    use what's available in ubuntu's apt packages
 *** MacOS
     On MacOS I install emacs using the [[https://github.com/d12frosted/homebrew-emacs-plus][homebrew-emacs-plus]] formula. To
     install follow the instructions in the README of the above git
