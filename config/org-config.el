@@ -92,6 +92,33 @@
 
   ;;---------------------------------------------------------
 
+  ;; @HACK: When file-based link is added in an org file using the
+  ;; bracket link syntax, we want a relative path in the same
+  ;; directory to contain a `./' prefix if `org-link-file-path-type'
+  ;; is set to `'relative'. This makes it work well with the `tagref'
+  ;; tool. Without this advice, the path gets normalized
+  ;; e.g. `./doc.md' becomes `doc.md' even when the former is
+  ;; explicitly specified.
+  ;;
+  ;; This feels a bit hacky though because `file-relative-name' is a
+  ;; core emacs function that we're patching and not an org-specific
+  ;; one. Hence we're checking multiple pre-conditions to ensure that
+  ;; the behavior takes effect only when required and can also be
+  ;; opted out of.
+  (advice-add 'file-relative-name
+              :filter-return
+              (lambda (path)
+                (if (and (derived-mode-p 'org-mode)
+                         ;; Only if set locally (e.g., .dir-locals.el)
+                         (local-variable-p 'org-link-file-path-type)
+                         (eq org-link-file-path-type 'relative)
+                         (not (file-name-absolute-p path))
+                         (not (string-prefix-p "." path)))
+                    (concat "./" path)
+                  path)))
+
+  ;;---------------------------------------------------------
+
   :hook
   (org-mode . (lambda () (hl-line-mode 1)))
 
