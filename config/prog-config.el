@@ -278,3 +278,6 @@
         (display-line-numbers-mode 1)))))
 
 (global-set-key (kbd "C-c n r") 'naiq/toggle-relative-line-numbers)
+
+(use-package caddyfile-mode
+  :ensure t)
