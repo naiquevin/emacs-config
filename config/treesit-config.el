@@ -12,4 +12,5 @@
       '((typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
         (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
         (kotlin "https://github.com/fwcd/tree-sitter-kotlin" "main")
-        (yaml "https://github.com/tree-sitter-grammars/tree-sitter-yaml" "master")))
+        (yaml "https://github.com/tree-sitter-grammars/tree-sitter-yaml" "master")
+        (typst "https://github.com/uben0/tree-sitter-typst")))

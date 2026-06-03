@@ -178,3 +178,8 @@
 
 (use-package command-log-mode
   :ensure t)
+
+(use-package typst-ts-mode
+  :ensure t
+  :config
+  (setq typst-ts-indent-offset 2))
