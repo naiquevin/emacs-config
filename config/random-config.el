@@ -29,3 +29,12 @@
 (add-hook 'yaml-mode-hook
           (lambda ()
             (define-key yaml-mode-map (kbd "C-c C-p") 'yaml-path/path)))
+
+
+(defun naiq/youtube-play-pause ()
+  (interactive)
+  (shell-command "playerctl play-pause"))
+
+
+(global-set-key (kbd "C-c m") 'naiq/youtube-play-pause)
+

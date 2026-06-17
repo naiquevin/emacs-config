@@ -133,7 +133,6 @@
      - https://github.com/clj-kondo/clj-kondo
      - For flycheck in clojure buffers
 
-
 ** Org mode
 *** Custom script for lower case UUIDs on MacOS
     On macos, the default ~uuidgen~ script generates UUIDs in
@@ -157,7 +156,6 @@
       brew install ledger
     #+end_src
 
-
 ** Projectile
 *** [[https://github.com/BurntSushi/ripgrep][Ripgrep]] is required for search functionality in projectile mode
 *** Cygwin on Windows
@@ -165,3 +163,18 @@
     #+begin_src ps1
       choco install Cygwin
     #+end_src
+
+** Controlling in-browser youtube video player from emacs
+   - Often I use emacs for taking notes while watching a youtube video
+     side-by-side (by splitting the screen). It's handy to be able to
+     control the youtube video from inside emacs.
+   - This only works on linux as it uses d-bus as the messaging layer
+     between processes
+   - Pre-requisites
+     1. [[https://github.com/lt-mayonesa/browser-mpris2][browser-mpris2]] native component and firefox
+        extension. Follow instructions from github README
+     2. playerctl
+        #+begin_src bash
+          sudo apt install playerctl
+        #+end_src
+
