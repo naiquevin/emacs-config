@@ -35,6 +35,14 @@
   (interactive)
   (shell-command "playerctl play-pause"))
 
+(defun naiq/youtube-rewind ()
+  (interactive)
+  (shell-command "playerctl pause && playerctl position $(echo $(playerctl position) | awk '{v=int($1)-15; print (v<0)?0:v}') && playerctl play"))
 
-(global-set-key (kbd "C-c m") 'naiq/youtube-play-pause)
+(define-prefix-command 'naiq/media-map)
+(global-set-key (kbd "C-c m") 'naiq/media-map)
+(define-key naiq/media-map (kbd "p") 'naiq/youtube-play-pause)
+(define-key naiq/media-map (kbd "b") 'naiq/youtube-rewind)
+
+
 
