@@ -9,6 +9,7 @@
   (setq org-list-allow-alphabetical t)
   (setq org-log-done t)   ; display time when TODO was changed to DONE
   (setq org-id-method 'uuid)
+  (setq org-log-into-drawer t)  ; add state changes into logbook drawer
 
   ;; @TODO: Fix on windows
   ;; (setq org-id-uuid-program my/uuidgen-program)
