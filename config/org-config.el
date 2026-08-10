@@ -78,6 +78,10 @@
 
   ;;---------------------------------------------------------
 
+  (add-to-list 'org-src-lang-modes '("typescript" . typescript-ts))
+
+  ;;---------------------------------------------------------
+
   ;; global key bindings
   (global-set-key "\C-cl" 'org-store-link)
   (global-set-key "\C-cc" 'org-capture)
