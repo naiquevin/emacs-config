@@ -118,13 +118,21 @@
   (when (file-exists-p jar-path)
     (use-package plantuml-mode
       :ensure t
+      :after (org)
       :mode ("\\.plantuml\\'" . plantuml-mode)
       :config
       (setq plantuml-default-exec-mode 'jar)
       (setq plantuml-jar-path jar-path)
       (setq plantuml-indent-level 4)
       ;; Until the problem with svg is fixed - https://emacs.stackexchange.com/a/74504
-      (plantuml-set-output-type "png"))))
+      (plantuml-set-output-type "png")
+
+      (org-babel-do-load-languages
+       'org-babel-load-languages
+       '((plantuml . t)))
+      (setq org-plantuml-jar-path jar-path)
+
+      )))
 
 
 (use-package flycheck
