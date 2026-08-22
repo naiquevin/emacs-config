@@ -81,8 +81,10 @@
 (use-package sqlformat
   :ensure t
   :config
-  (setq sqlformat-command 'pgformatter)
-  (setq sqlformat-args '("--extra-function" "/Users/vineet/.pg_format_files/functions.txt"))
+  ;; (setq sqlformat-command 'pgformatter)
+  (setq sqlformat-command 'sql-formatter)
+  ;; (setq sqlformat-args '("--extra-function" "/Users/vineet/.pg_format_files/functions.txt"))
+  (setq sqlformat-args '("--config" "{\"language\": \"sqlite\", \"tabWidth\": 4}"))
   :bind (:map sql-mode-map ("C-c C-f" . sqlformat-buffer)))
 
 
