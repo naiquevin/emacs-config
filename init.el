@@ -45,6 +45,15 @@
       (t (require 'linux)))
 
 
+;; Mark local variables as safe
+;; Mark sqlformat-command as safe if it's a symbol
+(put 'sqlformat-command 'safe-local-variable #'symbolp)
+
+;; Mark sqlformat-args as safe if it's a list of strings
+(put 'sqlformat-args 'safe-local-variable
+     (lambda (val) (and (listp val) (cl-every #'stringp val))))
+
+
 ;; Load the custom file
 (load custom-file)
 
