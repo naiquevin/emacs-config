@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: json-compare
+# key: json-compare
+# --
+
+diff <(jq --sort-keys . $1) <(jq --sort-keys . $2)$0
